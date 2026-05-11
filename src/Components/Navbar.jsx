@@ -104,7 +104,7 @@ const Navbar = () => {
                
 
                 <li ref={DropDownref}>
-                    <Link onClick={()=> setDropDown(!dropDown)} className='font-poppins  bg-[#333333] text-[20px]  font-bold absolute top-0 left-[64px] py-[17px] px-[20px] text-[white] flex items-center ' to='#'>All Categories <FaAngleDown className=' cursor-pointer flex pl-[4px] ml-[40px] text-[20px]'/></Link>
+                    <Link onMouseEnter={()=> setDropDown(!dropDown)} className='font-poppins  bg-[#333333] text-[20px]  font-bold absolute top-0 left-[64px] py-[17px] px-[20px] text-[white] flex items-center ' to='#'>All Categories <FaAngleDown className=' cursor-pointer flex pl-[4px] ml-[40px] text-[20px]'/></Link>
 
                  {dropDown &&
                  

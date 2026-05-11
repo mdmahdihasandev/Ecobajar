@@ -25,7 +25,7 @@ const TopBar = () => {
 
 
             {/* //! DropDown */}
-            {/* <div onClick={() => setOpen(!open)} className='flex items-center' ref={dropDown}>
+            <div onClick={() => setOpen(!open)} className='flex items-center' ref={dropDown}>
               Eng <FaAngleDown />
               {
                 open &&
@@ -38,10 +38,10 @@ const TopBar = () => {
                   </ul>
                 </div>
               }
-            </div> */}
+            </div>
 
               {/* Sidebar */}
-            <div onClick={() => setOpen(!open)} className='flex items-center' ref={dropDown}>
+            {/* <div onClick={() => setOpen(!open)} className='flex items-center' ref={dropDown}>
               Eng <FaAngleDown />
               {
                 open &&
@@ -56,7 +56,7 @@ const TopBar = () => {
                  </div>
                 </div>
               }
-            </div>
+            </div> */}
 
 
 

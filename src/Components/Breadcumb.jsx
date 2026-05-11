@@ -8,7 +8,7 @@ const Breadcumb = () => {
     let PageName = useLocation()
     let arr = PageName.pathname.split('/')
     return (
-        <div style={{ background: `url(${BackgrounPic})` }}>
+        <div className='bg-center bg-cover bg-no-repeat' style={{ backgroundImage: `url(${BackgrounPic})` }}>
             <Container>
                 <div className='flex items-center py-11'>
                     <IoHomeOutline className='text-[23px] text-[#808080]' />

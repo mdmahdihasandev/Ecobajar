@@ -4,11 +4,13 @@ import { Link } from 'react-router'
 
 const Registration = () => {
   return (
-    <div>
-      <Container>
+   
+     <div>
+     
         <div className='max-w-[520px] shadow-[0_0px_6px_rgba(0,0,0,0.4)] p-[20px] mx-auto my-[80px] rounded-md'>
           <h2 className='text-center font-poppins font-semibold text-[32px] py-[20px]'>Create Account</h2>
-         
+        <form action="">
+           
            <input type="email" placeholder='Email' className='w-full rounded-md mb-[12px] py-[14px] px-[16px] border border-[#ccc8c8]' />
            <input type="password" placeholder='Password' className='w-full rounded-md mb-[12px] py-[14px] px-[16px] border border-[#ccc8c8]' />
            <input type="password" placeholder='Confirm Password' className='w-full rounded-md mb-[12px] py-[14px] px-[16px] border border-[#ccc8c8]' />
@@ -23,9 +25,11 @@ const Registration = () => {
           <Link to="/login" className='font-poppins font-semibold hover:text-blue-600 font-sm text-black'> Login</Link>
         </p>
         
+        </form>
         </div>
-      </Container>
+     
     </div>
+ 
   )
 }
 
