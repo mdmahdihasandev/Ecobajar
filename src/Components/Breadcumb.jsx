@@ -10,11 +10,11 @@ const Breadcumb = () => {
     return (
         <div style={{ background: `url(${BackgrounPic})` }}>
             <Container>
-                <div className='flex items-center py-5'>
-                    <IoHomeOutline className='text-[16px] text-[#808080]' />
+                <div className='flex items-center py-11'>
+                    <IoHomeOutline className='text-[23px] text-[#808080]' />
                     {
                         arr.map((item, index) => (
-                            <span key={index} className='font-poppins text-sm text-[#808080]'>
+                            <span key={index} className='font-poppins text-[20px] text-[#808080]'>
 
                                 {item.charAt(0).toUpperCase() + item.slice(1)}
                                 {index < arr.length - 1 && <span className='mx-2 text-[#808080]'>

@@ -22,16 +22,16 @@ const FooterTop = () => {
                 </div>
                 <div className='flex gap-[8px] cursor-pointer'>
                    <div className='w-[40px] h-[40px] hover:bg-primary hover:text-white flex justify-center items-center rounded-full' >
-                    <Link> <TfiFacebook className='text-[18px]' /></Link>
+                    <Link to="https://www.facebook.com/"> <TfiFacebook className='text-[18px]' /></Link>
                    </div>
                    <div className='w-[40px] h-[40px] hover:bg-primary hover:text-white flex justify-center items-center rounded-full' >
-                     <Link><IoLogoTwitter className='text-[18px]' /></Link>
+                     <Link to="https://x.com/home"><IoLogoTwitter className='text-[18px]' /></Link>
                    </div>
                    <div className='w-[40px] h-[40px] hover:bg-primary hover:text-white flex justify-center items-center rounded-full' >
-                     <Link><FaInstagram className='text-[18px]' /></Link>
+                     <Link to="https://www.instagram.com/?hl=en"><FaInstagram className='text-[18px]' /></Link>
                    </div>
                    <div className='w-[40px] h-[40px] hover:bg-primary hover:text-white flex justify-center items-center rounded-full' >
-                     <Link><FaLinkedinIn className='text-[18px] ' /></Link>
+                     <Link to="https://www.linkedin.com/feed/"><FaLinkedinIn className='text-[18px] ' /></Link>
                    </div> 
                 </div>
             </div>
