@@ -23,10 +23,10 @@ const Footer = () => {
             <h5 className='font-poppins font-medium text-[16px] pb-[20px] '>My Account</h5>
 
             <ul className='font-poppins font-normal text-[14px] flex flex-col gap-[12px] text-[#999999] '>
-                <li className='hover:text-white'> My Account</li>
-                <li className='hover:text-white'>Order History</li>
-                <li className='hover:text-white'>Shoping Cart</li>
-                <li className='hover:text-white'> Wishlist</li>
+                <li className='hover:text-white'><Link to=""> My Account</Link></li>
+                <li className='hover:text-white'><Link to="">Order History</Link></li>
+                <li className='hover:text-white'><Link to="">Shoping Cart</Link></li>
+                <li className='hover:text-white'><Link to=""> Wishlist</Link></li>
             </ul>
             
         </div>
@@ -36,10 +36,10 @@ const Footer = () => {
            
             <ul className='font-poppins font-normal text-[14px] flex flex-col gap-[12px] text-[#999999] '>
 
-                <li className='hover:text-white'> Contact </li>
-                <li className='hover:text-white'> Faqs </li>
-                <li className='hover:text-white'>Terms & Condition</li>
-                <li className='hover:text-white'> Privacy Policy </li>
+                <li className='hover:text-white'> <Link to="">Contact</Link> </li>
+                <li className='hover:text-white'> <Link to="">Faqs</Link> </li>
+                <li className='hover:text-white'><Link to="">Terms & Condition</Link></li>
+                <li className='hover:text-white'> <Link to="">Privacy Policy</Link> </li>
             </ul>
             
         </div>
@@ -49,10 +49,10 @@ const Footer = () => {
            
             <ul className='font-poppins font-normal text-[14px] flex flex-col gap-[12px] text-[#999999]'>
 
-                <li className='hover:text-white'>About</li>
-                <li className='hover:text-white'>Shop</li>
-                <li className='hover:text-white'> Product</li>
-                <li className='hover:text-white'>Track Order</li>
+                <li className='hover:text-white'> <Link to="">About</Link> </li>
+                <li className='hover:text-white'><Link to="">Shop</Link></li>
+                <li className='hover:text-white'><Link to="">Product</Link></li>
+                <li className='hover:text-white'><Link to="">Track Order</Link></li>
 
             </ul>
             
@@ -63,10 +63,10 @@ const Footer = () => {
            
              <ul className='font-poppins font-normal text-[14px] flex flex-col gap-[12px] text-[#999999] '>
 
-                <li className='hover:text-white'>Fruit & Vegetables</li>
-                <li className='hover:text-white'>Meat & Fish</li>
-                <li className='hover:text-white'> Bread & Bakery</li>
-                <li className='hover:text-white'> Beauty & Health</li>
+                <li className='hover:text-white'><Link to="">Fruit & Vegetables</Link></li>
+                <li className='hover:text-white'><Link to="">Meat & Fish</Link></li>
+                <li className='hover:text-white'><Link to="">Bread & Bakery</Link></li>
+                <li className='hover:text-white'><Link to=""> Beauty & Health</Link></li>
 
             </ul>
             

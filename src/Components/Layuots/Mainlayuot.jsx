@@ -6,6 +6,7 @@ import Navbar from '../Navbar'
 import Footer from '../Footer'
 import FooterTop from '../FooterTop'
 import Breadcumb from '../Breadcumb'
+import Banner from '../../Pages/Banner'
 
 const Mainlayuot = () => {
   let PageName = useLocation().pathname
@@ -17,6 +18,7 @@ const Mainlayuot = () => {
         <SearchBar/>
         <Navbar/>
         {PageName !== '/' && <Breadcumb/> }
+         <Banner/>
         <Outlet/>
         <FooterTop/>
         <Footer/>

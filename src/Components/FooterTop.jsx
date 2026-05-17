@@ -17,7 +17,7 @@ const FooterTop = () => {
                     <p className='font-poppins font-semibold text-[14px] text-[#999999] max-w-[415px]'>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna.</p>
                 </div>
                 <div>
-                    <input className='w-[480px] py-[14px] pl-[20px] rounded-tl-full rounded-bl-full shadow-[0_0px_3px_rgba(0,0,0,0.2)] rounded-md' type="text"placeholder='Your email address' />
+                    <input className='w-[480px] py-[14px] pl-[20px] rounded-tl-full rounded-bl-full border border-gray-300 bg-white rounded-md' type="text"placeholder='Your email address' />
                     <button className='text-[white] cursor-pointer bg-[#00B207] py-[16px] px-[40px] leading-[138%] rounded-full relative left-[-30px] '>Subscribe</button>
                 </div>
                 <div className='flex gap-[8px] cursor-pointer'>
