@@ -18,7 +18,7 @@ const Mainlayuot = () => {
         <SearchBar/>
         <Navbar/>
         {PageName !== '/' && <Breadcumb/> }
-       {PageName !== '/registration' && PageName !== '/login' && PageName !== '/forget' && <Banner />}
+       {/* {PageName !== '/registration' && PageName !== '/login' && PageName !== '/forget' && <Banner />} */}
         
         <Outlet/>
         <FooterTop/>

@@ -16,6 +16,51 @@
 }
 
 
+
+.custom-prev {
+ 
+    background: rgb(255, 254, 254);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    z-index: 5;
+    transform: translatex(-50%);
+    cursor: pointer;
+    
+}
+.custom-next {
+    background: rgb(250, 250, 250);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+     position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 2;
+    transform: translatex(-50%);
+    cursor: pointer;
+}
+
+.swiper-navigation-icon{
+  
+}
+
+.swiper-button-disabled {
+  background-color: darkgray;
+  cursor:not-allowed;
+}
+
+
+
 /* ! checkBox k Css korar niyom */
 /* 
 .mylabel {

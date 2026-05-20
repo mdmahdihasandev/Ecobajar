@@ -5,6 +5,9 @@ import { Link } from 'react-router';
 import { FaBars } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
 import useOutsideClick from '../Hooks/OutsiteClick';
+import { IoSearch } from "react-icons/io5";
+import Food from '../Icons/Food';
+import Apple from '../Icons/Apple';
 
 const Navbar = () => {
 
@@ -54,25 +57,26 @@ const Navbar = () => {
  
 
     {/* Header */}
-    <div className="bg-[#2C742F] py-6 px-6">
+    <div className="bg-[#2C742F] py-6 px-6 relative">
       <h2 className="text-white text-[26px] font-bold font-pop">
         Dashboard
       </h2>
 
-      <p className="text-gray-200 text-sm mt-1">
-        Welcome Back 👋
-      </p>
+     <input className='mt-[7px] py-[5px] pl-[15px] border border-[#E6E6E6] outline-0 rounded-[5px]' type="text" />
+     <div className='absolute top-[63px] right-[32px] text-[20px] w-[40px] h-[40px] bg-[#ffffff] flex justify-center items-center rounded-[10px] hover:bg-[blue] hover:text-[white] cursor-pointer'>
+      <IoSearch  />
+     </div>
     </div>
 
     {/* Menu */}
-    <ul className="py-5 font-pop">
+    <ul className="py-5 font-pop items-center">
 
-      <li className="px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
-        Home
+      <li className="flex  px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
+      <span className='mr-[12px] '> < Food/> </span> Fresh Fruit
       </li>
 
-      <li className="px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
-        Shop
+      <li className=" flex px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
+       <span className="text-gray-400"><Apple/></span> Vegetables
       </li>
 
       <li className="px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">

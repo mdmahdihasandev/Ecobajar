@@ -4,6 +4,7 @@ import logo from '../assets/Logo.webp'
 import { IoSearchOutline } from "react-icons/io5";
 import LoveIcon from '../Icons/LoveIcon';
 import { IoBagOutline } from "react-icons/io5";
+import { Link } from 'react-router';
 
 const SearchBar = () => {
   return (
@@ -11,7 +12,7 @@ const SearchBar = () => {
      <Container> 
       <div className='items-center flex justify-between py-[27px]'>
         <div>
-          <img src={logo} alt="logo" fetchpriority="high"/>
+         <Link to="/"> <img src={logo} alt="logo" fetchpriority="high"/></Link>
         </div>
         <div className='relative'>
           <input className='py-3 pl-11 w-[400px] border border-r-0 rounded-tl-sm rounded-bl-sm border-[#808080] rounded-pt-[10px] placeholder:text-[#808080] placeholder:font-poppins placeholder:text-sm font-medium' type="text" placeholder='Search' />
