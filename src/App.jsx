@@ -5,6 +5,7 @@ import Registration from './Pages/Registration'
 import Login from './Pages/Login'
 import Mainlayuot from './Components/Layuots/Mainlayuot';
 import Forget from './Pages/Forget';
+import Reset from './Pages/Reset'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/registration" element={<Registration />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forget" element={<Forget/>} />
+        <Route path="/reset-password" element={<Reset/>} />
       </Route>
     </Routes>
 

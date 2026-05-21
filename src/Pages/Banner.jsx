@@ -11,7 +11,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import { Navigation } from 'swiper/modules';
+// import { Navigation } from 'swiper/modules';
+// import { Pagination } from 'swiper/modules';
+
+import { Autoplay, Pagination, Navigation ,Scrollbar} from 'swiper/modules';
 
 const Banner = () => {
   return (
@@ -29,8 +32,18 @@ const Banner = () => {
                         nextEl: '.custom-next',
                         prevEl: '.custom-prev',
                       }}
-                    modules={[Navigation]}
-                    autoplay={true}
+                   modules={[Navigation, Pagination , Autoplay]}
+                    pagination={{
+                       clickable: true,
+                    }} 
+
+                    autoplay={{
+                      delay: 2500,
+                      disableOnInteraction: false,
+                    }}
+
+                    loop={true}
+                 
                   >
                     <SwiperSlide>
                       <img className='pt-[24px]' src={Bannerlogo} alt="Bannerlogo" />
@@ -57,8 +70,63 @@ const Banner = () => {
 
               </div>
             <div className='max-w-[423px]'>
-                <div><img className='pt-[24px] pb-[24px]' src={BannerRigt} alt="BannerRigt" /></div>
-                <div><img src={BannerRigt2} alt="BannerRigt2" /></div>
+                <div>
+                
+       <Swiper
+            spaceBetween={0}
+            slidesPerView={1}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+             scrollbar={{
+                hide: true,
+            }}
+            modules={[Scrollbar]}
+              
+              >
+              <SwiperSlide>
+                <img className='pt-[24px] pb-[24px]' src={BannerRigt} alt="BannerRigt" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img className='pt-[24px] pb-[24px]' src={BannerRigt} alt="BannerRigt" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img className='pt-[24px] pb-[24px]' src={BannerRigt} alt="BannerRigt" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img className='pt-[24px] pb-[24px]' src={BannerRigt} alt="BannerRigt" />
+              </SwiperSlide>
+    </Swiper>
+                
+                </div>
+
+                <div className=''>
+       <Swiper
+            spaceBetween={0}
+            slidesPerView={1}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+           
+            pagination={{
+              clickable: true,
+           }}
+            modules={[Pagination]}
+              
+              >
+              <SwiperSlide>
+                <img src={BannerRigt2} alt="BannerRigt2" />
+              </SwiperSlide>
+              <SwiperSlide>
+               <img src={BannerRigt2} alt="BannerRigt2" />
+              </SwiperSlide>
+              <SwiperSlide>
+               <img src={BannerRigt2} alt="BannerRigt2" />
+              </SwiperSlide>
+              <SwiperSlide>
+              <img src={BannerRigt2} alt="BannerRigt2" />
+              </SwiperSlide>
+    </Swiper>
+                
+                </div>
             </div>
            </div>
         </Container>

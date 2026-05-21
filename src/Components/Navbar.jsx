@@ -8,6 +8,13 @@ import useOutsideClick from '../Hooks/OutsiteClick';
 import { IoSearch } from "react-icons/io5";
 import Food from '../Icons/Food';
 import Apple from '../Icons/Apple';
+import Fish from '../Icons/Fish';
+import Meet from '../Icons/Meet';
+import Coffe from '../Icons/Coffe';
+import IceCrim from '../Icons/IceCrim';
+import Cake from '../Icons/Cake';
+import Pie from '../Icons/Pie';
+import Fody from '../Icons/Fody';
 
 const Navbar = () => {
 
@@ -76,27 +83,41 @@ const Navbar = () => {
       </li>
 
       <li className=" flex px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
-       <span className="text-gray-400"><Apple/></span> Vegetables
+       <span className="mr-[12px]"> <Apple/> </span>   Vegetables
       </li>
 
-      <li className="px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
-        Products
+      <li className="flex px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
+        <span className="mr-[12px]"> <Fish/> </span>   River Fish
       </li>
 
-      <li className="px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
-        Categories
+      <li className="flex px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
+         <span className="mr-[12px]"> <Meet/> </span> Chicken & Meat
       </li>
 
-      <li className="px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
-        Blog
+      <li className="flex px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
+       <span className="mr-[12px]"> <Coffe/> </span>   Drink & Water
       </li>
 
-      <li className="px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
-        Contact
+      <li className="flex px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
+         <span className="mr-[12px]"> <IceCrim/> </span> Yogurt & Ice Cream
       </li>
+
+      <li className="flex px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
+         <span className="mr-[12px]"> <Cake/> </span> Cake & Bread
+      </li>
+
+      <li className="flex px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
+         <span className="mr-[12px]"> <Pie/> </span> Butter & Cream
+      </li>
+
+      <li className="flex px-6 py-4 text-[18px] hover:bg-[#2C742F] hover:text-white duration-300 cursor-pointer border-b">
+         <span className="mr-[12px]"> <Fody/> </span> Cooking
+      </li>
+
+     
 
       <li className="px-6 py-4 text-[18px] text-red-500 hover:bg-red-500 hover:text-white duration-300 cursor-pointer">
-        Logout
+       <span className='text-[28px]'>+</span> View all Category
       </li>
 
     </ul>
@@ -108,12 +129,12 @@ const Navbar = () => {
                
 
                 <li ref={DropDownref}>
-                    <Link onMouseEnter={()=> setDropDown(!dropDown)} className='font-poppins  bg-[#333333] text-[20px]  font-bold absolute top-0 left-[64px] py-[17px] px-[20px] text-[white] flex items-center ' to='#'>All Categories <FaAngleDown className=' cursor-pointer flex pl-[4px] ml-[40px] text-[20px]'/></Link>
+                    <Link onMouseEnter={()=> setDropDown(!dropDown)}  className='font-poppins  bg-[#333333] text-[20px]  font-bold absolute top-0 left-[64px] py-[17px] px-[20px] text-[white] flex items-center ' to='#'>All Categories <FaAngleDown className=' cursor-pointer flex pl-[4px] ml-[40px] text-[20px]'/></Link>
 
                  {dropDown &&
                  
-                  <div className='absolute top-[60px] left-[90px] bg-gray-200'>
-                    <ul className='w-[200px] h-full font-poppins font-medium text-[23px] text-center'>
+                  <div className='absolute top-[60px] left-[90px] z-3 bg-gray-200'>
+                    <ul className='w-[200px]  h-full font-poppins font-medium text-[23px] text-center'>
                       <li className='hover:bg-black hover:text-white py-[10px]'>home</li>
                       <li className='hover:bg-black hover:text-white py-[10px]'>home</li>
                       <li className='hover:bg-black hover:text-white py-[10px]'>home</li>
@@ -131,7 +152,7 @@ const Navbar = () => {
 
                  {dropDowntow &&
                  
-                  <div className='absolute top-[60px]  bg-gray-200'>
+                  <div className='absolute top-[60px] z-3 bg-gray-200'>
                     <ul className='w-[100px] h-full font-poppins font-medium text-[15px] text-center'>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
@@ -149,7 +170,7 @@ const Navbar = () => {
 
                  {dropDownthre &&
                  
-                  <div className='absolute top-[60px]  bg-gray-200'>
+                  <div className='absolute top-[60px] z-3 bg-gray-200'>
                     <ul className='w-[100px] h-full font-poppins font-medium text-[15px] text-center'>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
@@ -166,8 +187,8 @@ const Navbar = () => {
 
                  {dropDownfor &&
                  
-                  <div className='absolute top-[60px]  bg-gray-200'>
-                    <ul className='w-[100px] h-full font-poppins font-medium text-[15px] text-center'>
+                  <div className='absolute top-[60px] z-3 bg-gray-200'>
+                    <ul className='w-[100px]  h-full font-poppins font-medium text-[15px] text-center'>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
@@ -183,8 +204,8 @@ const Navbar = () => {
 
                  {dropDownfive &&
                  
-                  <div className='absolute top-[60px]  bg-gray-200'>
-                    <ul className='w-[100px] h-full font-poppins font-medium text-[15px] text-center'>
+                  <div className='absolute top-[60px] z-3 bg-gray-200'>
+                    <ul className='w-[100px] z-13 h-full font-poppins font-medium text-[15px] text-center'>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>

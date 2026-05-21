@@ -19,7 +19,7 @@ const Login = () => {
            <div className='relative'>
             <input type={show ? "text" : "password"} placeholder='Password' className='w-full rounded-md mb-[12px] py-[14px] px-[16px] border border-[#ccc8c8]' />
 
-          <div className='absolute top-[15px] right-[10px] text-[22px]' onClick={()=> setShow(!show)}>
+          <div className='absolute cursor-pointer top-[15px] right-[10px] text-[22px]' onClick={()=> setShow(!show)}>
           {
             show ?
             <IoEye />
@@ -36,10 +36,10 @@ const Login = () => {
         </div>
         <p className='font-poppins font-md text-sm text-[#666666]'><Link className='hover:text-blue-700 hover:font-semibold' to="/forget">Forget Password</Link></p>
         </div>
-        <button className='bg-primary w-full cursor-pointer py-[10px] my-[12px] rounded-full text-white font-poppins font-semibold text-sm hover:bg-blue-700 '>Create Account</button>
+        <button className='bg-primary w-full cursor-pointer py-[10px] my-[12px] rounded-full text-white font-poppins font-semibold text-[16px] hover:bg-blue-700 '>Login</button>
 
         <p className='font-poppins font-sm text-sm text-[#666666] text-center py-[10px]'>Don’t have account?
-          <Link to="/registration" className='font-poppins font-semibold hover:text-blue-600  font-sm text-black'> Register</Link>
+          <Link to="/registration" className='font-poppins font-semibold hover:text-blue-600 hover:font-bold font-sm text-black'>  Register</Link>
         </p>
         
           

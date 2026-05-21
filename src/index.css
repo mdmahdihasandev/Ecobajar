@@ -59,6 +59,54 @@
   cursor:not-allowed;
 }
 
+.swiper-pagination   {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+
+.swiper-pagination-bullet{
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
+  margin: 0 40px;
+  cursor: pointer;
+
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(52, 56, 240); 
+  
+}
+
+
+
+
+/* ! ScroolBar */
+
+.swiper-scrollbar {
+   position: absolute;
+  bottom: 25px;
+  z-index: 30;
+   width: 100%;
+    height: 10px;
+    background: rgb(255, 255, 255);
+}
+
+.swiper-scrollbar-drag {
+    transition-duration: 0ms;
+    transform: translate3d(15px, 0px, 0px);
+    width: 5px;
+    height: 10px;
+    background: rgb(0, 0, 0);
+}
+
+
 
 
 /* ! checkBox k Css korar niyom */
