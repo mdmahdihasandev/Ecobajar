@@ -15,6 +15,7 @@ import IceCrim from '../Icons/IceCrim';
 import Cake from '../Icons/Cake';
 import Pie from '../Icons/Pie';
 import Fody from '../Icons/Fody';
+import { DiApple } from "react-icons/di";
 
 const Navbar = () => {
 
@@ -124,22 +125,23 @@ const Navbar = () => {
   </div>
 
               </div>
-
-
-               
-
                 <li ref={DropDownref}>
-                    <Link onMouseEnter={()=> setDropDown(!dropDown)}  className='font-poppins  bg-[#333333] text-[20px]  font-bold absolute top-0 left-[64px] py-[17px] px-[20px] text-[white] flex items-center ' to='#'>All Categories <FaAngleDown className=' cursor-pointer flex pl-[4px] ml-[40px] text-[20px]'/></Link>
+                    <Link onMouseEnter={()=> setDropDown(!dropDown)}  className='font-poppins  bg-[#333333] text-[20px]  font-bold absolute top-0 left-[64px] py-[17px] px-[20px] text-[white] flex items-center ' to='#'>All Categories <FaAngleDown className={`cursor-pointer flex pl-[4px] ml-[40px] duration-300 ${dropDown ? 'rotate-180' : 'rotate-0'} text-[20px]`} /></Link>
 
                  {dropDown &&
                  
-                  <div className='absolute top-[60px] left-[90px] z-3 bg-gray-200'>
-                    <ul className='w-[200px]  h-full font-poppins font-medium text-[23px] text-center'>
-                      <li className='hover:bg-black hover:text-white py-[10px]'>home</li>
-                      <li className='hover:bg-black hover:text-white py-[10px]'>home</li>
-                      <li className='hover:bg-black hover:text-white py-[10px]'>home</li>
-                      <li className='hover:bg-black hover:text-white py-[10px]'>home</li>
-                      <li className='hover:bg-black hover:text-white py-[10px]'>home</li>
+                  <div className='shadow shadow-[#797777] bg-white w-[200px] absolute top-[70px] left-[90px] z-3 '>
+                    <ul className='  h-full font-poppins font-medium text-[19px] '>
+                      <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center'><DiApple className='mr-[10px]' /> home</li>
+                     
+                      <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center'><DiApple className='mr-[10px]' />About</li>
+                     
+                      <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center'><DiApple className='mr-[10px]' /> Blog</li>
+                     
+                      <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center'><DiApple className='mr-[10px]' />Page</li>
+                     
+                      <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center'><DiApple className='mr-[10px]' />Shop</li>
+                     
                      
                     </ul>
                   </div>
@@ -148,17 +150,17 @@ const Navbar = () => {
                 </li>
 
 
-                <li ref={DropDowntowref} ><Link onClick={()=> setDropDowntow(!dropDowntow)} className='flex items-center hover:text-[white]'  to='#'>Home <FaAngleDown className=' cursor-pointer pl-[4px] text-[17px]'/></Link>
+                <li ref={DropDowntowref} ><Link onClick={()=> setDropDowntow(!dropDowntow)} className='flex items-center hover:text-[white]'  to='#'>Home <FaAngleDown className={` cursor-pointer pl-[4px] duration-300 text-[17px] ${dropDowntow ? 'rotate-180 ml-[4px]' : 'rotate-0'}`}/></Link>
 
                  {dropDowntow &&
                  
-                  <div className='absolute top-[60px] z-3 bg-gray-200'>
+                  <div className='absolute top-[60px]  z-3 bg-gray-200 '>
                     <ul className='w-[100px] h-full font-poppins font-medium text-[15px] text-center'>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
-                      <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
-                      <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
-                      <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
-                      <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
+                      <li className='hover:bg-primary hover:text-black py-[10px]'>About</li>
+                      <li className='hover:bg-primary hover:text-black py-[10px]'>Shop</li>
+                      <li className='hover:bg-primary hover:text-black py-[10px]'>Contact</li>
+                      <li className='hover:bg-primary hover:text-black py-[10px]'>Skils</li>
                      
                     </ul>
                   </div>
@@ -166,11 +168,11 @@ const Navbar = () => {
                  }
                 </li>
 
-                 <li ref={DropDownthreref} ><Link onClick={()=> setDropDownthre(!dropDownthre)} className='flex items-center hover:text-[white]'  to='#'>Shop <FaAngleDown className=' cursor-pointer pl-[4px] text-[17px]'/></Link>
+                 <li ref={DropDownthreref} ><Link onClick={()=> setDropDownthre(!dropDownthre)} className='flex items-center hover:text-[white]'  to='#'>Shop <FaAngleDown className={` cursor-pointer pl-[4px] duration-300 text-[17px] ${dropDownthre ? 'rotate-180 ml-[4px]' : 'rotate-0'}`}/></Link>
 
                  {dropDownthre &&
                  
-                  <div className='absolute top-[60px] z-3 bg-gray-200'>
+                  <div className='absolute top-[60px]  z-3 bg-gray-200'>
                     <ul className='w-[100px] h-full font-poppins font-medium text-[15px] text-center'>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
                       <li className='hover:bg-primary hover:text-black py-[10px]'>home</li>
@@ -183,7 +185,7 @@ const Navbar = () => {
                 </li>
 
 
-                 <li ref={DropDownforref} ><Link onClick={()=> setDropDownfor(!dropDownfor)} className='flex items-center hover:text-[white]'  to='#'>Pages<FaAngleDown className=' cursor-pointer pl-[4px] text-[17px]'/></Link>
+                 <li ref={DropDownforref} ><Link onClick={()=> setDropDownfor(!dropDownfor)} className='flex items-center hover:text-[white]'  to='#'>Pages<FaAngleDown className={` cursor-pointer pl-[4px] duration-300 text-[17px] ${dropDownfor ? 'rotate-180 ml-[4px]' : 'rotate-0'}`}/></Link>
 
                  {dropDownfor &&
                  
@@ -200,7 +202,7 @@ const Navbar = () => {
                 </li>
 
 
-                  <li ref={DropDownfiveref} ><Link onClick={()=> setDropDownfive(!dropDownfive)} className='flex items-center hover:text-[white]'  to='#'>Blog<FaAngleDown className=' cursor-pointer pl-[4px] text-[17px]'/></Link>
+                  <li ref={DropDownfiveref} ><Link onClick={()=> setDropDownfive(!dropDownfive)} className='flex items-center hover:text-[white]'  to='#'>Blog<FaAngleDown className={` cursor-pointer pl-[4px] duration-300 text-[17px] ${dropDownfive ? 'rotate-180 ml-[4px]' : 'rotate-0'}`}/></Link>
 
                  {dropDownfive &&
                  

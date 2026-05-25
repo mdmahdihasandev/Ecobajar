@@ -25,19 +25,25 @@ const TopBar = () => {
 
 
             {/* //! DropDown */}
-            <div onClick={() => setOpen(!open)} className='flex items-center' ref={dropDown}>
-              Eng <FaAngleDown />
+           <div className='relative inline-block' onMouseEnter={() => setOpen(true)}  onMouseLeave={() => setOpen(false)}
+          >
+
+          <div className='flex items-center cursor-pointer'>
+            Eng <FaAngleDown  className={`duration-300 ml-1 ${open ? "rotate-180" : "rotate-0"}`} />
+          </div>
+
               {
                 open &&
-                <div className='absolute top-[35px] bg-[#E6E6E6] p-[7px]'>
-                  <ul>
-                    <li>BG</li>
-                    <li>CH</li>
-                    <li>IN</li>
-                    <li>IN</li>
+                <div className='absolute top-full left-[-20px] bg-[#afaeae] text-center text-black cursor-pointer  py-[10px] w-[70px]'>
+                  <ul className=''>
+                    <li className='hover:bg-[white] hover:text-blue-600 mb-[5px]'>BG</li>
+                    <li className='hover:bg-[white] hover:text-blue-600  mb-[5px]'>CH</li>
+                    <li className='hover:bg-[white] hover:text-blue-600  mb-[5px]'>IN</li>
+                    <li className='hover:bg-[white] hover:text-blue-600 '>PK</li>
                   </ul>
                 </div>
               }
+
             </div>
 
               {/* Sidebar */}
@@ -58,24 +64,29 @@ const TopBar = () => {
               }
             </div> */}
 
+            <div className='relative inline-block' onMouseEnter={() => setOpentow(true)}  onMouseLeave={() => setOpentow(false)}
+          >
 
+          <div className='flex items-center cursor-pointer'>
+            USD <FaAngleDown  className={`duration-300 ml-1 ${opentow ? "rotate-180" : "rotate-0"}`} />
+          </div>
 
-           <div onClick={() => setOpentow(!opentow)} className='flex items-center' ref={dropDowntow}>
-              USD <FaAngleDown />
               {
                 opentow &&
-                <div className='absolute top-[35px] bg-[#E6E6E6] p-[7px]'>
-                  <ul>
-                    <li>BG</li>
-                    <li>CH</li>
-                    <li>IN</li>
-                    <li>IN</li>
+                <div className='absolute top-full left-[-20px] bg-[#afaeae] text-center text-black cursor-pointer  py-[10px] w-[70px]'>
+                  <ul className=''>
+                    <li className='hover:bg-[white] hover:text-blue-600 mb-[5px]'>USDT</li>
+                    <li className='hover:bg-[white] hover:text-blue-600  mb-[5px]'>TRX</li>
+                    <li className='hover:bg-[white] hover:text-blue-600  mb-[5px]'>USD</li>
+                    <li className='hover:bg-[white] hover:text-blue-600 '>BTC</li>
                   </ul>
                 </div>
               }
+
             </div>
+
             <div className='flex items-center relative after:w-[1px] after:h-[15px] after:bg-[#E6E6E6] after:top-[2px] after:left-[-12px] after:content-[""] after:absolute gap-3.5'>
-               <Link to="/login">Sin In</Link>   /   <Link to="/registration">Sign Up </Link>
+               <Link className='hover:font-medium hover:text-blue-500' to="/login">Sign In</Link>   /   <Link className='hover:font-medium hover:text-blue-500' to="/registration">Sign Up </Link>
                 </div>
           </div>
         </div>
