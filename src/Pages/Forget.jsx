@@ -19,7 +19,7 @@ const Forget = () => {
 
 
           
-            <p>adfsasdf</p>
+           
 
 
 
