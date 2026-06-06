@@ -6,6 +6,7 @@ import Login from './Pages/Login'
 import Mainlayuot from './Components/Layuots/Mainlayuot';
 import Forget from './Pages/Forget';
 import Reset from './Pages/Reset'
+import Category from './Pages/Category';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/forget" element={<Forget/>} />
         <Route path="/reset-password" element={<Reset/>} />
+        <Route path="/category" element={<Category/>} />
       </Route>
     </Routes>
 

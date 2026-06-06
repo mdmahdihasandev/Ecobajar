@@ -7,9 +7,9 @@ import { GoPackage } from "react-icons/go";
 
 const Support = () => {
   return (
-    <div className='pt-[24px] pb-[60px] items-center'>
+    <div className='pt-[24px] pb-[60px] items-center '>
         <Container>
-            <div className='flex justify-between'>
+            <div className='flex justify-between shadow-2xl  py-[40px] px-[40px]'>
                 <div className='flex items-center'>
                   <div>
                       <TbTruckDelivery  className='text-[40px] text-[#00B207] mr-[16px]' />

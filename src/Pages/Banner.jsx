@@ -26,8 +26,8 @@ const Banner = () => {
                <Swiper
                     spaceBetween={0}
                     slidesPerView={1}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    // onSlideChange={() => console.log('slide change')}
+                    // onSwiper={(swiper) => console.log(swiper)}
                      navigation={{
                         nextEl: '.custom-next',
                         prevEl: '.custom-prev',
@@ -75,8 +75,8 @@ const Banner = () => {
        <Swiper
             spaceBetween={0}
             slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log('slide change')}
+            // onSwiper={(swiper) => console.log(swiper)}
              scrollbar={{
                 hide: true,
             }}
@@ -103,8 +103,8 @@ const Banner = () => {
        <Swiper
             spaceBetween={0}
             slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log('slide change')}
+            // onSwiper={(swiper) => console.log(swiper)}
            
             pagination={{
               clickable: true,
