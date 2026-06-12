@@ -73,7 +73,7 @@ const TopBar = () => {
 
               {
                 opentow &&
-                <div className='absolute top-full left-[-20px] bg-[#afaeae] text-center text-black cursor-pointer  py-[10px] w-[70px]'>
+                <div className='absolute top-full left-[-20px] bg-[#afaeae] text-center text-black cursor-pointer  py-[10px] w-[70px] z-20'>
                   <ul className=''>
                     <li className='hover:bg-[white] hover:text-blue-600 mb-[5px]'>USDT</li>
                     <li className='hover:bg-[white] hover:text-blue-600  mb-[5px]'>TRX</li>

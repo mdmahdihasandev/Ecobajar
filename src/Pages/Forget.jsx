@@ -10,7 +10,7 @@ const Forget = () => {
      <div>
      
         <div className='max-w-[520px] shadow-[0_0px_6px_rgba(0,0,0,0.4)] p-[20px] mx-auto my-[80px] rounded-md'>
-          <h2 className='text-black text-center font-poppins font-semibold text-[32px] py-[15px]'>Sign In</h2>
+          <h2 className='text-black text-center font-poppins font-semibold text-[32px] py-[15px]'>Forget</h2>
          
          
              <input type="email" placeholder='Email' className='w-full rounded-md mb-[12px] py-[14px] px-[16px] border border-[#ccc8c8]' />
