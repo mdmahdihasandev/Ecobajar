@@ -7,6 +7,7 @@ import Mainlayuot from './Components/Layuots/Mainlayuot';
 import Forget from './Pages/Forget';
 import Reset from './Pages/Reset'
 import Category from './Pages/Category';
+import Shop from './Components/Shop';
 
 const App = () => {
   return (

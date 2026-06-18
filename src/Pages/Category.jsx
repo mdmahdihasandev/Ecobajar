@@ -19,6 +19,7 @@ const Category = () => {
     <div>
         <>
        <ProduactShowcas allpro={allpro} showViewAll={false} />
+       <ProduactShowcas allcate={allpro} showViewAll={false} />
         </>
     </div>
   )

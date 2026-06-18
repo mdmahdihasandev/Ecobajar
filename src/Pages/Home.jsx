@@ -3,6 +3,11 @@ import Banner from './Banner'
 import Support from './Support'
 import ProduactShowcas from '../Components/ProduactShowcas'
 import axios from 'axios'
+import Sale from '../Components/Sale'
+import Shop from '../Components/Shop'
+import LatestNews from '../Components/LatestNews'
+import Client from '../Components/Client'
+import Steps from '../Components/Steps'
 
 
 const Home = () => {
@@ -35,8 +40,16 @@ const Home = () => {
   <>
   <Banner/>
   <Support/>
-  <ProduactShowcas allData={allcate} showViewAll={true} />
-  <ProduactShowcas allData={allpro} showViewAll={true} />
+  <ProduactShowcas type='category' allData={allcate} showViewAll={true} />
+  <ProduactShowcas type='product' allData={allpro} showViewAll={true} />
+  
+  <ProduactShowcas type='hotdeal' allData={allpro} showViewAll={true} />
+  <Sale/>
+  <ProduactShowcas type='Featured' allData={allpro} showViewAll={true} />
+  <Shop/>
+  <LatestNews/>
+  <Client/>
+  <Steps/>
   
   </>
    

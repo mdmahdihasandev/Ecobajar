@@ -5,8 +5,9 @@ import { Link } from 'react-router';
 import { RxArrowRight } from "react-icons/rx";
 import { IoIosStar  } from "react-icons/io";
 import { IoIosStarHalf } from "react-icons/io";
+import { IoBagOutline } from "react-icons/io5";
 
-const ProduactShowcas = ({allData,  showViewAll}) => {
+const ProduactShowcas = ({allData,  showViewAll , type}) => {
     console.log(allData);
 
     function asd(count){
@@ -22,11 +23,8 @@ const ProduactShowcas = ({allData,  showViewAll}) => {
             arry.push("color")
         }
         else{
-
             arry.push(i)
-        }
-
-        
+        }  
        }
 
        if(hafstar) {
@@ -46,15 +44,24 @@ const ProduactShowcas = ({allData,  showViewAll}) => {
              showViewAll && <Link className='flex items-center absolute  right-0 top-[25px] text-[#00B207] font-poppins font-medium text-[16px]' to="/category">View All <RxArrowRight className='text-[30px] pl-[8px]' /> </Link>
           
         }
-            <div className='flex  gap-[24px] flex-wrap text-center mb-[50px]'>
+            <div className={`flex ${type == 'category' && ' gap-[24px]'} flex-wrap  mb-[50px] `}>
                  {
                 allData.map(item => (
                     
-                   <div className='shadow-[0_0_20px_rgba(0,0,0,0.15)] p-6 rounded-lg max-w-[14.99%]'>
-                    <img className='pb-[13px]' src={ProductImages} alt="produactimages" />
-                    <h3 className='pb-[10px]'> {item.name || item.title} </h3>
-                    <p>{item.price && item.price}</p>
-                    <p>{item.rating && item.rating}</p>
+                   <div className={` group relative border-1 border-[#979393] ${type == 'product' &&'hover:border-2 hover:border-[#15ff00] max-w-[20.99%]'} ${type == 'hotdeal' && 'max-w-[20.99%]'} p-6 rounded-lg max-w-[14.99%]  ${type == 'Featured' &&'hover:border-2  max-w-[20.99%]'} `}>
+                   
+                    <img className='pb-[13px] ' src={ProductImages} alt="produactimages" />
+                     {item.price ?
+                         <h3 className='pb-[10px]'> {item.name || item.title.slice(0,16)}... </h3>
+                         :
+                         <h3 className='pb-[10px]'> {item.name || item.title} </h3>
+
+                        }
+
+                       
+                   
+                    <p className=''>{item.price && item.price}</p>
+                   
 
                   <div className='flex '>
 
@@ -73,6 +80,43 @@ const ProduactShowcas = ({allData,  showViewAll}) => {
                        
                    ))}
                   </div>
+
+                 {type == 'hotdeal' && 
+                  <div className=''>
+                     <div className={`w-[480px] h-[550px] ${ item.title}  bg-red-600 absolute top-0 right-0  hidden group-hover:block z-50`}>
+                         <img className='pb-[13px] ' src={ProductImages} alt="produactimages" />
+                            <h3 className='pb-[10px]'> {item.name || item.title} </h3>
+                           <p className=''>{item.price && item.price}</p>
+
+                          <div className='flex '>
+
+                     { item.rating && asd(item.rating).map(item => (
+                       
+                        item == "color" ?
+
+                        <IoIosStar className='text-yellow-300'/>
+                        :
+
+                        item == 'haff'
+                        ?
+                       <IoIosStarHalf  className='text-yellow-300'/>
+                        :
+                    <IoIosStar/>
+                       
+                   ))}
+                  </div>
+                 
+                   </div>
+                  </div>}
+
+                  { type == 'Featured' &&
+                  
+                  <div className='flex justify-end relative'>
+                    <IoBagOutline className='text-[20px] absolute top-[-40px] right-0' />
+                  </div>
+
+                  }
+
                    </div>
                 ))
             }
