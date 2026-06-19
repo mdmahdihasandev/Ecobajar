@@ -48,7 +48,27 @@ const ProduactShowcas = ({allData,  showViewAll , type}) => {
                  {
                 allData.map(item => (
                     
+<<<<<<< Updated upstream
                    <div className={` group relative border-1 border-[#979393] ${type == 'product' &&'hover:border-2 hover:border-[#15ff00] max-w-[20.99%]'} ${type == 'hotdeal' && 'max-w-[20.99%]'} p-6 rounded-lg max-w-[14.99%]  ${type == 'Featured' &&'hover:border-2  max-w-[20.99%]'} `}>
+=======
+                   <div className='shadow-[0_0_20px_rgba(0,0,0,0.15)] p-6 rounded-lg max-w-[14.99%]'>
+
+                    {
+                        item.price ?
+                        <img className='pb-[13px]' src={item.thumbnail} alt="produactimages" />
+                        :
+                        <img className='pb-[13px]' src={ProductImages} alt="produactimages" />
+
+                    
+                    }
+                rthdtrdrfthdfthdfghdfghdfgh
+
+                    <h3 className='pb-[10px]'> {item.name || item.title} </h3>
+                   {item.price &&
+                    <p>${item.price}</p>
+                   }
+                  
+>>>>>>> Stashed changes
                    
                     <img className='pb-[13px] ' src={ProductImages} alt="produactimages" />
                      {item.price ?
