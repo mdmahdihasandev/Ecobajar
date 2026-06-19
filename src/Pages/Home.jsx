@@ -37,6 +37,7 @@ const Home = () => {
   <Support/>
   <ProduactShowcas allData={allcate} showViewAll={true} />
   <ProduactShowcas allData={allpro} showViewAll={true} />
+  <ProduactShowcas allData={allpro} showViewAll={true} />
   
   </>
    
