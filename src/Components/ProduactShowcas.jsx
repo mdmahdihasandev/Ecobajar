@@ -51,12 +51,24 @@ const ProduactShowcas = ({allData,  showViewAll}) => {
                 allData.map(item => (
                     
                    <div className='shadow-[0_0_20px_rgba(0,0,0,0.15)] p-6 rounded-lg max-w-[14.99%]'>
-                    <img className='pb-[13px]' src={ProductImages} alt="produactimages" />
-                    <h3 className='pb-[10px]'> {item.name || item.title} </h3>
-                    <p>{item.price && item.price}</p>
-                    <p>{item.rating && item.rating}</p>
 
-                  <div className='flex '>
+                    {
+                        item.price ?
+                        <img className='pb-[13px]' src={item.thumbnail} alt="produactimages" />
+                        :
+                        <img className='pb-[13px]' src={ProductImages} alt="produactimages" />
+
+                    
+                    }
+                drth
+
+                    <h3 className='pb-[10px]'> {item.name || item.title} </h3>
+                   {item.price &&
+                    <p>${item.price}</p>
+                   }
+                  
+                   
+                  <div className='flex'>
 
                      { item.rating && asd(item.rating).map(item => (
                        
