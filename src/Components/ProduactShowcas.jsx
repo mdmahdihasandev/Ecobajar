@@ -48,7 +48,7 @@ const ProduactShowcas = ({allData,  showViewAll , type}) => {
                  {
                 allData.map(item => (
                     
-                   <div className={` group relative border-1 border-[#979393] ${type == 'product' &&'hover:border-2 hover:border-[#15ff00] max-w-[20.99%]'} ${type == 'hotdeal' && 'max-w-[20.99%]'} p-6 rounded-lg max-w-[14.99%]  ${type == 'Featured' &&'hover:border-2  max-w-[20.99%]'} `}>
+                   <div className={` group relative border-1 border-[#979393] ${type == 'product' &&'hover:border-2 hover:border-[#15ff00] max-w-[16.99%]'} ${type == 'hotdeal' && 'max-w-[16.99%]'} p-6 rounded-lg max-w-[14.99%]  ${type == 'Featured' &&'hover:border-2  max-w-[20.99%]'} `}>
                    
                   {
                     item.price ?
@@ -56,6 +56,12 @@ const ProduactShowcas = ({allData,  showViewAll , type}) => {
                       :
                         <img className='pb-[13px] ' src={ProductImages} alt="produactimages" />
                   }
+                     {item.price ?
+                         <h3 className='pb-[10px]'> {item.name || item.title.slice(0,16)}... </h3>
+                         :
+                         <h3 className='pb-[10px]'> {item.name || item.title} </h3>
+
+                        }
                      {item.price ?
                          <h3 className='pb-[10px]'> {item.name || item.title.slice(0,16)}... </h3>
                          :
