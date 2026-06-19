@@ -60,7 +60,7 @@ const ProduactShowcas = ({allData,  showViewAll}) => {
 
                     
                     }
-                drtherthdrth
+                drthert
 
                     <h3 className='pb-[10px]'> {item.name || item.title} </h3>
                    {item.price &&
