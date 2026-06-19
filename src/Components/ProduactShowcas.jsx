@@ -66,7 +66,7 @@ const ProduactShowcas = ({allData,  showViewAll}) => {
                     <p>${item.price}</p>
                    }
                   
-                   <div>s</div>
+                   
                   <div className='flex'>
 
                      { item.rating && asd(item.rating).map(item => (
