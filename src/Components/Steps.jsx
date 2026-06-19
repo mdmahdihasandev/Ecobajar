@@ -64,7 +64,7 @@ const Steps = () => {
              </div>
         
        
-            <div>awefawe</div>
+            
         </Container>
     </div>
   )
