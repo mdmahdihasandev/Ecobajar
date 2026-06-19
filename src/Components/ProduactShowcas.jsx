@@ -59,7 +59,7 @@ const ProduactShowcas = ({allData,  showViewAll , type}) => {
                         }
 
                        
-                   
+                   dfgtrgdt
                     <p className=''>{item.price && item.price}</p>
                    
 
