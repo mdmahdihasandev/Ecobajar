@@ -4,6 +4,8 @@ import { Link } from 'react-router'
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaDove } from "react-icons/fa";
 import chotpic from '../assets/chotpic.webp'
+import chotopic from '../assets/picchipix(1).webp'
+import chotopictow from '../assets/picchipix (2).webp'
 import { IoStar } from "react-icons/io5";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -96,7 +98,7 @@ const Client = () => {
                         </div>
 
                     <div className='pl-[24px]  pb-[24px] flex items-center relative'>
-                        <img src={chotpic} alt="" />
+                        <img src={chotopic} alt="" />
 
                        <div className='pl-[10px]'>
                          <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
@@ -130,7 +132,7 @@ const Client = () => {
                         </div>
 
                     <div className='pl-[24px]  pb-[24px] flex items-center relative'>
-                        <img src={chotpic} alt="" />
+                        <img src={chotopictow} alt="" />
 
                        <div className='pl-[10px]'>
                          <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
