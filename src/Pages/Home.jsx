@@ -43,10 +43,10 @@ const Home = () => {
   <ProduactShowcas type='category' allData={allcate} showViewAll={true} />
   <ProduactShowcas type='product' allData={allpro} showViewAll={true} />
   
-  <ProduactShowcas type='hotdeal' allData={allpro} showViewAll={true} />
   <Sale/>
-  <ProduactShowcas type='Featured' allData={allpro} showViewAll={true} />
+  <ProduactShowcas type='hotdeal' allData={allpro} showViewAll={true} />
   <Shop/>
+  <ProduactShowcas type='Featured' allData={allpro} showViewAll={true} />
   <LatestNews/>
   <Client/>
   <Steps/>

@@ -93,9 +93,9 @@ const ProduactShowcas = ({allData,  showViewAll , type}) => {
                   </div>
 
                  {type == 'hotdeal' && 
-                  <div className=''>
-                     <div className={`w-[480px] h-[550px] ${ item.title}  bg-red-600 absolute top-0 right-0  hidden group-hover:block z-50`}>
-                         <img className='pb-[13px] ' src={ProductImages} alt="produactimages" />
+                  <div  className={`flex flex-wrap gap-6 hover:[&>*]:scale-90`}>
+                     <div className={`w-[480px] h-[550px]   bg-red-600 absolute top-[-30px] left-0   hidden group-hover:block z-50`}>
+                         <img className='pb-[13px] ' src={item.thumbnail} alt="produactimages" />
                             <h3 className='pb-[10px]'> {item.name || item.title} </h3>
                            <p className=''>{item.price && item.price}</p>
 
