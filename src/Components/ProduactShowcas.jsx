@@ -62,12 +62,7 @@ const ProduactShowcas = ({allData,  showViewAll , type}) => {
                          <h3 className='pb-[10px]'> {item.name || item.title} </h3>
 
                         }
-                     {item.price ?
-                         <h3 className='pb-[10px]'> {item.name || item.title.slice(0,16)}... </h3>
-                         :
-                         <h3 className='pb-[10px]'> {item.name || item.title} </h3>
-
-                        }
+                    
 
                        
                    
@@ -93,15 +88,31 @@ const ProduactShowcas = ({allData,  showViewAll , type}) => {
                   </div>
 
                  {type == 'hotdeal' && 
+
+                 
+                 
                   <div  className={`flex flex-wrap gap-6 hover:[&>*]:scale-90`}>
-                     <div className={`w-[480px] h-[550px]   bg-red-600 absolute top-[-30px] left-0   hidden group-hover:block z-50`}>
+                     <div className={`w-[480px] h-[550px]    bg-red-600 absolute top-[-30px] left-0   hidden group-hover:block z-50`}>
+
+                        <div className='w-[30px] h-[30px] bg-[white] rounded-2xl flex justify-center items-center absolute hover:bg-[yellow] top-[340px] left-[100px]'>
+                                <IoBagOutline className='text-[20px] ' />
+                            </div>
+
                          <img className='pb-[13px] ' src={item.thumbnail} alt="produactimages" />
                             <h3 className='pb-[10px]'> {item.name || item.title} </h3>
                            <p className=''>{item.price && item.price}</p>
 
+                          
+                            
+                          
+
                           <div className='flex '>
 
+                             
+
                      { item.rating && asd(item.rating).map(item => (
+
+                        
                        
                         item == "color" ?
 
@@ -122,8 +133,8 @@ const ProduactShowcas = ({allData,  showViewAll , type}) => {
 
                   { type == 'Featured' &&
                   
-                  <div className='flex justify-end relative'>
-                    <IoBagOutline className='text-[20px] absolute top-[-40px] right-0' />
+                  <div className='w-[40px] h-[40px] bg-[#c2bfbf] absolute top-[300px] right-[20px] flex justify-center items-center rounded-[50px]'>
+                    <IoBagOutline className='text-[20px] hover:text-[red] cursor-pointer  ' />
                   </div>
 
                   }
