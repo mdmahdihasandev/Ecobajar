@@ -22,7 +22,7 @@ import { Navigation ,Autoplay} from 'swiper/modules';
 
 const Client = () => {
   return (
-    <div className='bg-[#F2F2F2] mb-[50px] pb-[10px] mt-[30px] relative'>
+    <div className='bg-[#F2F2F2] mb-[50px] pb-[10px] mt-[30px] '>
         <Container>
 
        <div className='pt-[50px] pb-[25px]'>
@@ -34,16 +34,16 @@ const Client = () => {
 
 
      <Swiper
-      slidesPerView={3}
+    slidesPerView={3}
   spaceBetween={20}
   navigation={true}
   modules={[Navigation,Autoplay]}
-  autoplay={{
-  delay: 2000,
-  disableOnInteraction: false,
-  pauseOnMouseEnter: true,
-}}
-  className="mySwiper"
+//   autoplay={{
+//   delay: 2000,
+//   disableOnInteraction: false,
+//   pauseOnMouseEnter: true,
+// }}
+   className="clientSwiper"
        >
         <SwiperSlide>
              <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2]  mb-[40px] '>
