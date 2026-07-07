@@ -71,6 +71,7 @@ const Client = () => {
                             <IoStar />
                             <IoStar />
                             <IoStar />
+                            
                         </div>
 
                     </div>
