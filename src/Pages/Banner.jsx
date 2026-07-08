@@ -20,7 +20,7 @@ const Banner = () => {
   return (
     <div>
         <Container>
-           <div className='flex justify-between mb-[24px]'>
+           <div className='sm:flex sm:justify-between sm:mb-[24px]'>
              <div className='max-w-[872px] relative'>
               
                <Swiper
@@ -33,14 +33,14 @@ const Banner = () => {
                         prevEl: '.custom-prev',
                       }}
                    modules={[Navigation, Pagination , Autoplay]}
-                    pagination={{
-                       clickable: true,
-                    }} 
+                    // pagination={{
+                    //    clickable: true,
+                    // }} 
 
-                    autoplay={{
-                      delay: 2500,
-                      disableOnInteraction: false,
-                    }}
+                    // autoplay={{
+                    //   delay: 2500,
+                    //   disableOnInteraction: false,
+                    // }}
 
                     loop={true}
                  
@@ -60,16 +60,16 @@ const Banner = () => {
                     
                 </Swiper>
 
-                   <div className="custom-prev">
-                     <FaArrowLeft />
+                   <div className="custom-prev w-[20px] h-[20px] bg-[#f7f7f7] sm:w-[36px] sm:h-[36px] sm:bg-[white] absolute ml-[15px] sm:ml-[36px] text-[10px] sm:text-[20px]">
+                     <FaArrowLeft  />
                     </div>
-                    <div className="custom-next">
+                    <div className="custom-next  w-[20px] h-[20px] bg-[#f7f7f7] sm:w-[36px] sm:h-[36px] sm:bg-[white] absolute ml-[15px] sm:ml-[36px] text-[10px] sm:text-[20px]">
                       
                        <FaArrowRight /> 
                   </div>
 
               </div>
-            <div className='max-w-[423px]'>
+            <div className='max-w-[423px] hidden sm:block'>
                 <div>
                 
        <Swiper
@@ -84,16 +84,16 @@ const Banner = () => {
               
               >
               <SwiperSlide>
-                <img className='pt-[24px] pb-[24px]' src={BannerRigt} alt="BannerRigt" />
+                <img className='sm:pt-[24px] sm:pb-[24px]' src={BannerRigt} alt="BannerRigt" />
               </SwiperSlide>
               <SwiperSlide>
-                <img className='pt-[24px] pb-[24px]' src={BannerRigt} alt="BannerRigt" />
+                <img className='sm:pt-[24px] sm:pb-[24px]' src={BannerRigt} alt="BannerRigt" />
               </SwiperSlide>
               <SwiperSlide>
-                <img className='pt-[24px] pb-[24px]' src={BannerRigt} alt="BannerRigt" />
+                <img className='sm:pt-[24px] sm:pb-[24px]' src={BannerRigt} alt="BannerRigt" />
               </SwiperSlide>
               <SwiperSlide>
-                <img className='pt-[24px] pb-[24px]' src={BannerRigt} alt="BannerRigt" />
+                <img className='sm:pt-[24px] sm:pb-[24px]' src={BannerRigt} alt="BannerRigt" />
               </SwiperSlide>
     </Swiper>
                 
