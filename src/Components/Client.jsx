@@ -15,243 +15,253 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
 
-import { Navigation ,Autoplay} from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 
 
 
 const Client = () => {
-  return (
-    <div className='bg-[#F2F2F2] mb-[50px] pb-[10px] mt-[30px] '>
-        <Container>
+    return (
+        <div className='bg-[#F2F2F2] mb-[50px] pb-[10px] mt-[30px] '>
+            <Container>
 
-       <div className='pt-[50px] pb-[25px]'>
-         <h2 className='font-poppins font-semibold text-[32px] text-[#1A1A1A]'>Client Testimonials</h2>
-       </div>
-
-
+                <div className='pt-[50px] pb-[25px]'>
+                    <h2 className='font-poppins font-semibold text-[32px] text-[#1A1A1A]'>Client Testimonials</h2>
+                </div>
 
 
 
-     <Swiper
-    slidesPerView={3}
-  spaceBetween={20}
-  navigation={true}
-  modules={[Navigation,Autoplay]}
-//   autoplay={{
-//   delay: 2000,
-//   disableOnInteraction: false,
-//   pauseOnMouseEnter: true,
-// }}
-   className="clientSwiper"
-       >
-        <SwiperSlide>
-             <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2]  mb-[40px] '>
 
-            <div className='pl-[24px] pt-[24px] pb-[10px]'>
-                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
-            </div>
-                    
-                  <div className='w-[370px]'>
-                      <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
 
-                        </div>
+                <Swiper
+                    slidesPerView={1}
+                    spaceBetween={20}
+                    navigation={true}
+                    modules={[Navigation, Autoplay]}
+                    //   autoplay={{
+                    //   delay: 2000,
+                    //   disableOnInteraction: false,
+                    //   pauseOnMouseEnter: true,
+                    // }}
 
-                    <div className='pl-[24px]  pb-[24px] flex items-center relative'>
-                        <img src={chotpic} alt="" />
-
-                       <div className='pl-[10px]'>
-                         <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
-                         <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
-                       </div>
-
-                        <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
+                      breakpoints={{
+                        640: {
+                            slidesPerView:3,
                             
-                        </div>
+                        },
+                        }}
 
-                    </div>
-
-                   
-             </div>
-        </SwiperSlide>
-        <SwiperSlide>
-             <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2] mb-[40px] '>
-
-            <div className='pl-[24px] pt-[24px] pb-[10px]'>
-                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
-            </div>
+                    className="clientSwiper "
                     
-                  <div className='w-[370px]'>
-                      <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
-
-                        </div>
-
-                    <div className='pl-[24px]  pb-[24px] flex items-center relative'>
-                        <img src={chotopic} alt="" />
-
-                       <div className='pl-[10px]'>
-                         <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
-                         <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
-                       </div>
-
-                        <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                        </div>
-
-                    </div>
-
                    
-             </div>
-        </SwiperSlide>
-        <SwiperSlide>
-             <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2] mb-[40px] '>
+                >
+                    <SwiperSlide>
+                        <div className='w-[424px]  bg-[#FFFFFF]  border border-[#e5e2e2]  mb-[40px] '>
 
-            <div className='pl-[24px] pt-[24px] pb-[10px]'>
-                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
-            </div>
-                    
-                  <div className='w-[370px]'>
-                      <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
+                            <div className='pl-[24px] pt-[24px] pb-[10px]'>
+                                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
+                            </div>
+
+                            <div className='sm:w-[370px] w-[297px]'>
+                                <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
+
+                            </div>
+
+                            <div className='pl-[24px]  pb-[24px] flex items-center relative'>
+                                <img src={chotpic} alt="" />
+
+                                <div className='pl-[10px]'>
+                                    <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
+                                    <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
+                                </div>
+
+                                <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+
+                                </div>
+
+                            </div>
+
 
                         </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2] mb-[40px] '>
 
-                    <div className='pl-[24px]  pb-[24px] flex items-center relative'>
-                        <img src={chotpic} alt="" />
+                            <div className='pl-[24px] pt-[24px] pb-[10px]'>
+                                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
+                            </div>
 
-                       <div className='pl-[10px]'>
-                         <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
-                         <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
-                       </div>
+                            <div className='sm:w-[370px] w-[297px]'>
+                                <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
 
-                        <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                        </div>
+                            </div>
 
-                    </div>
+                            <div className='pl-[24px]  pb-[24px] flex items-center relative'>
+                                <img src={chotopic} alt="" />
 
-                   
-             </div>
-        </SwiperSlide>
-        <SwiperSlide>
-             <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2] mb-[40px] '>
+                                <div className='pl-[10px]'>
+                                    <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
+                                    <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
+                                </div>
 
-            <div className='pl-[24px] pt-[24px] pb-[10px]'>
-                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
-            </div>
-                    
-                  <div className='w-[370px]'>
-                      <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
+                                <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
 
-                        </div>
+                            </div>
 
-                    <div className='pl-[24px]  pb-[24px] flex items-center relative'>
-                        <img src={chotpic} alt="" />
-
-                       <div className='pl-[10px]'>
-                         <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
-                         <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
-                       </div>
-
-                        <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                        </div>
-
-                    </div>
-
-                   
-             </div>
-        </SwiperSlide>
-        <SwiperSlide>
-             <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2] mb-[40px] '>
-
-            <div className='pl-[24px] pt-[24px] pb-[10px]'>
-                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
-            </div>
-                    
-                  <div className='w-[370px]'>
-                      <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
 
                         </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2] mb-[40px] '>
 
-                    <div className='pl-[24px]  pb-[24px] flex items-center relative'>
-                        <img src={chotopictow} alt="" />
+                            <div className='pl-[24px] pt-[24px] pb-[10px]'>
+                                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
+                            </div>
 
-                       <div className='pl-[10px]'>
-                         <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
-                         <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
-                       </div>
+                            <div className='sm:w-[370px] w-[297px]'>
+                                <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
 
-                        <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
+                            </div>
+
+                            <div className='pl-[24px]  pb-[24px] flex items-center relative'>
+                                <img src={chotpic} alt="" />
+
+                                <div className='pl-[10px]'>
+                                    <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
+                                    <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
+                                </div>
+
+                                <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+
+                            </div>
+
+
                         </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2] mb-[40px] '>
 
-                    </div>
+                            <div className='pl-[24px] pt-[24px] pb-[10px]'>
+                                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
+                            </div>
 
-                   
-             </div>
-        </SwiperSlide>
-        <SwiperSlide>
-             <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2] mb-[40px] '>
+                            <div className='sm:w-[370px] w-[297px]'>
+                                <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
 
-            <div className='pl-[24px] pt-[24px] pb-[10px]'>
-                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
-            </div>
-                    
-                  <div className='w-[370px]'>
-                      <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
+                            </div>
+
+                            <div className='pl-[24px]  pb-[24px] flex items-center relative'>
+                                <img src={chotpic} alt="" />
+
+                                <div className='pl-[10px]'>
+                                    <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
+                                    <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
+                                </div>
+
+                                <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+
+                            </div>
+
 
                         </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2] mb-[40px] '>
 
-                    <div className='pl-[24px]  pb-[24px] flex items-center relative'>
-                        <img src={chotpic} alt="" />
+                            <div className='pl-[24px] pt-[24px] pb-[10px]'>
+                                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
+                            </div>
 
-                       <div className='pl-[10px]'>
-                         <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
-                         <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
-                       </div>
+                            <div className='sm:w-[370px] w-[297px]'>
+                                <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
 
-                        <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
+                            </div>
+
+                            <div className='pl-[24px]  pb-[24px] flex items-center relative'>
+                                <img src={chotopictow} alt="" />
+
+                                <div className='pl-[10px]'>
+                                    <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
+                                    <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
+                                </div>
+
+                                <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+
+                            </div>
+
+
                         </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='w-[424px] bg-[#FFFFFF]  border border-[#e5e2e2] mb-[40px] '>
 
-                    </div>
+                            <div className='pl-[24px] pt-[24px] pb-[10px]'>
+                                <FaDove className='w-[20px] h-[20px] text-[#00B207] ' />
+                            </div>
 
-                   
-             </div>
-        </SwiperSlide>
-       
-      </Swiper>
+                            <div className='sm:w-[370px] w-[297px]'>
+                                <p className='pl-[24px] pt-[8px] pb-[20px] font-poppins font-medium text-[14px] text-[#4D4D4D] '>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
+
+                            </div>
+
+                            <div className='pl-[24px]  pb-[24px] flex items-center relative'>
+                                <img src={chotpic} alt="" />
+
+                                <div className='pl-[10px]'>
+                                    <p className='font-poppins font-medium text-[16px] text-[#1A1A1A]'>Robert Fox</p>
+                                    <p className='font-poppins font-normal text-[14px] text-[#999999]' >Customer</p>
+                                </div>
+
+                                <div className=' flex absolute top-[20px] right-[25px] text-[#FF8A00]'>
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </SwiperSlide>
+
+                </Swiper>
 
 
 
-        </Container>
-    </div>
-  )
+            </Container>
+        </div>
+    )
 }
 
 export default Client
