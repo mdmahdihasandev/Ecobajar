@@ -8,8 +8,7 @@ const Footer = () => {
   return (
     <div className='bg-black'>
         <Container>
-        <div className='text-white flex justify-between py-[60px]'>
-           
+        <div className='text-white sm:flex justify-between py-[60px] '>
 
         <div>
             <img src={FooterLogo} alt="Footer Logo" />
@@ -20,10 +19,10 @@ const Footer = () => {
                  <Link to='mailto:Proxy@gmail.com' className='ml-[16px] py-[8px]  border-b border-primary font-poppins font-medium text-[15px]'>Proxy@gmail.com</Link>
             </div>
         </div>
-        <div>
-            <h5 className='font-poppins font-medium text-[16px] pb-[20px] '>My Account</h5>
+        <div >
+            <h5 className='font-poppins font-medium text-[16px] sm:pb-[20px] sm:pb-[20px] pb-[8px]  mt-[20px] sm:mt-0'>My Account</h5>
 
-            <ul className='font-poppins font-normal text-[14px] flex flex-col gap-[12px] text-[#999999] '>
+            <ul className='font-poppins font-normal text-[14px] sm:flex sm:flex-col gap-[12px] text-[#999999] '>
                 <li className='hover:text-white'><Link to=""> My Account</Link></li>
                 <li className='hover:text-white'><Link to="">Order History</Link></li>
                 <li className='hover:text-white'><Link to="">Shoping Cart</Link></li>
@@ -33,9 +32,9 @@ const Footer = () => {
         </div>
 
         <div>
-            <h5 className='font-poppins font-medium text-[16px] pb-[20px] '>Helps</h5>
+            <h5 className='font-poppins font-medium text-[16px] sm:pb-[20px] pb-[10px] mt-[20px] sm:mt-0 '>Helps</h5>
            
-            <ul className='font-poppins font-normal text-[14px] flex flex-col gap-[12px] text-[#999999] '>
+            <ul className='font-poppins font-normal text-[14px] flex flex-col sm:gap-[12px] text-[#999999] '>
 
                 <li className='hover:text-white'> <Link to="">Contact</Link> </li>
                 <li className='hover:text-white'> <Link to="">Faqs</Link> </li>
@@ -46,9 +45,9 @@ const Footer = () => {
         </div>
 
         <div>
-            <h5 className='font-poppins font-medium text-[16px] pb-[20px] '>Proxy</h5>
+            <h5 className='font-poppins font-medium text-[16px] sm:pb-[20px] pb-[10px] mt-[20px] sm:mt-0'>Proxy</h5>
            
-            <ul className='font-poppins font-normal text-[14px] flex flex-col gap-[12px] text-[#999999]'>
+            <ul className='font-poppins font-normal text-[14px] flex flex-col sm:gap-[12px] text-[#999999]'>
 
                 <li className='hover:text-white'> <Link to="">About</Link> </li>
                 <li className='hover:text-white'><Link to="">Shop</Link></li>
@@ -60,9 +59,9 @@ const Footer = () => {
         </div>
 
         <div>
-            <h5 className='font-poppins font-medium text-[16px] pb-[20px] '>Categories</h5>
+            <h5 className='font-poppins font-medium text-[16px] sm:pb-[20px] pb-[10px] mt-[20px] sm:mt-0 '>Categories</h5>
            
-             <ul className='font-poppins font-normal text-[14px] flex flex-col gap-[12px] text-[#999999] '>
+             <ul className='font-poppins font-normal text-[14px] flex flex-col sm:gap-[12px] text-[#999999] '>
 
                 <li className='hover:text-white'><Link to="">Fruit & Vegetables</Link></li>
                 <li className='hover:text-white'><Link to="">Meat & Fish</Link></li>

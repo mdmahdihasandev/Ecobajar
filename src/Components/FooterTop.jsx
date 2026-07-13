@@ -11,16 +11,20 @@ const FooterTop = () => {
   return (
     <div className='py-[40px] bg-[#E6E6E6]'>
         <Container>
-            <div className='flex justify-between items-center'>
+            <div className='sm:flex justify-between items-center'>
                 <div>
                     <h3 className='font-poppins font-semibold text-[24px] mb-[4px]'>Subcribe our Newsletter</h3>
-                    <p className='font-poppins font-semibold text-[14px] text-[#999999] max-w-[415px]'>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna.</p>
+                    <p className='font-poppins font-semibold text-[14px] pb-[15px] sm:pb-0 text-[#999999] max-w-[415px]'>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna.</p>
                 </div>
                 <div>
-                    <input className='w-[480px] py-[14px] pl-[20px] rounded-tl-full rounded-bl-full border border-gray-300 bg-white rounded-md' type="text"placeholder='Your email address' />
-                    <button className='text-[white] cursor-pointer bg-[#00B207] py-[16px] px-[40px] leading-[138%] rounded-full relative left-[-30px] '>Subscribe</button>
+
+                  <div>fgsdfgsdgfsdg</div>
+                  <div>sssss</div>
+                 
+                    <input className='sm:w-[480px] w-[200px]  sm:py-[14px] sm:py-[8px] py-[4px] sm:pl-[20px] pl-[15px]  rounded-tl-full rounded-bl-full border border-gray-300 bg-white rounded-md' type="text"placeholder='Your email address' />
+                    <button className='text-[white] cursor-pointer bg-[#00B207] sm:py-[16px] py-[6px] sm:px-[40px] px-[10px] leading-[138%] rounded-full relative left-[-30px] '>Subscribe</button>
                 </div>
-                <div className='flex gap-[8px] cursor-pointer'>
+                <div className='flex sm:gap-[8px] cursor-pointer'>
                    <div className='w-[40px] h-[40px] hover:bg-primary hover:text-white flex justify-center items-center rounded-full' >
                     <Link to="https://www.facebook.com/"> <TfiFacebook className='text-[18px]' /></Link>
                    </div>

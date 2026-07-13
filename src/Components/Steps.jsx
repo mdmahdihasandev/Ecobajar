@@ -33,7 +33,7 @@ const Steps = () => {
   return (
     <div className=''>
         <Container>
-            <div className='flex justify-between my-[50px] '>
+            <div className='flex flex-wrap justify-center justify-between my-[50px] '>
                 <div className='hover:bg-[#00B207] p-[20px]'>
                     <img src={Group} alt="" />
                 </div>
@@ -57,20 +57,21 @@ const Steps = () => {
 
        
          <div className='mb-[50px]' >
-            <p className='font-poppins font-semibold text-[32px] text-center pb-[30px]'>Follow us on Instagram</p>
+            <p className='font-poppins font-semibold sm:text-[32px] text-[23px] text-center pb-[30px]'>Follow us on Instagram</p>
 
           
 
-            <div className='flex justify-between'>
-            <img onClick={()=> setShow(!show)}  src={Instagram} alt="" />
-            <img onClick={()=> setShowone(!showone)} src={instraone} alt="" />
-            <img onClick={()=> setShowtow(!showotow)} src={instratow} alt="" />
-            <img onClick={()=> setShowthree(!showothree)} src={instrathree} alt="" />
-            <img onClick={()=> setShowfor(!showofor)} src={instrafor} alt="" />
-            <img onClick={()=> setShowfive(!showofive)} src={instrafive} alt="" />
+            <div className='flex justify-between sm:gap-2.5 '>
+            <img className='w-[50px] sm:w-full' onClick={()=> setShow(!show)}  src={Instagram} alt="" />
+            <img  className='w-[50px] sm:w-full' onClick={()=> setShowone(!showone)} src={instraone} alt="" />
+            <img  className='w-[50px] sm:w-full' onClick={()=> setShowtow(!showotow)} src={instratow} alt="" />
+            <img  className='w-[50px] sm:w-full' onClick={()=> setShowthree(!showothree)} src={instrathree} alt="" />
+            <img  className='w-[50px] sm:w-full' onClick={()=> setShowfor(!showofor)} src={instrafor} alt="" />
+            <img  className='w-[50px] sm:w-full' onClick={()=> setShowfive(!showofive)} src={instrafive} alt="" />
             </div>
 
             {
+        
                 show &&
                   <div className='w-full h-screen bg-[#000000be] fixed top-0 left-0 z-50 flex justify-center items-center'>
              <div ref={Sidebarref}>
