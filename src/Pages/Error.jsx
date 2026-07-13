@@ -4,8 +4,7 @@ const Error = () => {
   return (
     <>
     <div>erro</div>
-    <div>aerge</div>
-    <div>aesrgas</div>
+   
     </>
     
   )

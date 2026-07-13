@@ -14,9 +14,9 @@ const Mainlayuot = () => {
   
   return (
     <>
-        {/* <TopBar/>
+        <TopBar/>
         <SearchBar/>
-        <Navbar/> */}
+        {/* <Navbar/> */}
         {PageName !== '/' && <Breadcumb/> }
        {/* {PageName !== '/registration' && PageName !== '/login' && PageName !== '/forget' && <Banner />} */}
         

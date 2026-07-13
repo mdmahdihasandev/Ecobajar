@@ -12,6 +12,8 @@ const TopBar = () => {
   const dropDown = useRef(null)
   const dropDowntow = useRef(null)
 
+  
+
   useOutsideClick(dropDown, () => setOpen(false), open)
   useOutsideClick(dropDowntow, () => setOpentow(false), opentow)
 
@@ -19,8 +21,9 @@ const TopBar = () => {
 
     <div className='border-b border-solid border-b-gry-50 items-center font-poppins text-[#666666]  text-sm py-[12px]'>
       <Container>
-        <div className='flex justify-between'>
-          <div className='flex items-center  gap-[6px]'> <CiLocationOn /> Store Location: Lincoln- 344, Illinois, Chicago, USA</div>
+        <div className='sm:flex sm:justify-between'>
+          <div className='flex items-center  sm:gap-[6px] gap-[3px] pb-[3px] sm:pb-0'> <CiLocationOn className='pl-[2px] sm:pl-0 text-[23px] sm:text-[0]' /> Store Location: Lincoln- 344, Illinois, Chicago</div>
+
           <div className='flex gap-[20px] '>
 
 
@@ -28,13 +31,13 @@ const TopBar = () => {
            <div className='relative inline-block' onMouseEnter={() => setOpen(true)}  onMouseLeave={() => setOpen(false)}
           >
 
-          <div className='flex items-center cursor-pointer'>
+          <div className='flex items-center cursor-pointer pl-[30px] sm:pl-0'>
             Eng <FaAngleDown  className={`duration-300 ml-1 ${open ? "rotate-180" : "rotate-0"}`} />
           </div>
 
               {
                 open &&
-                <div className='absolute top-full left-[-20px] bg-[#afaeae] text-center text-black cursor-pointer  py-[10px] w-[70px]'>
+                <div className='absolute top-full sm:left-[-20px] left-0 z-50 bg-[#afaeae] text-center text-black cursor-pointer  py-[10px] w-[70px]'>
                   <ul className=''>
                     <li className='hover:bg-[white] hover:text-blue-600 mb-[5px]'>BG</li>
                     <li className='hover:bg-[white] hover:text-blue-600  mb-[5px]'>CH</li>
