@@ -9,6 +9,8 @@ const Footer = () => {
     <div className='bg-black'>
         <Container>
         <div className='text-white flex justify-between py-[60px]'>
+            <div>awdfasfas</div>
+            <div>awerfgas</div>
 
         <div>
             <img src={FooterLogo} alt="Footer Logo" />
