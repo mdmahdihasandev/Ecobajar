@@ -12,10 +12,10 @@ const SearchBar = () => {
      <Container> 
       <div className='items-center sm:flex flex-wrap justify-between py-[27px]'>
         <div>
-         <Link to="/"> <img className='mx-auto sm:mx-0' src={logo} alt="logo" fetchpriority="high"/></Link>
+         <Link to="/"> <img className='mx-auto sm:mx-0 ' src={logo} alt="logo" fetchpriority="high"/></Link>
         </div>
         <div className='relative'>
-          <input className='sm:py-3 sm:pl-11 sm:w-[400px] ml-[10px]  border border-r-0 rounded-tl-sm rounded-bl-sm border-[#808080] rounded-pt-[10px] placeholder:text-[#808080] placeholder:font-poppins placeholder:text-sm font-medium' type="text" placeholder='Search' />
+          <input className='sm:py-3 sm:pl-11  sm:w-[400px] ml-[10px]  border border-r-0 rounded-tl-sm rounded-bl-sm border-[#808080] rounded-pt-[10px] placeholder:text-[#808080] placeholder:font-poppins placeholder:text-sm font-medium' type="text" placeholder='Search' />
           <IoSearchOutline className='absolute top-1/2 -translate-y-1/2 left-4 text-[20px]' />
           <button className='text-[white] cursor-pointer bg-[#00B207] sm:py-[14px] py-[2px] sm:px-[24px] px-[10px] leading-[138%] rounded-tr-sm rounded-br-sm'>Search</button>
         </div>
