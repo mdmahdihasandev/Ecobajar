@@ -16,8 +16,12 @@ import Cake from '../Icons/Cake';
 import Pie from '../Icons/Pie';
 import Fody from '../Icons/Fody';
 import { DiApple } from "react-icons/di";
+import { FaBarsStaggered } from "react-icons/fa6";
 
 const Navbar = () => {
+
+  let [show,setShow] = useState(false)
+
 
   let [sidebar,setSidebar] = useState(false)
   let [dropDown,setDropDown] = useState(false)
@@ -42,17 +46,26 @@ const Navbar = () => {
 
   return (
    
-         <div className='bg-[#1A1A1A] text-[white]'> 
+         <div className='bg-[#1A1A1A] text-[#ebe8e8] py-[12px] sm:py-0'> 
+        
           <Container>
-        <div className='flex justify-between items-center'>
-            <ul className='flex gap-[32px] relative font-poppins font-medium  text-sm text-[#999999] items-center'>
+            
+            <div className='flex justify-between px-[20px] sm:px-0'>
+               <FaBarsStaggered className='block sm:hidden text-white w-[25px] h-[25px]  ' onClick={()=> setShow(!show)} />
+                 <div className='sm:hidden'>
+            <Link to='tel:(219) 555-0114' className='flex items-center gap-2.5 font-poppins font-medium text-[14px]'><FiPhoneCall className='text-[20px]'/> (219) 555-0114</Link>
+           </div>
+            </div>
+
+        <div className={`sm:flex justify-between items-center ${show ? 'block' : 'hidden'} `}>
+            <ul className='sm:flex gap-[32px] relative font-poppins font-medium  text-sm text-[#999999] items-center'>
 
              
              
                <div className="relative" ref={Sidebarref}>
 
-            <li onClick={()=> setSidebar(!sidebar)} className=' p-4 bg-primary mr-[200px]'>
-                <FaBars className='text-[white] w-[32px] h-[32px] cursor-pointer'/>  
+            <li onClick={()=> setSidebar(!sidebar)} className='  p-4 bg-primary mr-[258px] sm:mr-[200px]'>
+                <FaBars className='text-[white] w-[32px] h-[20px] sm:h-[32px] cursor-pointer'/>  
                 </li>
 
             {sidebar && 
@@ -126,7 +139,7 @@ const Navbar = () => {
 
               </div>
                 <li ref={DropDownref}>
-                    <Link onMouseEnter={()=> setDropDown(!dropDown)}  className='font-poppins  bg-[#333333] text-[20px]  font-bold absolute top-0 left-[64px] py-[17px] px-[20px] text-[white] flex items-center ' to='#'>All Categories <FaAngleDown className={`cursor-pointer flex pl-[4px] ml-[40px] duration-300 ${dropDown ? 'rotate-180' : 'rotate-0'} text-[20px]`} /></Link>
+                    <Link onMouseEnter={()=> setDropDown(!dropDown)}  className='font-poppins  bg-[#333333] sm:text-[20px] text-[15px]  font-bold absolute top-0 left-[64px] py-[17px] px-[20px] text-[white] flex items-center ' to='#'>All Categories <FaAngleDown className={`cursor-pointer flex pl-[4px] ml-[40px] duration-300 ${dropDown ? 'rotate-180' : 'rotate-0'} text-[20px]`} /></Link>
 
                  {dropDown &&
                  
@@ -224,7 +237,7 @@ const Navbar = () => {
                 
             </ul>
            
-           <div>
+           <div className='sm:block hidden'>
             <Link to='tel:(219) 555-0114' className='flex items-center gap-2.5 font-poppins font-medium text-[14px]'><FiPhoneCall className='text-[20px]'/> (219) 555-0114</Link>
            </div>
 
