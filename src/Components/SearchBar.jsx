@@ -15,18 +15,18 @@ const SearchBar = () => {
          <Link to="/"> <img className='mx-auto sm:mx-0 ' src={logo} alt="logo" fetchpriority="high"/></Link>
         </div>
         <div className='relative'>
-          <input className='sm:py-3 sm:pl-11  sm:w-[400px] ml-[10px]  border border-r-0 rounded-tl-sm rounded-bl-sm border-[#808080] rounded-pt-[10px] placeholder:text-[#808080] placeholder:font-poppins placeholder:text-sm font-medium' type="text" placeholder='Search' />
-          <IoSearchOutline className='absolute top-1/2 -translate-y-1/2 left-4 text-[20px]' />
+          <input className='sm:py-3 py-[2px] sm:pl-11 w-[180px] ml-[35px]  sm:ml-0 sm:w-[400px] ml-[10px]  border border-r-0 rounded-tl-sm rounded-bl-sm border-[#808080] rounded-pt-[10px] placeholder:text-[#808080] placeholder:font-poppins placeholder:text-sm placeholder:pl-[30px] sm:placeholder:pl-0 font-medium' type="text" placeholder='Search' />
+          <IoSearchOutline className='absolute top-1/2 -translate-y-1/2 sm:left-4 left-[40px] text-[20px]' />
           <button className='text-[white] cursor-pointer bg-[#00B207] sm:py-[14px] py-[2px] sm:px-[24px] px-[10px] leading-[138%] rounded-tr-sm rounded-br-sm'>Search</button>
         </div>
-        <div className='flex '>
-         <div className='gap-[32px] flex'>
-           <div className='cursor-pointer relative after:absolute after:top-0 after:left-[48px]  after:w-[2px] after:h-[25px] after:bg-[#CCCCCC] after:content-[""] '>
-            <LoveIcon/>
+        <div className='flex justify-center sm:justify-start mt-[20px] sm:mt-0 '>
+         <div className='gap-[32px] flex '>
+           <div className='cursor-pointer relative after:absolute after:top-0 after:left-[48px]  after:w-[2px] after:h-[25px]  after:bg-[#CCCCCC] after:content-[""] '>
+            <LoveIcon />
           </div>
           <div className='relative'>
          <div className='w-[20px] h-[20px] cursor-pointer bg-[#2C742F] not-first: text-white absolute left-[18px] top-[-7px] flex items-center justify-center rounded-full'>2</div>
-          <IoBagOutline className='text-[34px] cursor-pointer' />
+          <IoBagOutline className='text-[34px] text-[30px] cursor-pointer' />
           </div>
          </div>
           <div className='pl-[12px] '>
