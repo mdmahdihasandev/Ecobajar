@@ -198,3 +198,96 @@
     transform: translateY(-50%);
     cursor: pointer;
 } */
+
+
+
+
+
+
+/* ========================== CheckBox Edit Start */
+/* label{
+  position: relative;
+  padding-left: 28px;
+}
+
+label::after{
+  width: 20px;
+  height: 20px;
+  border: 2px solid #CCCCCC;
+  border-radius: 50%;
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 2px;
+}
+label::before{
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  content: '';
+  left: 4px;
+  top: 6px;
+}
+
+input:checked + label::before {
+  background-color: yellowgreen;
+} 
+input:checked + label::after {
+  border-color: yellowgreen;
+}  */
+
+/* ========================== CheckBox Edit End */
+
+/* ==== Swich Start ===== */
+
+label {
+  position: relative;
+  padding-left: 55px;
+  cursor: pointer;
+  line-height: 24px;
+}
+
+/* Switch Background */
+label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 22px;
+  border: 2px solid rgb(133, 131, 131);
+  border-radius: 50px;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+/* Circle */
+label::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+/* ON হলে */
+input:checked + label::after {
+    background-color: rgb(94, 255, 1);
+  border-color: rgba(89, 253, 0, 0.952);
+}
+
+input:checked + label::before {
+  background-color: red!important;
+  transform: translateX(20px);
+  
+}
+
+/* ==== Swich END ===== */
+

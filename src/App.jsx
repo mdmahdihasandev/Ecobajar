@@ -7,7 +7,7 @@ import Mainlayuot from './Components/Layuots/Mainlayuot';
 import Forget from './Pages/Forget';
 import Reset from './Pages/Reset'
 import Category from './Pages/Category';
-import Shop from './Components/Shop';
+import Shop from './Pages/Shop';
 
 const App = () => {
   return (
@@ -20,6 +20,7 @@ const App = () => {
         <Route path="/forget" element={<Forget/>} />
         <Route path="/reset-password" element={<Reset/>} />
         <Route path="/category" element={<Category/>} />
+        <Route path="/shop" element={<Shop/>} />
       </Route>
     </Routes>
 
