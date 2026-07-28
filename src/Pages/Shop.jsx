@@ -8,7 +8,9 @@ import { FaRegStar } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import { IoIosStar, IoIosStarHalf } from 'react-icons/io';
 import disspic from "../assets/iscount.webp";
-import product from "../assets/Product (2).png"
+import product from "../../src/assets/Product.png"
+import productone from "../../src/assets/Product (1).png"
+import producttow from "../../src/assets/Product (2).png"
 
 
 const Shop = () => {
@@ -319,7 +321,7 @@ const Shop = () => {
 
         {/* popular tag */}
 
-          <h2 onClick={() => setShowPopular(!showPopular)} className='flex items-center gap-[100px] font-poppins font-medium text-[25px] text-[#1A1A1A]  '>Popular Tag <FaAngleDown className={`duration-300 ml-1 ${showPopular ? "rotate-180" : "rotate-0"} cursor-pointer`} /></h2>
+          <h2 onClick={() => setShowPopular(!showPopular)} className='flex items-center gap-[106px] font-poppins font-medium text-[25px] text-[#1A1A1A]  '>Popular Tag <FaAngleDown className={`duration-300 ml-1 ${showPopular ? "rotate-180" : "rotate-0"} cursor-pointer`} /></h2>
 
         {
           showPopular &&
@@ -383,6 +385,11 @@ const Shop = () => {
           <img className='mt-[30px]' src={disspic} alt="" />
 
           <h2 className='font-medium font-poppins text-[26px] '>Sale Products</h2>
+          <div className='my-[20px] '>
+            <img className='hover:border border-[#00B207]' src={product} alt="" />
+            <img className='hover:border border-[#00B207]' src={productone} alt="" />
+            <img className='hover:border border-[#00B207]' src={producttow} alt="" />
+          </div>
       
           </div>
         
