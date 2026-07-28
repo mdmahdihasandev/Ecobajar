@@ -7,7 +7,7 @@ import { CgFilters } from 'react-icons/cg';
 import { FaRegStar } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import { IoIosStar, IoIosStarHalf } from 'react-icons/io';
-import {discountd} from "../../src/assets/iscount.webp"
+import {disspic} from "../assets/is"
 
 
 const Shop = () => {
@@ -380,9 +380,7 @@ const Shop = () => {
             </div>
 
 
-       <div>
-        <img src={discountd} alt="" />
-       </div>
+      
           </div>
         
             {/* <div className='mt-[20px] '>
