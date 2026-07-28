@@ -51,7 +51,7 @@ const ProduactShowcas = ({ allData, showViewAll, type }) => {
                     ${type === 'Featured' ? 'sm:grid-cols-3 md:grid-cols-4' : ''}`}
                 >
                     {allData && allData.map((item, idx) => (
-                        <div 
+                        <div
                             key={item.id || idx}
                             className={`group relative border border-[#979393] p-3 sm:p-4 rounded-lg bg-white transition-all duration-300
                                 ${type === 'product' ? 'hover:border-2 hover:border-[#15ff00]' : ''} 
@@ -102,7 +102,7 @@ const ProduactShowcas = ({ allData, showViewAll, type }) => {
                                     <img className='w-full h-[200px] object-cover pb-[13px] rounded' src={item.thumbnail} alt="productimages" />
                                     <h3 className='pb-[10px] font-semibold text-lg'> {item.name || item.title} </h3>
                                     <p className='font-bold text-xl mb-2'>{item.price && item.price}</p>
-                                    
+
                                     <div className='flex items-center gap-0.5'>
                                         {item.rating && rattin(item.rating).map((star, sIdx) => (
                                             star === "color" ? (
