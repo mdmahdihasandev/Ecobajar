@@ -240,9 +240,9 @@ input:checked + label::after {
 
 /* ========================== CheckBox Edit End */
 
-/* ==== Swich Start ===== */
+/* ==== Catagoty Start ===== */
 
-label {
+label.catagory-label {
   position: relative;
   padding-left: 55px;
   cursor: pointer;
@@ -250,7 +250,7 @@ label {
 }
 
 /* Switch Background */
-label::after {
+label.catagory-label::after {
   content: "";
   position: absolute;
   left: 0;
@@ -264,7 +264,7 @@ label::after {
 }
 
 /* Circle */
-label::before {
+label.catagory-label::before {
   content: "";
   position: absolute;
   left: 3px;
@@ -278,16 +278,79 @@ label::before {
 }
 
 /* ON হলে */
-input:checked + label::after {
+input:checked + label.catagory-label::after {
     background-color: rgb(94, 255, 1);
   border-color: rgba(89, 253, 0, 0.952);
 }
 
-input:checked + label::before {
+input:checked + label.catagory-label::before {
   background-color: red!important;
   transform: translateX(20px);
   
 }
 
-/* ==== Swich END ===== */
+/* ==== Catagory END ===== */
 
+/*=== Ratting Start ===*/
+
+label.ratting-label {
+  position: relative;
+  padding-left: 55px;
+  cursor: pointer;
+  line-height: 24px;
+}
+
+/* Switch Background */
+label.ratting-label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 22px;
+  border: 2px solid rgb(133, 131, 131);
+  border-radius: 50px;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+/* Circle */
+label.ratting-label::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+/* ON হলে */
+input:checked + label.ratting-label::after {
+    background-color: rgb(94, 255, 1);
+  border-color: rgba(89, 253, 0, 0.952);
+}
+
+input:checked + label.ratting-label::before {
+  background-color: rgb(250, 6, 6)!important;
+  transform: translateX(20px);
+  
+}
+
+/*===== Ratting End ====*/
+
+
+/* ===Popular Start ==== */
+.popularlabel{
+  background-color: #F2F2F2;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+.popularlabel:hover{
+  background-color: #00B207;
+
+}
+/* ===Popular End ==== */
