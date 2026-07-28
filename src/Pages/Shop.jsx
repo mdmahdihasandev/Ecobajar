@@ -7,7 +7,8 @@ import { CgFilters } from 'react-icons/cg';
 import { FaRegStar } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import { IoIosStar, IoIosStarHalf } from 'react-icons/io';
-import {disspic} from "../assets/is"
+import disspic from "../assets/iscount.webp";
+import product from "../assets/Product.png"
 
 
 const Shop = () => {
@@ -373,13 +374,15 @@ const Shop = () => {
               <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
               <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Breackfast</label>
             </div>
-            <div className='mt-[20px]'>
+            <div className='mt-[20px] '>
               <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
               <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Fruit</label>
               
             </div>
 
+          <img className='mt-[30px]' src={disspic} alt="" />
 
+          <h2 className='font-medium font-poppins text-[26px] '>Sale Products</h2>
       
           </div>
         
@@ -443,6 +446,8 @@ const Shop = () => {
       <label className='cursor-pointer' htmlFor="checkoutfour">Applay</label>
     </div>
   </Accordian> */}
+
+  
 
       </Container>
 
