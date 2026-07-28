@@ -10,7 +10,7 @@ import { IoBagOutline } from "react-icons/io5";
 const ProduactShowcas = ({ allData, showViewAll, type }) => {
     console.log(allData);
 
-    function asd(count) {
+    function rattin(count) {
         let hafstar = count.toString().split('.')[1]
         let index = Math.floor(count)
         let arry = []
@@ -52,7 +52,7 @@ const ProduactShowcas = ({ allData, showViewAll, type }) => {
                 >
                     {allData && allData.map((item, idx) => (
                         <div 
-                            key={item.id || idx} 
+                            key={item.id || idx}
                             className={`group relative border border-[#979393] p-3 sm:p-4 rounded-lg bg-white transition-all duration-300
                                 ${type === 'product' ? 'hover:border-2 hover:border-[#15ff00]' : ''} 
                                 ${type === 'Featured' ? 'hover:border-2' : ''}`}
@@ -82,7 +82,7 @@ const ProduactShowcas = ({ allData, showViewAll, type }) => {
 
                             {/* Ratings */}
                             <div className='flex items-center gap-0.5 text-[12px] sm:text-[14px]'>
-                                {item.rating && asd(item.rating).map((star, sIdx) => (
+                                {item.rating && rattin(item.rating).map((star, sIdx) => (
                                     star === "color" ? (
                                         <IoIosStar key={sIdx} className='text-yellow-300' />
                                     ) : star === 'haff' ? (
@@ -104,7 +104,7 @@ const ProduactShowcas = ({ allData, showViewAll, type }) => {
                                     <p className='font-bold text-xl mb-2'>{item.price && item.price}</p>
                                     
                                     <div className='flex items-center gap-0.5'>
-                                        {item.rating && asd(item.rating).map((star, sIdx) => (
+                                        {item.rating && rattin(item.rating).map((star, sIdx) => (
                                             star === "color" ? (
                                                 <IoIosStar key={sIdx} className='text-yellow-300' />
                                             ) : star === 'haff' ? (

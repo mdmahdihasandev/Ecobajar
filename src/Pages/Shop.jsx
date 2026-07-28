@@ -4,6 +4,7 @@ import { FaAngleDown } from "react-icons/fa6";
 import Accordian from '../Components/Accordian';
 import useOutsideClick from '../Hooks/OutsiteClick';
 import { CgFilters } from 'react-icons/cg';
+import { FaRegStar } from "react-icons/fa6";
 
 
 const Shop = () => {
@@ -93,7 +94,10 @@ const Shop = () => {
     }
 
 
+    
 
+
+  {/* Ratting */}
 
       <h2 onClick={()=> setShowRating(!showRating)} className='flex items-center gap-[100px] font-poppins font-medium text-[25px] text-[#1A1A1A]  '>Rating <FaAngleDown className={`duration-300 ml-1 ${showRating ? "rotate-180" : "rotate-0"} cursor-pointer`} /></h2>
 
@@ -102,7 +106,7 @@ const Shop = () => {
      <>
       <div className='mt-[20px] '>
       <input className='cursor-pointer hidden' id='checkoutratingone' type="checkbox" />
-      <label className='cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutratingone">Fresh Fruit (25) <span className='text-[#808080] font-poppins font-medium text-[16px]'> (134)</span> </label>
+      <label className='cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutratingone"> <span className='text-[#808080] font-poppins font-medium text-[16px]'> (134)</span> </label>
     </div>
       <div className='mt-[20px] '>
       <input className='cursor-pointer hidden' id='checkoutratingtow' type="checkbox" />
