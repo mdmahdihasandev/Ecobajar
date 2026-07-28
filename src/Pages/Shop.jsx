@@ -8,7 +8,7 @@ import { FaRegStar } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import { IoIosStar, IoIosStarHalf } from 'react-icons/io';
 import disspic from "../assets/iscount.webp";
-import product from "../assets/Product.png"
+import product from "../assets/Product (2).png"
 
 
 const Shop = () => {
