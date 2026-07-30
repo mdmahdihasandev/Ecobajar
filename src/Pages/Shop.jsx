@@ -33,6 +33,12 @@ const Shop = () => {
    allProduct()
   },[])
 
+  let pagination = allpro.length / 2.50
+  let arry = new Array(pagination).fill(0)
+  
+
+
+
   let refdrop = useRef(null)
   let [open, setOpen] = useState(false)
 
@@ -87,7 +93,7 @@ const Shop = () => {
 
               {
                 open &&
-                <div className='absolute top-[35px] left-[100px] w-[50px] h-[100px] flex justify-center bg-[#cecccc] cursor-pointer'>
+                <div className='absolute z-2 top-[35px] left-[100px] w-[50px] h-[100px] flex justify-center bg-[#cecccc] cursor-pointer'>
                   <ul className='py-[10px]'>
                     <li className='pb-[8px] hover:text-[blue]'>MH</li>
                     <li className='pb-[8px] hover:text-[blue]'>XS</li>
@@ -442,6 +448,18 @@ const Shop = () => {
 
         <div className='max-w-[984px] '>
            <ProduactShowcas type='product' allData={allpro} columns={3} showTitle={false}/>
+           <div>
+            <ul className='flex gap-[30px]  justify-center'>
+
+            {
+              arry.map((item,index)=>(
+               <li className='w-[20px] h-[20px] bg-[red]'>{ index + 1 }</li>
+              ))
+            }
+
+             
+            </ul>
+           </div>
         </div>
         
          </div>
