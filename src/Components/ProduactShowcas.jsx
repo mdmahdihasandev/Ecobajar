@@ -7,7 +7,7 @@ import { IoIosStar } from "react-icons/io";
 import { IoIosStarHalf } from "react-icons/io";
 import { IoBagOutline } from "react-icons/io5";
 
-const ProduactShowcas = ({ allData, showViewAll, type }) => {
+const ProduactShowcas = ({ allData, showViewAll, type , columns = 5 ,  showTitle = true}) => {
     console.log(allData);
 
     function rattin(count) {
@@ -33,9 +33,14 @@ const ProduactShowcas = ({ allData, showViewAll, type }) => {
     return (
         <Container>
             <div className='relative px-4 sm:px-0'>
-                <h2 className='pb-[20px] sm:pb-[30px] font-poppins font-semibold text-[20px] sm:text-[32px] text-[#1A1A1A]'>
+               
+               {
+                showTitle && (
+                     <h2 className='pb-[20px] sm:pb-[30px] font-poppins font-semibold text-[20px] sm:text-[32px] text-[#1A1A1A]'>
                     Popular Categories
                 </h2>
+                )
+               }
 
                 {showViewAll && (
                     <Link className='flex items-center absolute right-4 sm:right-0 top-[5px] sm:top-[25px] text-[#00B207] font-poppins font-medium text-[14px] sm:text-[16px]' to="/category">
@@ -44,12 +49,13 @@ const ProduactShowcas = ({ allData, showViewAll, type }) => {
                 )}
 
                 {/* Responsive Grid System */}
-                <div className={`grid grid-cols-2 gap-4 mb-[50px] 
-                    ${type === 'category' ? 'sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6' : ''}
-                    ${type === 'product' ? 'sm:grid-cols-4 md:grid-cols-5' : ''}
-                    ${type === 'hotdeal' ? 'sm:grid-cols-4 md:grid-cols-5' : ''}
-                    ${type === 'Featured' ? 'sm:grid-cols-3 md:grid-cols-4' : ''}`}
-                >
+               <div className={`grid grid-cols-2 gap-4 mb-[50px]
+                        ${type === 'category' ? 'sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6' : ''}
+                        ${type === 'product' && columns === 3 ? 'sm:grid-cols-2 md:grid-cols-3' : ''}
+                        ${type === 'product' && columns === 5 ? 'sm:grid-cols-4 md:grid-cols-5' : ''}
+                        ${type === 'hotdeal' ? 'sm:grid-cols-4 md:grid-cols-5' : ''}
+                        ${type === 'Featured' ? 'sm:grid-cols-3 md:grid-cols-4' : ''}
+                        `}>
                     {allData && allData.map((item, idx) => (
                         <div
                             key={item.id || idx}
@@ -77,7 +83,7 @@ const ProduactShowcas = ({ allData, showViewAll, type }) => {
 
                             {/* Price */}
                             <p className='text-[14px] sm:text-[16px] font-bold text-[#1A1A1A] pb-1'>
-                                {item.price && `${item.price}`}
+                                {item.price && `$${item.price}`}
                             </p>
 
                             {/* Ratings */}

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Container from '../Components/Layuots/Container'
 import { FaAngleDown } from "react-icons/fa6";
 import Accordian from '../Components/Accordian';
@@ -11,9 +11,27 @@ import disspic from "../assets/iscount.webp";
 import product from "../../src/assets/Product.png"
 import productone from "../../src/assets/Product (1).png"
 import producttow from "../../src/assets/Product (2).png"
+import axios from 'axios';
+import ProduactShowcas from '../Components/ProduactShowcas';
 
 
 const Shop = () => {
+
+  //! API Product
+
+
+     let [allpro, setAllpro] = useState([])
+
+  
+     useEffect(()=> {
+   async function allProduct(){
+    let product = await axios.get('https://dummyjson.com/products')
+    setAllpro(product.data.products.slice(0,15));
+    
+    
+   }  
+   allProduct()
+  },[])
 
   let refdrop = useRef(null)
   let [open, setOpen] = useState(false)
@@ -25,16 +43,7 @@ const Shop = () => {
   let [showRating, setShowRating] = useState(false)
   let [showPopular, setShowPopular] = useState(false)
 
-
-
-
-
-
-
-
-
-
-
+   
 
 
   // rattinf 
@@ -53,7 +62,6 @@ const Shop = () => {
         arry.push("gray");
       }
     }
-
     return arry;
   }
 
@@ -98,6 +106,8 @@ const Shop = () => {
 
 
 
+              <div className='flex gap-3.5'>
+                
           <div className='w-[315px]'>
 
                <h2 onClick={() => setShowinput(!showinput)} className='flex items-center gap-[100px] font-poppins font-medium text-[25px] text-[#1A1A1A]  '>All Catagory <FaAngleDown className={`duration-300 ml-1 ${showinput ? "rotate-180" : "rotate-0"} cursor-pointer`} /></h2>
@@ -430,7 +440,15 @@ const Shop = () => {
 
           </div>
 
+        <div className='max-w-[984px] '>
+           <ProduactShowcas type='product' allData={allpro} columns={3} showTitle={false}/>
+        </div>
+        
+         </div>
+       
 
+
+        
        
 
 
