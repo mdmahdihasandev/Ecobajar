@@ -13,6 +13,7 @@ import productone from "../../src/assets/Product (1).png"
 import producttow from "../../src/assets/Product (2).png"
 import axios from 'axios';
 import ProduactShowcas from '../Components/ProduactShowcas';
+import { FaRegArrowAltCircleLeft ,FaRegArrowAltCircleRight} from "react-icons/fa";
 
 
 const Shop = () => {
@@ -20,7 +21,10 @@ const Shop = () => {
   //! API Product
 
 
+
+    
      let [allpro, setAllpro] = useState([])
+     let [currentPages,setCurrent] = useState(1)
 
   
      useEffect(()=> {
@@ -33,8 +37,14 @@ const Shop = () => {
    allProduct()
   },[])
 
-  let pagination = allpro.length / 2.50
-  let arry = new Array(pagination).fill(0)
+ let perpage = 6;
+
+let pagination = Math.ceil(allpro.length / perpage);
+
+let arry = new Array(pagination).fill(0);
+
+let showPro = allpro.slice((currentPages - 1) * perpage, currentPages * perpage);
+
   
 
 
@@ -446,18 +456,34 @@ const Shop = () => {
 
           </div>
 
-        <div className='max-w-[984px] '>
-           <ProduactShowcas type='product' allData={allpro} columns={3} showTitle={false}/>
+        <div className='max-w-[984px] mb-[20px] '>
+           <ProduactShowcas type='product' allData={showPro} columns={3} showTitle={false}/>
            <div>
             <ul className='flex gap-[20px]  justify-center'>
-
+            <button
+        onClick={() => {
+          if (currentPages > 1) {
+            setCurrent(currentPages - 1)
+          }
+        }}
+      >
+        <FaRegArrowAltCircleLeft className='text-[26px] '  />
+      </button>
             {
               arry.map((item,index)=>(
-               <li className='w-[30px] h-[30px] rounded-[30px] cursor-pointer hover: bg-[#bdb8b8] flex items-center justify-center '>{ index + 1 }</li>
+               <li onClick={()=> setCurrent(index+1)} className={`w-[30px] h-[30px] hover:bg-[#fa2003] rounded-[30px] cursor-pointer hover: bg-[#bdb8b8] flex items-center justify-center ${currentPages === index +1 ? "bg-red-500 ": "bg-[#bdb8b8]"}`}>{ index + 1 }</li>
               ))
             }
 
-             
+            <button
+        onClick={() => {
+          if (currentPages < 3) {
+            setCurrent(currentPages + 1)
+          }
+        }}
+      >
+        <FaRegArrowAltCircleRight className='text-[26px] ' />
+      </button>
             </ul>
            </div>
         </div>
