@@ -449,11 +449,11 @@ const Shop = () => {
         <div className='max-w-[984px] '>
            <ProduactShowcas type='product' allData={allpro} columns={3} showTitle={false}/>
            <div>
-            <ul className='flex gap-[30px]  justify-center'>
+            <ul className='flex gap-[20px]  justify-center'>
 
             {
               arry.map((item,index)=>(
-               <li className='w-[20px] h-[20px] bg-[red]'>{ index + 1 }</li>
+               <li className='w-[30px] h-[30px] rounded-[30px] cursor-pointer hover: bg-[#bdb8b8] flex items-center justify-center '>{ index + 1 }</li>
               ))
             }
 
