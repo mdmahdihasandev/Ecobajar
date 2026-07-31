@@ -13,7 +13,7 @@ import productone from "../../src/assets/Product (1).png"
 import producttow from "../../src/assets/Product (2).png"
 import axios from 'axios';
 import ProduactShowcas from '../Components/ProduactShowcas';
-import { FaRegArrowAltCircleLeft ,FaRegArrowAltCircleRight} from "react-icons/fa";
+import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from "react-icons/fa";
 
 
 const Shop = () => {
@@ -22,30 +22,27 @@ const Shop = () => {
 
 
 
-    
-     let [allpro, setAllpro] = useState([])
-     let [currentPages,setCurrent] = useState(1)
 
-  
-     useEffect(()=> {
-   async function allProduct(){
-    let product = await axios.get('https://dummyjson.com/products')
-    setAllpro(product.data.products.slice(0,15));
-    
-    
-   }  
-   allProduct()
-  },[])
+  let [allpro, setAllpro] = useState([])
+  let [currentPages, setCurrent] = useState(1)
 
- let perpage = 6;
 
-let pagination = Math.ceil(allpro.length / perpage);
+  useEffect(() => {
+    async function allProduct() {
+      let product = await axios.get('https://dummyjson.com/products')
+      setAllpro(product.data.products.slice(0, 24));
 
-let arry = new Array(pagination).fill(0);
 
-let showPro = allpro.slice((currentPages - 1) * perpage, currentPages * perpage);
+    }
+    allProduct()
+  }, [])
 
-  
+  let perpage = 6;
+  let pagination = Math.ceil(allpro.length / perpage);
+  let arry = new Array(pagination).fill(0);
+  let showPro = allpro.slice((currentPages - 1) * perpage, currentPages * perpage);
+
+
 
 
 
@@ -59,7 +56,7 @@ let showPro = allpro.slice((currentPages - 1) * perpage, currentPages * perpage)
   let [showRating, setShowRating] = useState(false)
   let [showPopular, setShowPopular] = useState(false)
 
-   
+
 
 
   // rattinf 
@@ -122,378 +119,355 @@ let showPro = allpro.slice((currentPages - 1) * perpage, currentPages * perpage)
 
 
 
-              <div className='flex gap-3.5'>
-                
+        <div className='flex gap-3.5'>
+
           <div className='w-[315px]'>
 
-               <h2 onClick={() => setShowinput(!showinput)} className='flex items-center gap-[100px] font-poppins font-medium text-[25px] text-[#1A1A1A]  '>All Catagory <FaAngleDown className={`duration-300 ml-1 ${showinput ? "rotate-180" : "rotate-0"} cursor-pointer`} /></h2>
+            <h2 onClick={() => setShowinput(!showinput)} className='flex items-center gap-[100px] font-poppins font-medium text-[25px] text-[#1A1A1A]  '>All Catagory <FaAngleDown className={`duration-300 ml-1 ${showinput ? "rotate-180" : "rotate-0"} cursor-pointer`} /></h2>
 
-        {
-          showinput &&
-          <>
-            <div className='mt-[20px] '>
-              <input className=' catagory-input cursor-pointer hidden' id='checkoutone' type="checkbox" />
-              <label className='catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutone">Fresh Fruit (25) <span className='text-[#808080] font-poppins font-medium text-[16px]'> (134)</span> </label>
-            </div>
-            <div className='mt-[20px] '>
-              <input className=' catagory-input cursor-pointer hidden' id='checkouttow' type="checkbox" />
-              <label className='catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkouttow">Vegetables <span className='text-[#808080] font-poppins font-medium text-[16px]'> (150)</span> </label>
-            </div>
-            <div className='mt-[20px] '>
-              <input className=' catagory-input cursor-pointer hidden' id='checkoutthree' type="checkbox" />
-              <label className='catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutthree">Cooking <span className='text-[#808080] font-poppins font-medium text-[16px]'> (54)</span> </label>
-            </div>
-            <div className='mt-[20px] '>
-              <input className=' catagory-input cursor-pointer hidden' id='checkoutfour' type="checkbox" />
-              <label className=' catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutfour">Snacks <span className='text-[#808080] font-poppins font-medium text-[16px]'> (47)</span> </label>
-            </div>
-            <div className='mt-[20px] '>
-              <input className=' catagory-input cursor-pointer hidden' id='checkoutfive' type="checkbox" />
-              <label className=' catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutfive">Beverages <span className='text-[#808080] font-poppins font-medium text-[16px]'> (43)</span> </label>
-            </div>
-            <div className='mt-[20px] '>
-              <input className=' catagory-input cursor-pointer hidden' id='checkoutsix' type="checkbox" />
-              <label className='catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutsix">Beauty & Health <span className='text-[#808080] font-poppins font-medium text-[16px]'> (38)</span> </label>
-            </div>
-            <div className='mt-[20px] '>
-              <input className='catagory-input cursor-pointer hidden' id='checkoutseven' type="checkbox" />
-              <label className='catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutseven">Bread & Bakery <span className='text-[#808080] font-poppins font-medium text-[16px]'> (15)</span> </label>
-            </div>
-
-             
-
-          </>
-
-        }
-
-         <div className='border-b border-solid border-[#CCCCCC] w-[300px] my-[30px]'></div>
-
-
-
-
-        {/* Rating */}
-
-        <h2 onClick={() => setShowRating(!showRating)} className='flex items-center gap-[167px] font-poppins font-medium text-[25px] text-[#1A1A1A]'>Rating <FaAngleDown
-          className={`duration-300 ml-1 ${showRating ? "rotate-180" : "rotate-0"} cursor-pointer`}
-        />
-        </h2>
-
-        {
-          showRating && (
-            <div className='mt-[20px]'>
-
-              {/* 5 Star */}
-              <div className='mb-[15px]'>
-                <input className='ratting-input cursor-pointer hidden' id='rating5' type='checkbox' />
-
-                <label className='ratting-label cursor-pointer flex items-center gap-[5px]'  htmlFor='rating5' >
-                  {rattin(5).map((star, index) => (
-                    star === "color" ? (
-                      <IoIosStar
-                        key={index}
-                        className='text-[#FF8A00] text-[24px]' />
-                    ) : (
-                      <IoIosStar
-                        key={index}
-                        className='text-gray-300 text-[20px]'
-                      />
-                    )
-                  ))}
-
-                  <span className='text-[#1A1A1A] font-poppins font-medium text-[19px] ml-[5px]'> 5.0</span>
-
-                   </label>
-              </div>
-
-
-              {/* 4 Star */}
-              <div className='mb-[15px]'>
-                <input
-                  className='ratting-input cursor-pointer hidden'
-                  id='rating4'
-                  type='checkbox'
-                />
-
-                <label
-                  className='ratting-label cursor-pointer flex items-center gap-[5px]'
-                  htmlFor='rating4'
-                >
-                  {rattin(4).map((star, index) => (
-                    star === "color" ? (
-                      <IoIosStar
-                        key={index}
-                        className='text-[#FF8A00] text-[24px]'
-                      />
-                    ) : (
-                      <IoIosStar
-                        key={index}
-                        className='text-gray-300 text-[24px]'
-                      />
-                    )
-                  ))}
-
-                  <span className='font-poppins font-medium text-[19px] text-[#1A1A1A] ml-[5px]'>
-                    4.0
-                  </span>
-                </label>
-              </div>
-
-
-              {/* 3 Star */}
-              <div className='mb-[15px]'>
-                <input
-                  className='ratting-input cursor-pointer hidden'
-                  id='rating3'
-                  type='checkbox'
-                />
-
-                <label
-                  className='ratting-label cursor-pointer flex items-center gap-[5px]'
-                  htmlFor='rating3'
-                >
-                  {rattin(3).map((star, index) => (
-                    star === "color" ? (
-                      <IoIosStar
-                        key={index}
-                        className='text-[#FF8A00] text-[24px]'
-                      />
-                    ) : (
-                      <IoIosStar
-                        key={index}
-                        className='text-gray-300 text-[24px]'
-                      />
-                    )
-                  ))}
-
-                  <span className='font-poppins font-medium text-[19px] text-[#1A1A1A] ml-[5px]'>
-                    3.0
-                  </span>
-                </label>
-              </div>
-
-
-              {/* 2 Star */}
-              <div className='mb-[15px]'>
-                <input
-                  className='ratting-input cursor-pointer hidden'
-                  id='rating2'
-                  type='checkbox'
-                />
-
-                <label
-                  className='ratting-label cursor-pointer flex items-center gap-[5px]'
-                  htmlFor='rating2'
-                >
-                  {rattin(2).map((star, index) => (
-                    star === "color" ? (
-                      <IoIosStar
-                        key={index}
-                        className='text-[#FF8A00] text-[24px]'
-                      />
-                    ) : (
-                      <IoIosStar
-                        key={index}
-                        className='text-gray-300 text-[24px]'
-                      />
-                    )
-                  ))}
-
-                  <span className='font-poppins font-medium text-[19px] text-[#1A1A1A] ml-[5px]'>
-                    2.0
-                  </span>
-                </label>
-              </div>
-
-
-              {/* 1 Star */}
-              <div className='mb-[15px]'>
-                <input
-                  className='ratting-input cursor-pointer hidden'
-                  id='rating1'
-                  type='checkbox'
-                />
-
-                <label
-                  className='ratting-label cursor-pointer flex items-center gap-[5px]'
-                  htmlFor='rating1'
-                >
-                  {rattin(1).map((star, index) => (
-                    star === "color" ? (
-                      <IoIosStar
-                        key={index}
-                        className='text-[#FF8A00] text-[24px]'
-                      />
-                    ) : (
-                      <IoIosStar
-                        key={index}
-                        className='text-gray-300 text-[24px]'
-                      />
-                    )
-                  ))}
-
-                  <span className='font-poppins font-medium text-[19px] text-[#1A1A1A] ml-[5px]'>
-                    1.0
-                  </span>
-                </label>
-              </div>
-
-            </div>
-          )
-        }
-
-        <div className='border-b border-solid border-[#CCCCCC] w-[300px] my-[30px]'></div>
-
-
-
-        {/* popular tag */}
-
-          <h2 onClick={() => setShowPopular(!showPopular)} className='flex items-center gap-[106px] font-poppins font-medium text-[25px] text-[#1A1A1A]  '>Popular Tag <FaAngleDown className={`duration-300 ml-1 ${showPopular ? "rotate-180" : "rotate-0"} cursor-pointer`} /></h2>
-
-        {
-          showPopular &&
-          <>
-          <div className='flex flex-wrap gap-[10px]'>
-
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Healthy</label>
-            </div>
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Low fat</label>
-            </div>
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Vegetarian</label>
-            </div>
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Kid foods</label>
-            </div>
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Vitamins</label>
-            </div>
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Bread</label>
-            </div>
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Meat</label>
-            </div>
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Snacks</label>
-            </div>
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Tiffin</label>
-            </div>
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Launch</label>
-            </div>
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Dinner</label>
-            </div>
-            <div className='mt-[20px]'>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Breackfast</label>
-            </div>
-            <div className='mt-[20px] '>
-              <input  className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
-              <label  className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Fruit</label>
-              
-            </div>
-
-          <img className='mt-[30px]' src={disspic} alt="" />
-
-          <h2 className='font-medium font-poppins text-[26px] '>Sale Products</h2>
-          <div className='my-[20px] '>
-            <img className='hover:border border-[#00B207]' src={product} alt="" />
-            <img className='hover:border border-[#00B207]' src={productone} alt="" />
-            <img className='hover:border border-[#00B207]' src={producttow} alt="" />
-          </div>
-      
-          </div>
-        
-            {/* <div className='mt-[20px] '>
-              <input className='cursor-pointer hidden' id='checkouttow' type="checkbox" />
-              <label className='cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkouttow">Vegetables <span className='text-[#808080] font-poppins font-medium text-[16px]'> (150)</span> </label>
-            </div>
-            <div className='mt-[20px] '>
-              <input className='cursor-pointer hidden' id='checkoutthree' type="checkbox" />
-              <label className='cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutthree">Cooking <span className='text-[#808080] font-poppins font-medium text-[16px]'> (54)</span> </label>
-            </div>
-            <div className='mt-[20px] '>
-              <input className='cursor-pointer hidden' id='checkoutfour' type="checkbox" />
-              <label className='cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutfour">Snacks <span className='text-[#808080] font-poppins font-medium text-[16px]'> (47)</span> </label>
-            </div>
-            <div className='mt-[20px] '>
-              <input className='cursor-pointer hidden' id='checkoutfive' type="checkbox" />
-              <label className='cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutfive">Beverages <span className='text-[#808080] font-poppins font-medium text-[16px]'> (43)</span> </label>
-            </div>
-            <div className='mt-[20px] '>
-              <input className='cursor-pointer hidden' id='checkoutsix' type="checkbox" />
-              <label className='cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutsix">Beauty & Health <span className='text-[#808080] font-poppins font-medium text-[16px]'> (38)</span> </label>
-            </div>
-            <div className='mt-[20px] '>
-              <input className='cursor-pointer hidden' id='checkoutseven' type="checkbox" />
-              <label className='cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutseven">Bread & Bakery <span className='text-[#808080] font-poppins font-medium text-[16px]'> (15)</span> </label>
-            </div> */}
-
-             
-
-          </>
-
-        }
-
-         <div className='border-b border-solid border-[#CCCCCC] w-[300px] my-[30px]'></div>
-
-
-
-          </div>
-
-        <div className='max-w-[984px] mb-[20px] '>
-           <ProduactShowcas type='product' allData={showPro} columns={3} showTitle={false}/>
-           <div>
-            <ul className='flex gap-[20px]  justify-center'>
-            <button
-        onClick={() => {
-          if (currentPages > 1) {
-            setCurrent(currentPages - 1)
-          }
-        }}
-      >
-        <FaRegArrowAltCircleLeft className='text-[26px] '  />
-      </button>
             {
-              arry.map((item,index)=>(
-               <li onClick={()=> setCurrent(index+1)} className={`w-[30px] h-[30px] hover:bg-[#fa2003] rounded-[30px] cursor-pointer hover: bg-[#bdb8b8] flex items-center justify-center ${currentPages === index +1 ? "bg-red-500 ": "bg-[#bdb8b8]"}`}>{ index + 1 }</li>
-              ))
+              showinput &&
+              <>
+                <div className='mt-[20px] '>
+                  <input className=' catagory-input cursor-pointer hidden' id='checkoutone' type="checkbox" />
+                  <label className='catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutone">Fresh Fruit (25) <span className='text-[#808080] font-poppins font-medium text-[16px]'> (134)</span> </label>
+                </div>
+                <div className='mt-[20px] '>
+                  <input className=' catagory-input cursor-pointer hidden' id='checkouttow' type="checkbox" />
+                  <label className='catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkouttow">Vegetables <span className='text-[#808080] font-poppins font-medium text-[16px]'> (150)</span> </label>
+                </div>
+                <div className='mt-[20px] '>
+                  <input className=' catagory-input cursor-pointer hidden' id='checkoutthree' type="checkbox" />
+                  <label className='catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutthree">Cooking <span className='text-[#808080] font-poppins font-medium text-[16px]'> (54)</span> </label>
+                </div>
+                <div className='mt-[20px] '>
+                  <input className=' catagory-input cursor-pointer hidden' id='checkoutfour' type="checkbox" />
+                  <label className=' catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutfour">Snacks <span className='text-[#808080] font-poppins font-medium text-[16px]'> (47)</span> </label>
+                </div>
+                <div className='mt-[20px] '>
+                  <input className=' catagory-input cursor-pointer hidden' id='checkoutfive' type="checkbox" />
+                  <label className=' catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutfive">Beverages <span className='text-[#808080] font-poppins font-medium text-[16px]'> (43)</span> </label>
+                </div>
+                <div className='mt-[20px] '>
+                  <input className=' catagory-input cursor-pointer hidden' id='checkoutsix' type="checkbox" />
+                  <label className='catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutsix">Beauty & Health <span className='text-[#808080] font-poppins font-medium text-[16px]'> (38)</span> </label>
+                </div>
+                <div className='mt-[20px] '>
+                  <input className='catagory-input cursor-pointer hidden' id='checkoutseven' type="checkbox" />
+                  <label className='catagory-label cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutseven">Bread & Bakery <span className='text-[#808080] font-poppins font-medium text-[16px]'> (15)</span> </label>
+                </div>
+
+
+
+              </>
+
             }
 
-            <button
-        onClick={() => {
-          if (currentPages < 3) {
-            setCurrent(currentPages + 1)
-          }
-        }}
-      >
-        <FaRegArrowAltCircleRight className='text-[26px] ' />
-      </button>
-            </ul>
-           </div>
+            <div className='border-b border-solid border-[#CCCCCC] w-[300px] my-[30px]'></div>
+
+
+
+
+            {/* Rating */}
+
+            <h2 onClick={() => setShowRating(!showRating)} className='flex items-center gap-[167px] font-poppins font-medium text-[25px] text-[#1A1A1A]'>Rating <FaAngleDown
+              className={`duration-300 ml-1 ${showRating ? "rotate-180" : "rotate-0"} cursor-pointer`}
+            />
+            </h2>
+
+            {
+              showRating && (
+                <div className='mt-[20px]'>
+
+                  {/* 5 Star */}
+                  <div className='mb-[15px]'>
+                    <input className='ratting-input cursor-pointer hidden' id='rating5' type='checkbox' />
+
+                    <label className='ratting-label cursor-pointer flex items-center gap-[5px]' htmlFor='rating5' >
+                      {rattin(5).map((star, index) => (
+                        star === "color" ? (
+                          <IoIosStar
+                            key={index}
+                            className='text-[#FF8A00] text-[24px]' />
+                        ) : (
+                          <IoIosStar
+                            key={index}
+                            className='text-gray-300 text-[20px]'
+                          />
+                        )
+                      ))}
+
+                      <span className='text-[#1A1A1A] font-poppins font-medium text-[19px] ml-[5px]'> 5.0</span>
+
+                    </label>
+                  </div>
+
+
+                  {/* 4 Star */}
+                  <div className='mb-[15px]'>
+                    <input
+                      className='ratting-input cursor-pointer hidden'
+                      id='rating4'
+                      type='checkbox'
+                    />
+
+                    <label
+                      className='ratting-label cursor-pointer flex items-center gap-[5px]'
+                      htmlFor='rating4'
+                    >
+                      {rattin(4).map((star, index) => (
+                        star === "color" ? (
+                          <IoIosStar
+                            key={index}
+                            className='text-[#FF8A00] text-[24px]'
+                          />
+                        ) : (
+                          <IoIosStar
+                            key={index}
+                            className='text-gray-300 text-[24px]'
+                          />
+                        )
+                      ))}
+
+                      <span className='font-poppins font-medium text-[19px] text-[#1A1A1A] ml-[5px]'>
+                        4.0
+                      </span>
+                    </label>
+                  </div>
+
+
+                  {/* 3 Star */}
+                  <div className='mb-[15px]'>
+                    <input
+                      className='ratting-input cursor-pointer hidden'
+                      id='rating3'
+                      type='checkbox'
+                    />
+
+                    <label
+                      className='ratting-label cursor-pointer flex items-center gap-[5px]'
+                      htmlFor='rating3'
+                    >
+                      {rattin(3).map((star, index) => (
+                        star === "color" ? (
+                          <IoIosStar
+                            key={index}
+                            className='text-[#FF8A00] text-[24px]'
+                          />
+                        ) : (
+                          <IoIosStar
+                            key={index}
+                            className='text-gray-300 text-[24px]'
+                          />
+                        )
+                      ))}
+
+                      <span className='font-poppins font-medium text-[19px] text-[#1A1A1A] ml-[5px]'>
+                        3.0
+                      </span>
+                    </label>
+                  </div>
+
+
+                  {/* 2 Star */}
+                  <div className='mb-[15px]'>
+                    <input
+                      className='ratting-input cursor-pointer hidden'
+                      id='rating2'
+                      type='checkbox'
+                    />
+
+                    <label
+                      className='ratting-label cursor-pointer flex items-center gap-[5px]'
+                      htmlFor='rating2'
+                    >
+                      {rattin(2).map((star, index) => (
+                        star === "color" ? (
+                          <IoIosStar
+                            key={index}
+                            className='text-[#FF8A00] text-[24px]'
+                          />
+                        ) : (
+                          <IoIosStar
+                            key={index}
+                            className='text-gray-300 text-[24px]'
+                          />
+                        )
+                      ))}
+
+                      <span className='font-poppins font-medium text-[19px] text-[#1A1A1A] ml-[5px]'>
+                        2.0
+                      </span>
+                    </label>
+                  </div>
+
+
+                  {/* 1 Star */}
+                  <div className='mb-[15px]'>
+                    <input
+                      className='ratting-input cursor-pointer hidden'
+                      id='rating1'
+                      type='checkbox'
+                    />
+
+                    <label
+                      className='ratting-label cursor-pointer flex items-center gap-[5px]'
+                      htmlFor='rating1'
+                    >
+                      {rattin(1).map((star, index) => (
+                        star === "color" ? (
+                          <IoIosStar
+                            key={index}
+                            className='text-[#FF8A00] text-[24px]'
+                          />
+                        ) : (
+                          <IoIosStar
+                            key={index}
+                            className='text-gray-300 text-[24px]'
+                          />
+                        )
+                      ))}
+
+                      <span className='font-poppins font-medium text-[19px] text-[#1A1A1A] ml-[5px]'>
+                        1.0
+                      </span>
+                    </label>
+                  </div>
+
+                </div>
+              )
+            }
+
+            <div className='border-b border-solid border-[#CCCCCC] w-[300px] my-[30px]'></div>
+
+
+
+            {/* popular tag */}
+
+            <h2 onClick={() => setShowPopular(!showPopular)} className='flex items-center gap-[106px] font-poppins font-medium text-[25px] text-[#1A1A1A]  '>Popular Tag <FaAngleDown className={`duration-300 ml-1 ${showPopular ? "rotate-180" : "rotate-0"} cursor-pointer`} /></h2>
+
+            {
+              showPopular &&
+              <>
+                <div className='flex flex-wrap gap-[10px]'>
+
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Healthy</label>
+                  </div>
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Low fat</label>
+                  </div>
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Vegetarian</label>
+                  </div>
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Kid foods</label>
+                  </div>
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Vitamins</label>
+                  </div>
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Bread</label>
+                  </div>
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Meat</label>
+                  </div>
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Snacks</label>
+                  </div>
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Tiffin</label>
+                  </div>
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Launch</label>
+                  </div>
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Dinner</label>
+                  </div>
+                  <div className='mt-[20px]'>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Breackfast</label>
+                  </div>
+                  <div className='mt-[20px] '>
+                    <input className=' popularinput cursor-pointer hidden' id='checkoutpopular' type="checkbox" />
+                    <label className='popularlabel cursor-pointer  font-poppins font-medium text-[16px]' htmlFor="checkoutpopular">Fruit</label>
+
+                  </div>
+
+                  <img className='mt-[30px]' src={disspic} alt="" />
+
+                  <h2 className='font-medium font-poppins text-[26px] '>Sale Products</h2>
+                  <div className='my-[20px] '>
+                    <img className='hover:border border-[#00B207]' src={product} alt="" />
+                    <img className='hover:border border-[#00B207]' src={productone} alt="" />
+                    <img className='hover:border border-[#00B207]' src={producttow} alt="" />
+                  </div>
+
+                </div>
+
+              </>
+
+            }
+
+            <div className='border-b border-solid border-[#CCCCCC] w-[300px] my-[30px]'></div>
+
+
+
+          </div>
+
+          <div className='max-w-[984px] mb-[20px] '>
+            <ProduactShowcas type='product' allData={showPro} columns={3} showTitle={false} />
+            <div>
+              <ul className='flex gap-[20px]  justify-center'>
+
+                <button
+                  onClick={() => {
+                    if (currentPages > 1) {
+                      setCurrent(currentPages - 1)
+                    }
+                  }}
+                >
+                  <FaRegArrowAltCircleLeft className='text-[26px] ' />
+                </button>
+
+                {
+                  arry.map((item, index) => (
+                    <li onClick={() => setCurrent(index + 1)} className={`w-[30px] h-[30px] hover:bg-[#fa2003] rounded-[30px] cursor-pointer hover: bg-[#bdb8b8] flex items-center justify-center ${currentPages === index + 1 ? "bg-red-500 " : "bg-[#bdb8b8]"}`}>{index + 1}</li>
+                  ))
+                }
+
+
+                <button
+                  onClick={() => {
+                    if (currentPages < pagination) {
+                      setCurrent(currentPages + 1)
+                    }
+                  }}
+                >
+                  <FaRegArrowAltCircleRight className='text-[26px] ' />
+                </button>
+
+              </ul>
+            </div>
+          </div>
+
         </div>
-        
-         </div>
-       
 
 
-        
-       
+
+
+
 
 
         {/* <Accordian title="tis is mai title" icon={<FaAngleDown/>} border={true} bg={true}>
@@ -516,7 +490,7 @@ let showPro = allpro.slice((currentPages - 1) * perpage, currentPages * perpage)
     </div>
   </Accordian> */}
 
-  
+
 
       </Container>
 
