@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import productSmall1 from '../assets/Productsixe-small(1).png';
 
 import Container from "../Components/Layuots/Container";
 
@@ -37,7 +38,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-[125px] object-cover cursor-pointer"
-                src="https://swiperjs.com/demos/images/abstract-1.jpg"
+                src={productSmall1}
                 alt=""
               />
             </SwiperSlide>
