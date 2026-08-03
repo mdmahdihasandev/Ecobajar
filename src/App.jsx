@@ -8,6 +8,7 @@ import Forget from './Pages/Forget';
 import Reset from './Pages/Reset'
 import Category from './Pages/Category';
 import Shop from './Pages/Shop';
+import Details from './Pages/Details';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/reset-password" element={<Reset/>} />
         <Route path="/category" element={<Category/>} />
         <Route path="/shop" element={<Shop/>} />
+        <Route path="/details" element={<Details/>} />
       </Route>
     </Routes>
 
