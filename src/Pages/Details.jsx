@@ -2,7 +2,10 @@ import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import productSmall1 from '../assets/Productsixe-small(1).png';
+import productSmall1 from '../assets/Productsixe-small1.png'
+import productSmall2 from '../assets/Productsixe-small2.png'
+import productSmall3 from '../assets/Productsixe-small3.png'
+import productSmall4 from '../assets/Productsixe-small4.png'
 
 import Container from "../Components/Layuots/Container";
 
@@ -16,11 +19,11 @@ export default function Details() {
 
   return (
     <Container>
-      <div className="flex gap-[10px]">
+      <div className="flex gap-[10px] my-[35px]">
 
         {/* ================= LEFT SWIPER ================= */}
 
-        <div className="w-[90px] h-[550px] mt-[10px]">
+        <div className="w-[90px] h-[550px] mt-[40px] ">
 
           <Swiper
             onSwiper={setThumbsSwiper}
@@ -32,12 +35,12 @@ export default function Details() {
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="mySwiper h-[550px]"
+            className="mySwiper h-[500px]"
           >
 
             <SwiperSlide>
               <img
-                className="w-full h-[125px] object-cover cursor-pointer"
+                className="w-full h-[100px] object-cover cursor-pointer"
                 src={productSmall1}
                 alt=""
               />
@@ -45,72 +48,72 @@ export default function Details() {
 
             <SwiperSlide>
               <img
-                className="w-full h-[125px] object-cover cursor-pointer"
-                src="https://swiperjs.com/demos/images/abstract-2.jpg"
+                className="w-full h-[100px] object-cover cursor-pointer"
+                src={productSmall2}
                 alt=""
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <img
-                className="w-full h-[125px] object-cover cursor-pointer"
-                src="https://swiperjs.com/demos/images/abstract-3.jpg"
+                className="w-full h-[100px] object-cover cursor-pointer"
+                src={productSmall3}
                 alt=""
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <img
-                className="w-full h-[125px] object-cover cursor-pointer"
-                src="https://swiperjs.com/demos/images/abstract-4.jpg"
+                className="w-full h-[100px] object-cover cursor-pointer"
+                src={productSmall4}
                 alt=""
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <img
-                className="w-full h-[125px] object-cover cursor-pointer"
-                src="https://swiperjs.com/demos/images/abstract-5.jpg"
+                className="w-full h-[100px] object-cover cursor-pointer"
+                src={productSmall1}
                 alt=""
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <img
-                className="w-full h-[125px] object-cover cursor-pointer"
-                src="https://swiperjs.com/demos/images/abstract-6.jpg"
+                className="w-full h-[100px] object-cover cursor-pointer"
+                src={productSmall2}
                 alt=""
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <img
-                className="w-full h-[125px] object-cover cursor-pointer"
-                src="https://swiperjs.com/demos/images/abstract-7.jpg"
+                className="w-full h-[100px] object-cover cursor-pointer"
+                src={productSmall3}
                 alt=""
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <img
-                className="w-full h-[125px] object-cover cursor-pointer"
-                src="https://swiperjs.com/demos/images/abstract-8.jpg"
+                className="w-full h-[100px] object-cover cursor-pointer"
+                src={productSmall4}
                 alt=""
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <img
-                className="w-full h-[125px] object-cover cursor-pointer"
-                src="https://swiperjs.com/demos/images/abstract-9.jpg"
+                className="w-full h-[100px] object-cover cursor-pointer"
+                src={productSmall2}
                 alt=""
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <img
-                className="w-full h-[125px] object-cover cursor-pointer"
-                src="https://swiperjs.com/demos/images/abstract-10.jpg"
+                className="w-full h-[100px] object-cover cursor-pointer"
+                src={productSmall3}
                 alt=""
               />
             </SwiperSlide>
@@ -122,7 +125,7 @@ export default function Details() {
 
         {/* ================= RIGHT BIG SWIPER ================= */}
 
-        <div className="w-[550px] h-[550px]">
+        <div className="w-[550px] h-[550px] ">
 
           <Swiper
             loop={true}
@@ -139,8 +142,8 @@ export default function Details() {
 
             <SwiperSlide>
               <img
-                className="w-full h-full object-cover"
-                src="https://swiperjs.com/demos/images/abstract-1.jpg"
+                className="w-full h-full object-cover "
+                src={productSmall1}
                 alt=""
               />
             </SwiperSlide>
@@ -148,7 +151,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src="https://swiperjs.com/demos/images/abstract-2.jpg"
+                src={productSmall2}
                 alt=""
               />
             </SwiperSlide>
@@ -156,7 +159,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src="https://swiperjs.com/demos/images/abstract-3.jpg"
+                src={productSmall3}
                 alt=""
               />
             </SwiperSlide>
@@ -164,7 +167,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src="https://swiperjs.com/demos/images/abstract-4.jpg"
+                src={productSmall4}
                 alt=""
               />
             </SwiperSlide>
@@ -172,7 +175,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src="https://swiperjs.com/demos/images/abstract-5.jpg"
+                src={productSmall1}
                 alt=""
               />
             </SwiperSlide>
@@ -180,7 +183,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src="https://swiperjs.com/demos/images/abstract-6.jpg"
+                src={productSmall2}
                 alt=""
               />
             </SwiperSlide>
@@ -188,7 +191,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src="https://swiperjs.com/demos/images/abstract-7.jpg"
+                src={productSmall3}
                 alt=""
               />
             </SwiperSlide>
@@ -196,7 +199,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src="https://swiperjs.com/demos/images/abstract-8.jpg"
+                src={productSmall4}
                 alt=""
               />
             </SwiperSlide>
@@ -204,7 +207,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src="https://swiperjs.com/demos/images/abstract-9.jpg"
+                src={productSmall2}
                 alt=""
               />
             </SwiperSlide>
@@ -212,7 +215,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src="https://swiperjs.com/demos/images/abstract-10.jpg"
+                src={productSmall3}
                 alt=""
               />
             </SwiperSlide>
