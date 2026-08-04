@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-
+import InnerImageZoom from 'react-inner-image-zoom'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import productSmall1 from '../assets/Productsixe-small1.png'
 import productSmall2 from '../assets/Productsixe-small2.png'
 import productSmall3 from '../assets/Productsixe-small3.png'
 import productSmall4 from '../assets/Productsixe-small4.png'
+import productbigg from '../assets/Productsixebig.png'
 
 import Container from "../Components/Layuots/Container";
 
@@ -141,9 +142,19 @@ export default function Details() {
           >
 
             <SwiperSlide>
-              <img
+              {/* <img
                 className="w-full h-full object-cover "
-                src={productSmall1}
+                src={productbigg}
+                alt=""
+                
+              /> */}
+              <InnerImageZoom src={productbigg} zoomSrc={productbigg} />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <img
+                className="w-full h-full object-cover"
+                src={productbigg}
                 alt=""
               />
             </SwiperSlide>
@@ -151,7 +162,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src={productSmall2}
+                src={productbigg}
                 alt=""
               />
             </SwiperSlide>
@@ -159,7 +170,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src={productSmall3}
+                src={productbigg}
                 alt=""
               />
             </SwiperSlide>
@@ -167,7 +178,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src={productSmall4}
+                src={productbigg}
                 alt=""
               />
             </SwiperSlide>
@@ -175,7 +186,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src={productSmall1}
+                src={productbigg}
                 alt=""
               />
             </SwiperSlide>
@@ -183,7 +194,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src={productSmall2}
+                src={productbigg}
                 alt=""
               />
             </SwiperSlide>
@@ -191,7 +202,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src={productSmall3}
+                src={productbigg}
                 alt=""
               />
             </SwiperSlide>
@@ -199,15 +210,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-full object-cover"
-                src={productSmall4}
-                alt=""
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <img
-                className="w-full h-full object-cover"
-                src={productSmall2}
+                src={productbigg}
                 alt=""
               />
             </SwiperSlide>
