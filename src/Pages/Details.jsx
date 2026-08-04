@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import InnerImageZoom from 'react-inner-image-zoom'
+import { FaArrowDown } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FaArrowUp } from "react-icons/fa";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import productSmall1 from '../assets/Productsixe-small1.png'
-import productSmall2 from '../assets/Productsixe-small2.png'
+ 
 import productSmall3 from '../assets/Productsixe-small3.png'
 import productSmall4 from '../assets/Productsixe-small4.png'
 import productbigg from '../assets/Productsixebig.png'
@@ -20,11 +22,15 @@ export default function Details() {
 
   return (
     <Container>
-      <div className="flex gap-[10px] my-[35px]">
+      <div className="flex gap-[10px] my-[35px] relative">
 
         {/* ================= LEFT SWIPER ================= */}
 
+
+
         <div className="w-[90px] h-[550px] mt-[40px] ">
+
+
 
           <Swiper
             onSwiper={setThumbsSwiper}
@@ -32,7 +38,11 @@ export default function Details() {
             loop={true}
             spaceBetween={10}
             slidesPerView={4}
-            navigation={true}
+            // navigation={true}
+            navigation={{
+              nextEl: '.custom-nextf',
+              prevEl: '.custom-prevf',
+            }}
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
@@ -50,7 +60,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-[100px] object-cover cursor-pointer"
-                src={productSmall2}
+                src={productSmall1}
                 alt=""
               />
             </SwiperSlide>
@@ -82,7 +92,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-[100px] object-cover cursor-pointer"
-                src={productSmall2}
+                src={productSmall3}
                 alt=""
               />
             </SwiperSlide>
@@ -106,7 +116,7 @@ export default function Details() {
             <SwiperSlide>
               <img
                 className="w-full h-[100px] object-cover cursor-pointer"
-                src={productSmall2}
+                src={productSmall4}
                 alt=""
               />
             </SwiperSlide>
@@ -121,7 +131,16 @@ export default function Details() {
 
           </Swiper>
 
+
+         <div className="custom-nextf cursor-pointer absolute  top-[-10px] left-[30px] ">
+            <FaArrowUp className="text-[25px]" />
+         </div>
+         <div className="custom-prevf cursor-pointer absolute   left-[30px] ">
+            <FaArrowDown className="text-[25px]" />
+         </div>
+
         </div>
+
 
 
         {/* ================= RIGHT BIG SWIPER ================= */}
@@ -142,13 +161,13 @@ export default function Details() {
           >
 
             <SwiperSlide>
-              {/* <img
+              <img
                 className="w-full h-full object-cover "
                 src={productbigg}
                 alt=""
-                
-              /> */}
-              <InnerImageZoom src={productbigg} zoomSrc={productbigg} />
+
+              />
+
             </SwiperSlide>
 
             <SwiperSlide>
