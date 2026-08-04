@@ -28,7 +28,7 @@ export default function Details() {
 
 
 
-        <div className="w-[90px] h-[550px] mt-[40px] ">
+        <div className="w-[90px] h-[550px]   sm:h-[200px]  md:h-[300px]  lg:h-[550px] mt-[40px]">
 
 
 
@@ -37,7 +37,12 @@ export default function Details() {
             direction="vertical"
             loop={true}
             spaceBetween={10}
-            slidesPerView={4}
+            slidesPerView={2}
+              breakpoints={{
+            640: {
+                slidesPerView: 4,
+            },
+        }}
             // navigation={true}
             navigation={{
               nextEl: '.custom-nextf',
@@ -145,7 +150,7 @@ export default function Details() {
 
         {/* ================= RIGHT BIG SWIPER ================= */}
 
-        <div className="w-[550px] h-[550px] ">
+        <div className="w-[230px] h-[230px]    sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] lg:w-[550px] lg:h-[550px] ">
 
           <Swiper
             loop={true}

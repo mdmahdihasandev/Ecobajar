@@ -1,8 +1,13 @@
 import React from 'react'
+import Container from '../Components/Layuots/Container'
 
 const About = () => {
   return (
-    <div>About</div>
+    <>
+    <Container>
+      <div>sgsr</div>
+    </Container>
+    </>
   )
 }
 

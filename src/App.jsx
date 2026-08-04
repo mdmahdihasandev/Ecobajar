@@ -9,6 +9,7 @@ import Reset from './Pages/Reset'
 import Category from './Pages/Category';
 import Shop from './Pages/Shop';
 import Details from './Pages/Details';
+import About  from './Pages/About';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/category" element={<Category/>} />
         <Route path="/shop" element={<Shop/>} />
         <Route path="/details" element={<Details/>} />
+        <Route path="/about" element={<About/>} />
       </Route>
     </Routes>
 
