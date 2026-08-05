@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 import ReactImageZoom from "react-image-zoom";
+import { GoHeart } from "react-icons/go";
 import { FaInstagram } from "react-icons/fa";
+import { FaBagShopping } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { FaGoogleDrive } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
@@ -35,7 +37,9 @@ export default function Details() {
   let [count,setCount] = useState(1)
 
  let handleClickPlus = ()=> {
-     if(count < 10)
+     if(count < 50){
+      setCount(count+1)
+     }
  }
  let handleClickMinus = ()=> {
    if(count > 1){
@@ -353,7 +357,7 @@ export default function Details() {
                     <div className="border border-b-[#ffffff]"></div>
 
 
-                  <div className="flex justify-between">
+                  <div className="flex justify-between my-[20px] items-center ">
                     <div className="flex gap-[20px] border border-[#c7c4c4] p-[5px] rounded-[50px] items-center ">
                     <div onClick={()=> handleClickMinus()} className="w-[35px] h-[35px] cursor-pointer bg-[#F2F2F2] flex justify-center items-center rounded-[35px]">
                         <button  className="text-[25px] cursor-pointer">-</button>
@@ -363,10 +367,25 @@ export default function Details() {
                         <button  className="text-[25px] cursor-pointer">+</button>
                     </div>
                     </div>
-                    <div>adsf</div>
-                    <div>adsf</div>
+                    <div className="cursor-pointer ">
+                      <h3 className="flex items-center hover:bg-[blue] gap-[17px] font-poppins font-semibold text-[20px] py-[14px] px-[140px] rounded-[45px] bg-[#00B207] text-[white]">Add to Cart <FaBagShopping /></h3>
+                    </div>
+                    <div className="w-[50px] h-[50px] bg-[#cee7ce] hover:bg-[#9be69b] rounded-[50px] flex justify-center items-center">
+                      <GoHeart className="text-[23px]"/>
+                    </div>
                   </div>
 
+
+                    <div className="border border-b-[#ffffff]"></div>
+
+
+                    <div className="mt-[25px]">
+                      <p className="font-poppins font-medium text-[16px] text-[#1A1A1A]">Category: <span className="text-[#808080] pl-[5px]">Vegetables</span></p>
+                    </div>
+                    <div className="flex mt-[14px]">
+                      <p className="font-poppins font-medium text-[16px] text-[#1A1A1A]">Tag: <span className="text-[#808080] pl-[5px]">Vegetables  Healthy</span></p>
+                      <p className="font-poppins font-medium text-[16px] pl-[10px] text-[#1A1A1A]">Chinese: <span className="text-[#808080] pl-[5px]">Cabbage  Green Cabbage</span></p>
+                    </div>
 
                 </div>
 
