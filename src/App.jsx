@@ -10,6 +10,7 @@ import Category from './Pages/Category';
 import Shop from './Pages/Shop';
 import Details from './Pages/Details';
 import About  from './Pages/About';
+import Card from './Pages/Card';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/shop" element={<Shop/>} />
         <Route path="/details" element={<Details/>} />
         <Route path="/about" element={<About/>} />
+        <Route path="/card" element={<Card/>} />
       </Route>
     </Routes>
 

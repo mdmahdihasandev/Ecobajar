@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+
+
+import ReactImageZoom from 'react-image-zoom';
+
 import InnerImageZoom from 'react-inner-image-zoom'
 import { FaArrowDown } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,7 +22,10 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 export default function Details() {
+  const props = {width: 400, height: 250, zoomWidth: 500, img: productSmall1};
+
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
 
   return (
     <Container>
@@ -53,13 +60,17 @@ export default function Details() {
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper h-[500px]"
           >
+            
 
             <SwiperSlide>
+              
               <img
+              
                 className="w-full h-[100px] object-cover cursor-pointer"
                 src={productSmall1}
                 alt=""
               />
+            
             </SwiperSlide>
 
             <SwiperSlide>
@@ -166,12 +177,14 @@ export default function Details() {
           >
 
             <SwiperSlide>
-              <img
+              {/* <img
                 className="w-full h-full object-cover "
                 src={productbigg}
                 alt=""
 
-              />
+              /> */}
+
+                <ReactImageZoom className="bg-red-500 w-[500px] h-[300px]" {...props}  />
 
             </SwiperSlide>
 
