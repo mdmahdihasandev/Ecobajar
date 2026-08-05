@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 import ReactImageZoom from "react-image-zoom";
-
-
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaGoogleDrive } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowUp } from "react-icons/fa";
+import detailspic from '../assets/details-pic.webp'
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import productSmall1 from '../assets/Productsixe-small1.png'
 import Bannerlogo from '../../src/assets/bannerpic.webp'
@@ -20,6 +23,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import { Link } from "react-router";
 
 export default function Details() {
   const props = {
@@ -27,6 +31,19 @@ export default function Details() {
   zoomWidth: 600,
   img: Bannerlogo,
 };
+
+  let [count,setCount] = useState(1)
+
+ let handleClickPlus = ()=> {
+     if(count < 10)
+ }
+ let handleClickMinus = ()=> {
+   if(count > 1){
+     
+     setCount(count-1)
+
+      }
+ }
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -304,10 +321,53 @@ export default function Details() {
                  <div className="border border-b-[#E5E5E5]"></div>
 
                  <div className="flex justify-between">
-                  <h1>Brand:</h1>
-                  <p>sadfgsdg</p>
+                 <div className="flex items-center ">
+                   <h1 className="font-poppins font-medium text-[15px]  ">Brand:</h1>
+                  <img src={detailspic} alt="" />
+                 </div>
+
+                 <div className="flex items-center">
+                   <p className="font-poppins font-medium text-[14px] pr-[10px]">Share item:</p>
+                  <div className="w-[40px] h-[40px]  gap-[20px] hover:bg-[#00B207] hover:text-[white] rounded-[30px] flex justify-center items-center ">
+                     <Link><FaFacebookF className="text-[18px]" /></Link>
+                  </div>
+                  <div className="w-[40px] h-[40px]  gap-[20px] hover:bg-[#00B207] hover:text-[white] rounded-[30px] flex justify-center items-center ">
+                     <Link><FaTwitter className="text-[18px]" /></Link>
+                  </div>
+                  <div className="w-[40px] h-[40px]  gap-[20px] hover:bg-[#00B207] hover:text-[white] rounded-[30px] flex justify-center items-center ">
+                     <Link><FaGoogleDrive className="text-[18px]" /></Link>
+                  </div>
+                  <div className="w-[40px] h-[40px]  gap-[20px] hover:bg-[#00B207] hover:text-[white] rounded-[30px] flex justify-center items-center ">
+                     <Link><FaInstagram className="text-[18px]" /></Link>
+                  </div>
+                
+                 </div>
                  </div>
               
+
+                <div className="w-[540px] mt-[17px] mb-[25px]">
+                  <p className="font-poppins font-medium text-[14px] text-[#808080]">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. </p>
+                </div>
+
+
+                    <div className="border border-b-[#ffffff]"></div>
+
+
+                  <div className="flex justify-between">
+                    <div className="flex gap-[20px] border border-[#c7c4c4] p-[5px] rounded-[50px] items-center ">
+                    <div onClick={()=> handleClickMinus()} className="w-[35px] h-[35px] cursor-pointer bg-[#F2F2F2] flex justify-center items-center rounded-[35px]">
+                        <button  className="text-[25px] cursor-pointer">-</button>
+                    </div>
+                      <h2>{count}</h2>
+                      <div onClick={()=> handleClickPlus()} className="w-[35px] h-[35px] bg-[#F2F2F2] cursor-pointer  flex justify-center items-center rounded-[35px]">
+                        <button  className="text-[25px] cursor-pointer">+</button>
+                    </div>
+                    </div>
+                    <div>adsf</div>
+                    <div>adsf</div>
+                  </div>
+
+
                 </div>
 
 
