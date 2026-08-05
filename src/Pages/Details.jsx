@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 
-import ReactImageZoom from 'react-image-zoom';
+import ReactImageZoom from "react-image-zoom";
 
-import InnerImageZoom from 'react-inner-image-zoom'
+
 import { FaArrowDown } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowUp } from "react-icons/fa";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import productSmall1 from '../assets/Productsixe-small1.png'
- 
+import Bannerlogo from '../../src/assets/bannerpic.webp'
 import productSmall3 from '../assets/Productsixe-small3.png'
 import productSmall4 from '../assets/Productsixe-small4.png'
 import productbigg from '../assets/Productsixebig.png'
@@ -22,14 +22,18 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 export default function Details() {
-  const props = {width: 400, height: 250, zoomWidth: 500, img: productSmall1};
+  const props = {
+ 
+  zoomWidth: 600,
+  img: Bannerlogo,
+};
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
 
   return (
     <Container>
-      <div className="flex gap-[10px] my-[35px] relative">
+      <div className="flex gap-[10px] my-[35px] relative ">
 
         {/* ================= LEFT SWIPER ================= */}
 
@@ -177,23 +181,25 @@ export default function Details() {
           >
 
             <SwiperSlide>
-              {/* <img
+              <img
                 className="w-full h-full object-cover "
                 src={productbigg}
                 alt=""
 
-              /> */}
+              />
 
-                <ReactImageZoom className="bg-red-500 w-[500px] h-[300px]" {...props}  />
+               
 
             </SwiperSlide>
 
             <SwiperSlide>
-              <img
+              {/* <img
                 className="w-full h-full object-cover"
                 src={productbigg}
                 alt=""
-              />
+                
+              /> */}
+              <ReactImageZoom  {...props} />
             </SwiperSlide>
 
             <SwiperSlide>

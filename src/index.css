@@ -365,3 +365,20 @@ input:checked + label.ratting-label::before {
   position: absolute;
 } */
 
+
+
+/* .js-image-zoom__zoomed-area{
+  width: 150px !important;
+  height: 150px !important;
+} */
+
+.js-image-zoom__zoomed-image {
+   position:  static !important;
+   
+   /* position:  static !important; */
+   transform:  translateX(0) !important;
+}
+
+/* .swiper-backface-hidden- .swiper-slide {
+  background:  transparent !important;
+} */
