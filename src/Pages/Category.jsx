@@ -8,8 +8,10 @@ const Category = () => {
 
   useEffect(()=> {
    async function allProduct(){
-    let product = await axios.get('https://dummyjson.com/products/categories')
-    setAllpro(product.data);
+    let product = await axios.get('https://dummyjson.com/products')
+    setAllpro(product.data.products);
+    
+    
     
    }  
    allProduct()
@@ -18,8 +20,9 @@ const Category = () => {
   return (
     <div>
         <>
-       <ProduactShowcas allpro={allpro} showViewAll={false} />
-       <ProduactShowcas allcate={allpro} showViewAll={false} />
+      <ProduactShowcas allData={allpro} showViewAll={false} type="product"
+/>
+       <ProduactShowcas allData={allpro} showViewAll={false} type="Featured"/>
         </>
     </div>
   )
