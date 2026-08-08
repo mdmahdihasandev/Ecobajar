@@ -52,6 +52,12 @@ export default function Details() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
 
+
+
+  const [activeTab, setActiveTab] = useState("Additional Information");
+
+
+
   return (
     <Container>
       <div className="flex gap-[24px] my-[35px] relative ">
@@ -391,6 +397,136 @@ export default function Details() {
 
 
       </div>
+
+
+
+
+
+
+
+
+{/* akhan theke nicher ta suru */}
+
+                   <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-8 font-sans">
+      {/* Tabs */}
+      <div className="flex flex-wrap justify-center gap-6 sm:gap-10 border-b border-gray-200">
+        {TABS.map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`pb-3 text-sm sm:text-base font-medium whitespace-nowrap transition-colors border-b-2 -mb-px ${
+              activeTab === tab
+                ? "text-gray-900 border-green-600"
+                : "text-gray-400 border-transparent hover:text-gray-600"
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+ 
+      {/* Content */}
+      {activeTab === "Additional Information" && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-8 items-start justify-items-stretch w-full">
+          {/* Left: details list */}
+          <div className="space-y-3 w-full">
+            {DETAILS.map((item) => (
+              <div key={item.label} className="flex text-sm sm:text-base">
+                <span className="w-32 sm:w-36 shrink-0 font-medium text-gray-900">
+                  {item.label}:
+                </span>
+                <span className="text-gray-500">{item.value}</span>
+              </div>
+            ))}
+ 
+            <div className="flex flex-wrap text-sm sm:text-base">
+              <span className="w-32 sm:w-36 shrink-0 font-medium text-gray-900">
+                Tags:
+              </span>
+              <span className="flex flex-wrap gap-x-1 text-gray-500">
+                {TAGS.map((tag, i) => (
+                  <span key={tag.name}>
+                    <span
+                      className={
+                        tag.active
+                          ? "text-gray-900 underline underline-offset-2"
+                          : "text-gray-500"
+                      }
+                    >
+                      {tag.name}
+                    </span>
+                    {i < TAGS.length - 1 && ","}
+                    {i < TAGS.length - 1 && " "}
+                  </span>
+                ))}
+              </span>
+            </div>
+          </div>
+ 
+          {/* Right: video + badges */}
+          <div className="w-full lg:justify-self-end lg:max-w-md">
+            <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-gray-100">
+              <img
+                src="https://images.unsplash.com/photo-1607349913338-fca6f7fc42d0?w=800&auto=format&fit=crop"
+                alt="Delivery person with fresh vegetables"
+                className="w-full h-full object-cover"
+              />
+              <button
+                aria-label="Play video"
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                <span className="flex items-center justify-center w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 transition-colors shadow-lg">
+                  <Play className="w-6 h-6 text-white fill-white ml-1" />
+                </span>
+              </button>
+            </div>
+ 
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+              <div className="flex items-start gap-3 border border-gray-200 rounded-lg p-4">
+                <Percent className="w-6 h-6 text-green-600 shrink-0" />
+                <div>
+                  <p className="font-medium text-gray-900 text-sm sm:text-base">
+                    64% Discount
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+                    Save your 64% money with us
+                  </p>
+                </div>
+              </div>
+ 
+              <div className="flex items-start gap-3 border border-gray-200 rounded-lg p-4">
+                <Leaf className="w-6 h-6 text-green-600 shrink-0" />
+                <div>
+                  <p className="font-medium text-gray-900 text-sm sm:text-base">
+                    100% Organic
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+                    100% Organic Vegetables
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+ 
+      {activeTab === "Descriptions" && (
+        <div className="mt-8 text-gray-500 text-sm sm:text-base">
+          Product description content goes here.
+        </div>
+      )}
+ 
+      {activeTab === "Customer Feedback" && (
+        <div className="mt-8 text-gray-500 text-sm sm:text-base">
+          Customer feedback content goes here.
+        </div>
+      )}
+    </div>
+
+
+
+
+
     </Container>
   );
 }

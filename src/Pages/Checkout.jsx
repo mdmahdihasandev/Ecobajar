@@ -218,10 +218,18 @@ const Checkout = () => {
           </h2>
  
           {[
-            { id: "cod", label: "Cash on Delivery" },
-            { id: "paypal", label: "Paypal" },
-            { id: "amazon", label: "Amazon Pay" },
-          ].map((opt) => (
+            { id: "cod",
+              label: "Cash on Delivery" },
+
+            { id: "paypal", 
+              label: "Paypal" },
+
+            { id: "amazon",
+               label: "Amazon Pay" },
+
+          ]
+          
+          .map((opt) => (
             <label
               key={opt.id}
               className="flex items-center gap-2.5 mb-3 text-sm text-gray-800 cursor-pointer"
