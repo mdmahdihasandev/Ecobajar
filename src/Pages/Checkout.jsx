@@ -1,374 +1,260 @@
-import React from "react";
-
-
+import React, { useState } from 'react'
+import Container from '../Components/Layuots/Container'
 
 const Checkout = () => {
+
+  const [payment, setPayment] = useState("cod");
+  const [shipDiff, setShipDiff] = useState(false);
+ 
+  const items = [
+    { name: "Green Capsicum", 
+      qty: 5,
+       price: "$70.00",
+        emoji: "🫑" },
+
+    { name: "Red Capsicum",
+       qty: 1,
+        price: "$14.00",
+         emoji: "🍅" },
+         
+  ];
+
+
   return (
-    <section className="py-16">
-      <div className="max-w-[1320px] mx-auto px-4">
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-
-          {/* ================= Left Side ================= */}
-
-          <div className="lg:col-span-8">
-
-            <h2 className="text-[32px] font-semibold text-[#1A1A1A] mb-8">
-              Billing Information
-            </h2>
-
-            {/* First Row */}
-
-            <div className="grid md:grid-cols-3 gap-5">
-
-              <div>
-                <label className="text-sm text-[#1A1A1A]">
-                  First Name
-                </label>
-
-                <input
-                  type="text"
-                  placeholder="Your first name"
-                  className="w-full h-12 border border-gray-300 rounded-md px-4 mt-2 outline-none focus:border-green-500"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-[#1A1A1A]">
-                  Last Name
-                </label>
-
-                <input
-                  type="text"
-                  placeholder="Your last name"
-                  className="w-full h-12 border border-gray-300 rounded-md px-4 mt-2 outline-none focus:border-green-500"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-[#1A1A1A]">
-                  Company Name
-                  <span className="text-gray-400">
-                    {" "}
-                    (optional)
-                  </span>
-                </label>
-
-                <input
-                  type="text"
-                  placeholder="Company name"
-                  className="w-full h-12 border border-gray-300 rounded-md px-4 mt-2 outline-none focus:border-green-500"
-                />
-              </div>
-
-            </div>
-
-            {/* Street Address */}
-
-            <div className="mt-5">
-
-              <label className="text-sm text-[#1A1A1A]">
-                Street Address
-              </label>
-
-              <input
-                type="text"
-                placeholder="Email"
-                className="w-full h-12 border border-gray-300 rounded-md px-4 mt-2 outline-none focus:border-green-500"
-              />
-
-            </div>
-
-            {/* Country State Zip */}
-
-            <div className="grid md:grid-cols-3 gap-5 mt-5">
-
-              <div>
-
-                <label className="text-sm">
-                  Country / Region
-                </label>
-
-                <select className="w-full h-12 border border-gray-300 rounded-md px-4 mt-2 outline-none">
-
-                  <option>Select</option>
-
-                  <option>Bangladesh</option>
-
-                  <option>India</option>
-
-                  <option>USA</option>
-
-                </select>
-
-              </div>
-
-              <div>
-
-                <label className="text-sm">
-                  States
-                </label>
-
-                <select className="w-full h-12 border border-gray-300 rounded-md px-4 mt-2 outline-none">
-
-                  <option>Selects</option>
-
-                  <option>Dhaka</option>
-
-                  <option>Chittagong</option>
-
-                  <option>Khulna</option>
-
-                </select>
-
-              </div>
-
-              <div>
-
-                <label className="text-sm">
-                  Zip Code
-                </label>
-
-                <input
-                  type="text"
-                  placeholder="Zip Code"
-                  className="w-full h-12 border border-gray-300 rounded-md px-4 mt-2 outline-none focus:border-green-500"
-                />
-
-              </div>
-
-            </div>
-
-            {/* Email Phone */}
-
-            <div className="grid md:grid-cols-2 gap-5 mt-5">
-
-              <div>
-
-                <label className="text-sm">
-                  Email
-                </label>
-
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full h-12 border border-gray-300 rounded-md px-4 mt-2 outline-none focus:border-green-500"
-                />
-
-              </div>
-
-              <div>
-
-                <label className="text-sm">
-                  Phone
-                </label>
-
-                <input
-                  type="text"
-                  placeholder="Phone number"
-                  className="w-full h-12 border border-gray-300 rounded-md px-4 mt-2 outline-none focus:border-green-500"
-                />
-
-              </div>
-
-            </div>
-
-            {/* Checkbox */}
-
-            <div className="flex items-center gap-3 mt-8">
-
-              <input
-                type="checkbox"
-                className="w-5 h-5 accent-green-600"
-              />
-
-              <p className="text-sm">
-                Ship to a different address
-              </p>
-
-            </div>
-
-            <hr className="my-10" />
-
-            {/* Additional Info */}
-
-            <h2 className="text-[30px] font-semibold mb-6">
-              Additional Info
-            </h2>
+    <div>
+      <Container>
+        <div className=" bg-white p-6 md:p-10">
+      <div className=" mx-auto flex flex-row gap-10 items-start">
+        {/* Billing Information */}
+        <div className="flex-1 min-w-0">
+          <h1 className="text-[24px] font-medium font-poppins text-gray-900 mb-6">
+            Billing Information
+          </h1>
+ 
+          <div className="grid grid-cols-3 gap-4 mb-5">
 
             <div>
-
-              <label className="text-sm">
-                Order Notes (Optional)
+              <label className="block text-sm text-gray-600 mb-1.5">
+                First name
               </label>
+              <input type="text"  placeholder="Your first name"  className="w-full px-3 py-2.5 border border-gray-200 rounded-md text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
 
-              <textarea
-                placeholder="Notes about your order, e.g. special notes for delivery"
-                className="w-full h-[180px] border border-gray-300 rounded-lg p-4 mt-2 resize-none outline-none focus:border-green-500"
-              ></textarea>
+            <div>
+              <label className="block text-sm text-gray-600 mb-1.5">
+                Last name
+              </label>
+              <input
+                type="text"
+                placeholder="Your last name"
+                className="w-full px-3 py-2.5 border border-gray-200 rounded-md text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
 
+            <div>
+              <label className="block text-sm text-gray-600 mb-1.5">
+                Company Name{" "}
+                <span className="text-gray-400 font-normal">(optional)</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Company name"
+                className="w-full px-3 py-2.5 border border-gray-200 rounded-md text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
             </div>
 
           </div>
 
-          {/* ================= Right Side ================= */}
 
-          <div className="lg:col-span-4">
+ 
+          <div className="mb-5">
+            <label className="block text-sm text-gray-600 mb-1.5">
+              Street Address
+            </label>
+            <input
+              type="text"
+              placeholder="Email"
+              className="w-full px-3 py-2.5 border border-gray-200 rounded-md text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
+ 
+          <div className="grid grid-cols-3 gap-4 mb-5">
 
-            <div className="border rounded-xl p-6 shadow-sm">
+            <div>
+              <label className="block text-sm text-gray-600 mb-1.5">
+                Country / Region
+              </label>
+              <select className="w-full px-3 py-2.5 border border-gray-200 rounded-md text-sm text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500  bg-white">
+                <option>Select</option>
+                <option>Bangladesh</option>
+                <option>India</option>
+                <option>Pakistan</option>
+                <option>japan</option>
+              </select>
+            </div>
 
-              <h2 className="text-2xl font-semibold mb-6">
-                Order Summary
-              </h2>              {/* Product 1 */}
+            <div>
+              <label className="block text-sm text-gray-600 mb-1.5">
+                States
+              </label>
+              <select className="w-full px-3 py-2.5 border border-gray-200 rounded-md text-sm text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500  bg-white">
+                <option>Selects</option>
+                <option>Dhaka</option>
+                <option>Chattogram</option>
+                <option>Rajshahi</option>
+                <option>Khulna</option>
+                <option>Barishal</option>
+              </select>
+            </div>
 
-              <div className="flex justify-between items-center mb-5">
-
-                <div className="flex items-center gap-3">
-
-                  <img
-                    src={greenCapsicum}
-                    alt="product"
-                    className="w-16 h-16 object-cover"
-                  />
-
-                  <p className="text-sm">
-                    Green Capsicum <span className="font-semibold">x5</span>
-                  </p>
-
-                </div>
-
-                <span className="font-medium">$70.00</span>
-
-              </div>
-
-              {/* Product 2 */}
-
-              <div className="flex justify-between items-center">
-
-                <div className="flex items-center gap-3">
-
-                  <img
-                    src={redCapsicum}
-                    alt="product"
-                    className="w-16 h-16 object-cover"
-                  />
-
-                  <p className="text-sm">
-                    Red Capsicum <span className="font-semibold">x1</span>
-                  </p>
-
-                </div>
-
-                <span className="font-medium">$14.00</span>
-
-              </div>
-
-              <hr className="my-6" />
-
-              {/* Subtotal */}
-
-              <div className="flex justify-between mb-4">
-
-                <p className="text-gray-600">
-                  Subtotal
-                </p>
-
-                <span className="font-semibold">
-                  $84.00
-                </span>
-
-              </div>
-
-              {/* Shipping */}
-
-              <div className="flex justify-between mb-4">
-
-                <p className="text-gray-600">
-                  Shipping
-                </p>
-
-                <span className="font-semibold">
-                  Free
-                </span>
-
-              </div>
-
-              <hr className="my-6" />
-
-              {/* Total */}
-
-              <div className="flex justify-between text-lg font-semibold mb-8">
-
-                <p>Total</p>
-
-                <span>$84.00</span>
-
-              </div>
-
-              {/* Payment Method */}
-
-              <h3 className="text-xl font-semibold mb-5">
-                Payment Method
-              </h3>
-
-              <div className="space-y-4">
-
-                <label className="flex items-center gap-3 cursor-pointer">
-
-                  <input
-                    type="radio"
-                    name="payment"
-                    defaultChecked
-                    className="accent-green-600"
-                  />
-
-                  <span>Cash on Delivery</span>
-
-                </label>
-
-                <label className="flex items-center gap-3 cursor-pointer">
-
-                  <input
-                    type="radio"
-                    name="payment"
-                    className="accent-green-600"
-                  />
-
-                  <span>Paypal</span>
-
-                </label>
-
-                <label className="flex items-center gap-3 cursor-pointer">
-
-                  <input
-                    type="radio"
-                    name="payment"
-                    className="accent-green-600"
-                  />
-
-                  <span>Amazon Pay</span>
-
-                </label>
-
-              </div>
-
-              {/* Button */}
-
-              <button
-                className="w-full h-14 rounded-full bg-green-600 hover:bg-green-700 duration-300 text-white font-semibold mt-8"
-              >
-                Place Order
-              </button>
-
+            <div>
+              <label className="block text-sm text-gray-600 mb-1.5">
+                Zip Code
+              </label>
+              <input
+                type="text"
+                placeholder="Zip Code"
+                className="w-full px-3 py-2.5 border border-gray-200 rounded-md text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
             </div>
 
           </div>
 
+
+ 
+          <div className="grid grid-cols-2 gap-4 mb-5">
+            <div>
+              <label className="block text-sm text-gray-600 mb-1.5">
+                Email
+              </label>
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full px-3 py-2.5 border border-gray-200 rounded-md text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm text-gray-600 mb-1.5">
+                Phone
+              </label>
+              <input
+                type="tel"
+                placeholder="Phone number"
+                className="w-full px-3 py-2.5 border border-gray-200 rounded-md text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
+          </div>
+          
+ 
+          <label className="flex items-center gap-2 mb-6 text-sm text-gray-800 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={shipDiff}
+              onChange={(e) => setShipDiff(e.target.checked)}
+              className="w-4 h-4 accent-green-600"
+            />
+            Ship to a different address
+          </label>
+ 
+          <hr className="border-gray-200 mb-6" />
+
+        
+ 
+          <h2 className="text-lg font-bold text-gray-900 mb-4">
+            Additional Info
+          </h2>
+          <div>
+            <label className="block text-sm text-gray-600 mb-1.5">
+              Order Notes (Optional)
+            </label>
+            <textarea
+              placeholder="Notes about your order, e.g. special notes for delivery"
+              rows={4}
+              className="w-full px-3 py-2.5 border border-gray-200 rounded-md text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 resize-y"
+            />
+          </div>
         </div>
-
+ 
+        {/* Order Summary */}
+        <div className="w-80 flex-shrink-0 border border-gray-200 rounded-xl p-6">
+          <h2 className="text-lg font-bold text-gray-900 mb-5">
+            Order Summary
+          </h2>
+ 
+          {items.map((item, i) => (
+            <div key={i} className="flex items-center gap-3 mb-4">
+              <div className="w-9 h-9 rounded-md bg-gray-50 flex items-center justify-center text-lg flex-shrink-0">
+                {item.emoji}
+              </div>
+              <div className="flex-1 text-sm text-gray-800">
+                {item.name}{" "}
+                <span className="text-gray-400">x{item.qty}</span>
+              </div>
+              <div className="text-sm font-semibold text-gray-900">
+                {item.price}
+              </div>
+            </div>
+          ))}
+ 
+          <hr className="border-gray-200 my-4" />
+ 
+          <div className="flex justify-between text-sm text-gray-600 mb-3">
+            <span>Subtotal:</span>
+            <span>$84.00</span>
+          </div>
+          <div className="flex justify-between text-sm text-gray-600 mb-3">
+            <span>Shipping:</span>
+            <span>Free</span>
+          </div>
+          <div className="flex justify-between text-[15px] font-bold text-gray-900 mt-4">
+            <span>Total:</span>
+            <span>$84.00</span>
+          </div>
+ 
+          <h2 className="text-lg font-bold text-gray-900 mt-6 mb-4">
+            Payment Method
+          </h2>
+ 
+          {[
+            { id: "cod", label: "Cash on Delivery" },
+            { id: "paypal", label: "Paypal" },
+            { id: "amazon", label: "Amazon Pay" },
+          ].map((opt) => (
+            <label
+              key={opt.id}
+              className="flex items-center gap-2.5 mb-3 text-sm text-gray-800 cursor-pointer"
+            >
+              <span
+                className={
+                  "w-[18px] h-[18px] rounded-full border-2 border-green-500 flex items-center justify-center flex-shrink-0"
+                }
+              >
+                {payment === opt.id && (
+                  <span className="w-[9px] h-[9px] rounded-full bg-green-500" />
+                )}
+              </span>
+              <input
+                type="radio"
+                name="payment"
+                className="hidden"
+                checked={payment === opt.id}
+                onChange={() => setPayment(opt.id)}
+              />
+              {opt.label}
+            </label>
+          ))}
+ 
+          <button className="w-full mt-4 py-3.5 bg-green-500 hover:bg-green-600 text-white text-[15px] font-semibold rounded-lg transition-colors">
+            Place Order
+          </button>
+        </div>
       </div>
-    </section>
-  );
-};
+    </div>
+      </Container>
+    </div>
+  )
+}
 
-export default Checkout;
+export default Checkout
