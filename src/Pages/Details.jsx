@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
-
+import { IoMdCheckmarkCircle } from "react-icons/io";
 import ReactImageZoom from "react-image-zoom";
 import { GoHeart } from "react-icons/go";
 import { FaInstagram } from "react-icons/fa";
@@ -51,67 +51,6 @@ export default function Details() {
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-
-  const [activeTab, setActiveTab] = useState(1);
-  const tabs = [
-    {
-      id: 0,
-      title: "Descriptions",
-    },
-    {
-      id: 1,
-      title: "Additional Information",
-    },
-    {
-      id: 2,
-      title: "Customer Feedback",
-    },
-  ];
-
-  const contents = [
-    {
-      leftTitle: "Product Description",
-
-      leftText:
-        "Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.   Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra. ",
-
-
-      rightTitle: "Fresh & Healthy",
-
-
-      rightText:
-        "Our vegetables are selected with care to provide you with fresh, nutritious and high-quality products for your family.",
-
-    },
-
-    {
-      leftTitle: "Additional Information",
-      leftItems: [
-        ["Weight:", "03"],
-        ["Color:", "Green"],
-        ["Type:", "Organic"],
-        ["Category:", "Vegetables"],
-        ["Stock Status:", "Available (5,413)"],
-      ],
-      rightTitle: "Product Details",
-
-      rightText:
-        "This product is organically grown and carefully selected. It is suitable for healthy meals and everyday cooking.",
-    },
-
-    {
-      leftTitle: "Customer Feedback",
-
-      leftText:
-        "Our customers love the freshness and quality of this product. Your feedback helps us improve our products and services.",
-
-      rightTitle: "What Customers Say",
-
-      rightText:
-        "Fresh vegetables, great quality and excellent value for money. Customers can share their experience and rating here.",
-    },
-    
-  ];
 
 
 
@@ -467,150 +406,35 @@ export default function Details() {
       {/* akhan theke nicher ta suru */}
 
 
-      <section className="w-full bg-white">
+     <div className="flex justify-center gap-[50px] my-[50px]">
+      <div>Descriptions</div>
+      <div>Additional Information</div>
+      <div>Customer Feedback</div>
 
-        {/* ================= TABS ================= */}
-        <div className="border-b border-gray-200">
-          <div className="max-w-[1170px] mx-auto px-4">
-            <div className="flex justify-center items-center gap-8">
+       
 
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`
-                  relative py-4 text-sm font-medium
-                  transition-all duration-300
-                  ${activeTab === tab.id
-                      ? 
-                      "text-[#53f109]"
-                      : 
-                      "text-gray-500 hover:text-[#1A1A1A]"
-                    }
-                `}
-                >
-                  {tab.title}
-
-                  {/* Active Line */}
-                  <span
-                    className={`
-                    absolute left-0 bottom-0 h-[2px] bg-[#00B207]
-                    transition-all duration-300
-                    ${activeTab === tab.id
-                        && "w-full"
-                      
-                      }
-                  `}
-                  />
-                </button>
-              ))}
-
-            </div>
-          </div>
-        </div>
+     </div>
+      <div className="border border-b-[#808080] mb-[20px]"></div>
 
 
-        {/* ================= CONTENT ================= */}
-        <div className="max-w-[1170px] mx-auto px-4 py-8 overflow-hidden">
+      <div className="flex">
+        <div className="w-[650px] bg-[#dbd7d7]">
+          <p>Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.</p>
 
-          {/* Sliding Wrapper */}
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${activeTab * 100}%)`,
-            }}
-          >
+          <p className="py-[20px]">
+            Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra. 
+          </p>
 
-            {contents.map((content, index) => (
-              <div
-                key={index}
-                className="w-full flex-shrink-0"
-              >
-
-                {/* ================= TWO COLUMN ================= */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
-
-                  {/* LEFT SIDE */}
-                  <div>
-
-                    <h3 className="text-lg font-semibold text-[#1A1A1A] mb-5">
-                      {content.leftTitle}
-                    </h3>
-
-                    {/* Additional Information */}
-                    {content.leftItems ? (
-                      <div className="space-y-4">
-
-                        {content.leftItems.map(([label, value]) => (
-                          <div
-                            key={label}
-                            className="flex items-center text-sm"
-                          >
-                            <span className="w-[130px] text-[#1A1A1A] font-medium">
-                              {label}
-                            </span>
-
-                            <span className="text-gray-500">
-                              {value}
-                            </span>
-                          </div>
-                        ))}
-
-                      </div>
-                    ) : (
-                      <p className="text-sm leading-7 text-gray-500 max-w-[500px]">
-                        {content.leftText}
-                      </p>
-                    )}
-
-                  </div>
-
-
-                  {/* RIGHT SIDE */}
-                  <div>
-
-                    <h3 className="text-lg font-semibold text-[#1A1A1A] mb-5">
-                      {content.rightTitle}
-                    </h3>
-
-                    <p className="text-sm leading-7 text-gray-500 max-w-[500px]">
-                      {content.rightText}
-                    </p>
-
-                    {/* Small Feature Boxes */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-
-                      <div className="border border-gray-200 rounded-lg p-4">
-                        <h4 className="text-sm font-medium text-[#1A1A1A] mb-1">
-                          ✓ Quality Product
-                        </h4>
-                        <p className="text-xs text-gray-500">
-                          Carefully selected for the best quality.
-                        </p>
-                      </div>
-
-                      <div className="border border-gray-200 rounded-lg p-4">
-                        <h4 className="text-sm font-medium text-[#1A1A1A] mb-1">
-                          ✓ 100% Organic
-                        </h4>
-                        <p className="text-xs text-gray-500">
-                          Fresh and healthy vegetables.
-                        </p>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            ))}
-
-          </div>
+          <span className="flex items-center "> <IoMdCheckmarkCircle className="text-[#00B207]" /> 100 g of fresh leaves provides.</span>
+          <span className="flex items-center "> <IoMdCheckmarkCircle className="text-[#00B207]" /> Aliquam ac est at augue volutpat elementum.</span>
+          <span className="flex items-center "> <IoMdCheckmarkCircle className="text-[#00B207]" />Quisque nec enim eget sapien molestie.</span>
+          <span className="flex items-center "> <IoMdCheckmarkCircle className="text-[#00B207]" /> Proin convallis odio volutpat finibus posuere.</span>
+        
+        <p className="py-[15px]">Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa. </p>
 
         </div>
-      </section>
+        <div>x</div>
+      </div>
 
 
 
