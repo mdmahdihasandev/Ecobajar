@@ -1,6 +1,8 @@
 import React from 'react'
 import Container from '../Components/Layuots/Container'
 import { Minus, Plus, X } from "lucide-react";
+import cartpic from '../assets/cartpage.png'
+import cartpictow from '../assets/cartpagetow.png'
 
 const Cart = () => {
   return (
@@ -8,6 +10,7 @@ const Cart = () => {
   <Container>
    <div>
      <div className="min-h-screen bg-white p-6 md:p-10">
+      <h2 className='font-poppins font-bold text-[32px] text-[#1A1A1A] text-center pb-[15px]' >My Shopping Cart</h2>
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6 items-start">
         {/* Left column */}
         <div className="flex flex-col gap-6">
@@ -33,11 +36,7 @@ const Cart = () => {
             {/* Row 1 - Green Capsicum */}
             <div className="grid grid-cols-[2fr_1fr_1.4fr_1fr_40px] items-center px-6 py-5 border-b border-gray-100">
               <div className="flex items-center gap-4">
-                <img
-                  src="https://images.unsplash.com/photo-1568584711271-6c929fb49b60?w=120&h=120&fit=crop"
-                  alt="Green Capsicum"
-                  className="w-14 h-14 rounded-md object-cover"
-                />
+              <img src={cartpic} alt="" />
                 <span className="font-medium text-gray-900 text-sm">
                   Green Capsicum
                 </span>
@@ -63,11 +62,7 @@ const Cart = () => {
             {/* Row 2 - Red Capsicum */}
             <div className="grid grid-cols-[2fr_1fr_1.4fr_1fr_40px] items-center px-6 py-5 border-b border-gray-100">
               <div className="flex items-center gap-4">
-                <img
-                  src="https://images.unsplash.com/photo-1526470303735-2b5c1c5b5c0b?w=120&h=120&fit=crop"
-                  alt="Red Capsicum"
-                  className="w-14 h-14 rounded-md object-cover"
-                />
+               <img src={cartpictow} alt="" />
                 <span className="font-medium text-gray-900 text-sm">
                   Red Capsicum
                 </span>
