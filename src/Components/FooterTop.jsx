@@ -18,8 +18,7 @@ const FooterTop = () => {
                 </div>
                 <div>
 
-                  <div>fgsdfgsdgfsdg</div>
-                  <div>sssss</div>
+                 
                  
                     <input className='sm:w-[480px] w-[200px]  sm:py-[14px] sm:py-[8px] py-[4px] sm:pl-[20px] pl-[15px]  rounded-tl-full rounded-bl-full border border-gray-300 bg-white rounded-md' type="text"placeholder='Your email address' />
                     <button className='text-[white] cursor-pointer bg-[#00B207] sm:py-[16px] py-[6px] sm:px-[40px] px-[10px] leading-[138%] rounded-full relative left-[-30px] '>Subscribe</button>

@@ -20,8 +20,8 @@ const Category = () => {
   return (
     <div>
         <>
-      <ProduactShowcas allData={allpro} showViewAll={false} type="product"
-/>
+      <ProduactShowcas allData={allpro} showViewAll={false} type="product"/>
+      
        <ProduactShowcas allData={allpro} showViewAll={false} type="Featured"/>
         </>
     </div>

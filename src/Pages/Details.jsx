@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { GiPriceTag } from "react-icons/gi";
 import { IoMdCheckmarkCircle  } from "react-icons/io";
@@ -19,7 +19,7 @@ import Bannerlogo from '../../src/assets/bannerpic.webp'
 import productSmall3 from '../assets/Productsixe-small3.png'
 import productSmall4 from '../assets/Productsixe-small4.png'
 import productbigg from '../assets/Productsixebig.png'
-import video from '../assets/Video.png'
+// import video from '../assets/Video.png'
 import Container from "../Components/Layuots/Container";
 
 import "swiper/css";
@@ -27,6 +27,8 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { Link } from "react-router";
+import axios from "axios";
+import ProduactShowcas from "../Components/ProduactShowcas";
 
 export default function Details() {
   const props = {
@@ -54,6 +56,25 @@ export default function Details() {
 
 
  const [activeTab, setActiveTab] = useState("description");
+
+
+
+//  API start
+
+     let [allpro, setAllpro] = useState([])
+
+  useEffect(()=> {
+   async function allProduct(){
+    let product = await axios.get('https://dummyjson.com/products')
+    setAllpro(product.data.products.slice(0, 5));
+    
+    
+    
+   }  
+   allProduct()
+  },[])
+
+//  API end
 
 
 
@@ -404,69 +425,7 @@ export default function Details() {
 
 
 
-      {/* akhan theke nicher ta suru */}
-
-
-     {/* <div className="flex justify-center gap-[50px] my-[50px]">
-      <div>
-       <h2 onClick={()=> setShow(!show)}> Descriptions</h2>
-                  {
-                    show &&
-                      <div className="flex gap-[130px]">
-        <div className="w-[650px]  font-poppins font-medium text-[14px] text-[#808080]">
-          <p>Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.</p>
-
-          <p className="py-[20px]">
-            Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra. 
-          </p>
-
-          <span className="flex items-center "> <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" /> 100 g of fresh leaves provides.</span>
-          <span className="flex items-center "> <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" /> Aliquam ac est at augue volutpat elementum.</span>
-          <span className="flex items-center "> <IoMdCheckmarkCircle className="text-[#00B207]  text-[23px] pr-[5px]" />Quisque nec enim eget sapien molestie.</span>
-          <span className="flex items-center "> <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" /> Proin convallis odio volutpat finibus posuere.</span>
-        
-        <p className="py-[15px]">Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa. </p>
-
-        </div>
-        <div className="w-[540px]">
-         <div>
-           <img  src={video} alt="" />
-         </div>
-         <div className="flex items-center my-[20px] gap-[7px] bg-[#f7f7f7] rounded-[7px] p-[20px]">
-
-          <div>
-            <GiPriceTag className="text-[25px] text-[#00B207]" />
-          </div>
-        <div className="pr-[20px] ">
-            <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">64% Discount</h5>
-             <p className="font-poppins font-normal text-[14px] text-[#808080]">Save your 64% money with us</p>
-        </div>
-          <div>
-            <GiPriceTag className="text-[25px] text-[#00B207]" />
-          </div>
-        <div>
-            <h5>64% Discount</h5>
-             <p>Save your 64% money with us</p>
-        </div>
-         
-         </div>
-        </div>
-      </div>
-                    
-                  }
-      </div>
-      <div>Additional Information</div>
-      <div>Customer Feedback</div>
-
-       
-
-     </div>
-      <div className="border border-b-[#808080] mb-[20px]"></div> */}
-
-
-    
-
-
+      {/* akhan theke nicher Descriptions */}
 
         <div className="my-[50px]">
 
@@ -551,7 +510,8 @@ export default function Details() {
 
       <div className="w-[540px]">
          <div>
-           <img  src={video} alt="" />
+           {/* <img  src={video} alt="" /> */}
+           <iframe width="500" height="300"src="https://www.youtube.com/embed/qt26WJOf76s" title="স্টিডফাস্ট কুরিয়ারে প্রোডাক্ট ডেলিভারি করার নিয়ম | How to Send Parcel by Steadfast" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
          </div>
          <div className="flex items-center my-[20px] gap-[7px] bg-[#f7f7f7] rounded-[7px] p-[20px]">
 
@@ -621,7 +581,8 @@ export default function Details() {
 
       <div className="w-[540px]">
          <div>
-           <img  src={video} alt="" />
+           {/* <img  src={video} alt="" /> */}
+           <iframe width="500" height="300" src="https://www.youtube.com/embed/rH-OxS4S_3E" title="How to Order at foodpanda || ফুডপ্যান্ডায় অর্ডার করবেন কিভাবে" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
          </div>
          <div className="flex items-center my-[20px] gap-[7px] bg-[#f7f7f7] rounded-[7px] p-[20px]">
 
@@ -650,7 +611,7 @@ export default function Details() {
 
 
   {/* Customer Feedback */}
-  {activeTab === "description" && (
+  {activeTab === "feedback" && (
     <div className="flex justify-center gap-[130px] mt-[40px]">
 
       <div className="w-[650px] font-poppins text-[14px] text-[#808080]">
@@ -690,8 +651,9 @@ export default function Details() {
       </div>
 
       <div className="w-[540px]">
-         <div>
-           <img  src={video} alt="" />
+         <div >
+           {/* <img  src={video} alt="" /> */}
+           <iframe width="500" height="300" src="https://www.youtube.com/embed/jVrPC_yssY0" title="How to order food from Foodpanda | Foodpanda Order System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
          </div>
          <div className="flex items-center my-[20px] gap-[7px] bg-[#f7f7f7] rounded-[7px] p-[20px]">
 
@@ -721,6 +683,19 @@ export default function Details() {
 </div>
 
 
+ {/* akhan theke nicher Descriptions end */}
+
+
+
+
+  {/*  API start */}
+
+
+ 
+
+ <ProduactShowcas allData={allpro} showViewAll={false} type="product" titleCenter={true}/>
+
+  {/*  API End */}
 
     </Container>
   );

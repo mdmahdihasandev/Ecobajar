@@ -10,7 +10,7 @@ import Category from './Pages/Category';
 import Shop from './Pages/Shop';
 import Details from './Pages/Details';
 import About  from './Pages/About';
-import Card from './Pages/Card';
+import Card from './Pages/Cart';
 import Checkout from './Pages/Checkout';
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/shop" element={<Shop/>} />
         <Route path="/details" element={<Details/>} />
         <Route path="/about" element={<About/>} />
-        <Route path="/card" element={<Card/>} />
+        <Route path="/cart" element={<Card/>} />
         <Route path="/checkout" element={<Checkout/>} />
       </Route>
     </Routes>

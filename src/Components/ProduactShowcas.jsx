@@ -9,7 +9,7 @@ import { IoBagOutline } from "react-icons/io5";
 import { FaRegEye ,  } from "react-icons/fa6";
 import { IoIosHeartEmpty } from "react-icons/io";
 
-const ProduactShowcas = ({ allData, showViewAll, type, columns = 5, showTitle = true }) => {
+const ProduactShowcas = ({ allData, showViewAll, type, columns = 5, showTitle = true ,titleCenter }) => {
     console.log(allData);
 
 
@@ -39,7 +39,7 @@ const ProduactShowcas = ({ allData, showViewAll, type, columns = 5, showTitle = 
 
                 {
                     showTitle && (
-                        <h2 className='pb-[20px] sm:pb-[30px] font-poppins font-semibold text-[20px] sm:text-[32px] text-[#1A1A1A]'>
+                        <h2 className={`pb-[20px] sm:pb-[30px] font-poppins font-semibold text-[20px] sm:text-[32px] text-[#1A1A1A]  ${titleCenter ? "text-center" : ""}`}>
                             Popular Categories
                         </h2>
                     )
@@ -85,7 +85,7 @@ const ProduactShowcas = ({ allData, showViewAll, type, columns = 5, showTitle = 
                                    
                                 </div>
 
-                                <div className='w-[35px] h-[35px] bg-white text-black rounded-full flex justify-center items-center absolute hover:bg-yellow-400 bottom-[20px] right-[25px] cursor-pointer transition-colors'>
+                                <div className='w-[35px] h-[35px] bg-white text-black rounded-full flex justify-center items-center absolute hover:bg-[#00B207] hover:text-[white] bottom-[20px] right-[25px] cursor-pointer transition-colors'>
                                         <IoBagOutline className='text-[22px]' />
                                     </div>
 
