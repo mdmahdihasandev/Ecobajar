@@ -18,7 +18,7 @@ import Bannerlogo from '../../src/assets/bannerpic.webp'
 import productSmall3 from '../assets/Productsixe-small3.png'
 import productSmall4 from '../assets/Productsixe-small4.png'
 import productbigg from '../assets/Productsixebig.png'
-
+import video from '../assets/Video.png'
 import Container from "../Components/Layuots/Container";
 
 import "swiper/css";
@@ -433,7 +433,9 @@ export default function Details() {
         <p className="py-[15px]">Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa. </p>
 
         </div>
-        <div>x</div>
+        <div>
+          <img src={video} alt="" />
+        </div>
       </div>
 
 
