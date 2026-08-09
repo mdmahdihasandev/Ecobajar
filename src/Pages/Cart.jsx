@@ -14,8 +14,12 @@ const Cart = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6 items-start">
         {/* Left column */}
         <div className="flex flex-col gap-6">
+
+
           {/* Cart table card */}
           <div className="border border-gray-200 rounded-md">
+
+
             {/* Header row */}
             <div className="grid grid-cols-[2fr_1fr_1.4fr_1fr_40px] px-6 py-4 border-b border-gray-100">
               <span className="text-xs tracking-widest text-gray-400 font-medium">
@@ -32,6 +36,7 @@ const Cart = () => {
               </span>
               <span />
             </div>
+
  
             {/* Row 1 - Green Capsicum */}
             <div className="grid grid-cols-[2fr_1fr_1.4fr_1fr_40px] items-center px-6 py-5 border-b border-gray-100">
@@ -141,6 +146,8 @@ const Cart = () => {
             Proceed to checkout
           </button>
         </div>
+
+        
       </div>
     </div>
    </div>
