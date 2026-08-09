@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { GiPriceTag } from "react-icons/gi";
-import { IoMdCheckmarkCircle  } from "react-icons/io";
+import { IoMdCheckmarkCircle } from "react-icons/io";
 import ReactImageZoom from "react-image-zoom";
 import { GoHeart } from "react-icons/go";
 import { FaInstagram } from "react-icons/fa";
@@ -55,26 +55,26 @@ export default function Details() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
 
- const [activeTab, setActiveTab] = useState("description");
+  const [activeTab, setActiveTab] = useState("description");
 
 
 
-//  API start
+  //  API start
 
-     let [allpro, setAllpro] = useState([])
+  let [allpro, setAllpro] = useState([])
 
-  useEffect(()=> {
-   async function allProduct(){
-    let product = await axios.get('https://dummyjson.com/products')
-    setAllpro(product.data.products.slice(0, 5));
-    
-    
-    
-   }  
-   allProduct()
-  },[])
+  useEffect(() => {
+    async function allProduct() {
+      let product = await axios.get('https://dummyjson.com/products')
+      setAllpro(product.data.products.slice(0, 5));
 
-//  API end
+
+
+    }
+    allProduct()
+  }, [])
+
+  //  API end
 
 
 
@@ -427,275 +427,303 @@ export default function Details() {
 
       {/* akhan theke nicher Descriptions */}
 
-        <div className="my-[50px]">
+      <div className="my-[50px]">
 
-  {/* Tabs */}
-  <div className="flex justify-center gap-[50px] border-b border-gray-200">
+        {/* Tabs */}
+        <div className="flex justify-center gap-[50px] border-b border-gray-200">
 
-    <button onClick={() => setActiveTab("description")} className={`pb-[15px] font-poppins font-medium text-[16px]
-     ${
-        activeTab === "description"
-          ? "text-[#1A1A1A] border-b-2 border-[#00B207]"
-          : "text-[#808080]"
-      }`}
-    >
-      Descriptions
-    </button>
+          <button
+            onClick={() => setActiveTab("description")}
+            className={`pb-[15px] font-poppins font-medium text-[16px] max-[639px]:text-[13px]
+     ${activeTab === "description"
+                ? "text-[#1A1A1A] border-b-2 border-[#00B207]"
+                : "text-[#808080]"
+              }`}
+          >
+            Descriptions
+          </button>
 
-    <button
-      onClick={() => setActiveTab("information")}
-      className={`pb-[15px] font-poppins font-medium text-[16px] ${
-        activeTab === "information"
-          ? "text-[#1A1A1A] border-b-2 border-[#00B207]"
-          : "text-[#808080]"
-      }`}
-    >
-      Additional Information
-    </button>
+          <button
+            onClick={() => setActiveTab("information")}
+            className={`pb-[15px] font-poppins font-medium text-[16px] max-[639px]:text-[13px] ${activeTab === "information"
+                ? "text-[#1A1A1A] border-b-2 border-[#00B207]"
+                : "text-[#808080]"
+              }`}
+          >
+            Additional Information
+          </button>
 
-    <button
-      onClick={() => setActiveTab("feedback")}
-      className={`pb-[15px] font-poppins font-medium text-[16px] ${
-        activeTab === "feedback"
-          ? "text-[#1A1A1A] border-b-2 border-[#00B207]"
-          : "text-[#808080]"
-      }`}
-    >
-      Customer Feedback
-    </button>
+          <button
+            onClick={() => setActiveTab("feedback")}
+            className={`pb-[15px] font-poppins font-medium text-[16px] max-[639px]:text-[13px] ${activeTab === "feedback"
+                ? "text-[#1A1A1A] border-b-2 border-[#00B207]"
+                : "text-[#808080]"
+              }`}
+          >
+            Customer Feedback
+          </button>
 
-  </div>
+        </div>
 
 
-  {/* Description Content */}
+        {/* Description Content */}
 
-  {activeTab === "description" && (
-    <div className="flex justify-center gap-[130px] mt-[40px]">
+        {activeTab === "description" && (
 
-      <div className="w-[650px] font-poppins text-[14px] text-[#808080]">
+          <div className="flex my-[20px] sm:gap-[80px] max-[639px]:flex-col">
 
-        <p>
-         Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.
-        </p>
+            <div className="w-[650px] max-[639px]:w-full font-poppins text-[14px] text-[#808080]">
 
-        <p className="py-[20px]">
-        Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra. 
-        </p>
+              <p>
+                Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.
+              </p>
 
-        <span className="flex pb-[5px] items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-          100 g of fresh leaves provides.
-        </span>
+              <p className="py-[20px]">
+                Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra.
+              </p>
 
-        <span className="flex pb-[5px]  items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-          Aliquam ac est at augue volutpat elementum.
-        </span>
+              <span className="flex pb-[5px] items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                100 g of fresh leaves provides.
+              </span>
 
-        <span className="flex pb-[5px]  items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-          Quisque nec enim eget sapien molestie.
-        </span>
+              <span className="flex pb-[5px] items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                Aliquam ac est at augue volutpat elementum.
+              </span>
 
-        <span className="flex pb-[5px]  items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-         Proin convallis odio volutpat finibus posuere.
-        </span>
+              <span className="flex pb-[5px] items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                Quisque nec enim eget sapien molestie.
+              </span>
 
-        <p className="pt-[15px]">
-          Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa. 
-        </p>
+              <span className="flex pb-[5px] items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                Proin convallis odio volutpat finibus posuere.
+              </span>
+
+              <p className="pt-[15px]">
+                Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa.
+              </p>
+
+            </div>
+
+
+            <div className="w-[540px] max-[639px]:w-full max-[639px]:mt-[25px]">
+
+              <div className="max-[639px]:w-full">
+                {/* <img src={video} alt="" /> */}
+
+                <iframe
+                  width="500"
+                  height="300"
+                  className="max-[639px]:w-full max-[639px]:h-auto"
+                  src="https://www.youtube.com/embed/qt26WJOf76s"
+                  title="স্টিডফাস্ট কুরিয়ারে প্রোডাক্ট ডেলিভারি করার নিয়ম | How to Send Parcel by Steadfast"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div className="flex items-center my-[20px] gap-[7px] bg-[#f7f7f7] rounded-[7px] p-[20px] max-[639px]:flex-wrap">
+
+                <div>
+                  <GiPriceTag className="text-[25px] text-[#00B207]" />
+                </div>
+
+                <div className="pr-[20px] ">
+                  <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">
+                    64% Discount
+                  </h5>
+                  <p className="font-poppins font-normal text-[14px] text-[#808080]">
+                    Save your 64% money with us
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-[7px] max-[639px]:w-full">
+
+                  <div>
+                    <GiPriceTag className="text-[25px] text-[#00B207]" />
+                  </div>
+
+                  <div>
+                    <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">
+                      64% Discount
+                    </h5>
+                    <p className="font-poppins font-normal text-[14px] text-[#808080]">
+                      Save your 64% money with us
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        )}
+
+
+
+        {/* Additional Information */}
+        {activeTab === "information" && (
+          <div className="flex justify-center gap-[130px] mt-[40px]">
+
+            <div className="w-[650px] font-poppins text-[14px] text-[#808080]">
+
+            
+
+              <p className="py-[20px]">
+                Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra.
+              </p>
+
+              <span className="flex pb-[5px] items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                100 g of fresh leaves provides.
+              </span>
+
+              <span className="flex pb-[5px]  items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                Aliquam ac est at augue volutpat elementum.
+              </span>
+
+              <span className="flex pb-[5px]  items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                Quisque nec enim eget sapien molestie.
+              </span>
+
+              <span className="flex pb-[5px]  items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                Proin convallis odio volutpat finibus posuere.
+              </span>
+
+              <p className="pt-[15px]">
+                Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa.
+              </p>
+
+            </div>
+
+            <div className="w-[540px]">
+              <div>
+                {/* <img  src={video} alt="" /> */}
+                <iframe width="500" height="300" src="https://www.youtube.com/embed/rH-OxS4S_3E" title="How to Order at foodpanda || ফুডপ্যান্ডায় অর্ডার করবেন কিভাবে" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div className="flex items-center my-[20px] gap-[7px] bg-[#f7f7f7] rounded-[7px] p-[20px]">
+
+                <div>
+                  <GiPriceTag className="text-[25px] text-[#00B207]" />
+                </div>
+                <div className="pr-[20px] ">
+                  <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">64% Discount</h5>
+                  <p className="font-poppins font-normal text-[14px] text-[#808080]">Save your 64% money with us</p>
+                </div>
+                <div>
+                  <GiPriceTag className="text-[25px] text-[#00B207]" />
+                </div>
+                <div className=" ">
+                  <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">64% Discount</h5>
+                  <p className="font-poppins font-normal text-[14px] text-[#808080]">Save your 64% money with us</p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        )}
+
+
+
+
+        {/* Customer Feedback */}
+        {activeTab === "feedback" && (
+          <div className="flex justify-center gap-[130px] mt-[40px]">
+
+            <div className="w-[650px] font-poppins text-[14px] text-[#808080]">
+
+              <p>
+                Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.
+              </p>
+
+              <p className="py-[20px]">
+                Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra.
+              </p>
+
+              <span className="flex pb-[5px] items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                100 g of fresh leaves provides.
+              </span>
+
+              <span className="flex pb-[5px]  items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                Aliquam ac est at augue volutpat elementum.
+              </span>
+
+              <span className="flex pb-[5px]  items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                Quisque nec enim eget sapien molestie.
+              </span>
+
+              <span className="flex pb-[5px]  items-center">
+                <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
+                Proin convallis odio volutpat finibus posuere.
+              </span>
+
+              <p className="pt-[15px]">
+                Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa.
+              </p>
+
+            </div>
+
+            <div className="w-[540px]">
+              <div >
+                {/* <img  src={video} alt="" /> */}
+                <iframe width="500" height="300" src="https://www.youtube.com/embed/jVrPC_yssY0" title="How to order food from Foodpanda | Foodpanda Order System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div className="flex items-center my-[20px] gap-[7px] bg-[#f7f7f7] rounded-[7px] p-[20px]">
+
+                <div>
+                  <GiPriceTag className="text-[25px] text-[#00B207]" />
+                </div>
+                <div className="pr-[20px] ">
+                  <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">64% Discount</h5>
+                  <p className="font-poppins font-normal text-[14px] text-[#808080]">Save your 64% money with us</p>
+                </div>
+                <div>
+                  <GiPriceTag className="text-[25px] text-[#00B207]" />
+                </div>
+                <div className=" ">
+                  <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">64% Discount</h5>
+                  <p className="font-poppins font-normal text-[14px] text-[#808080]">Save your 64% money with us</p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        )}
+
+
 
       </div>
 
-      <div className="w-[540px]">
-         <div>
-           {/* <img  src={video} alt="" /> */}
-           <iframe width="500" height="300"src="https://www.youtube.com/embed/qt26WJOf76s" title="স্টিডফাস্ট কুরিয়ারে প্রোডাক্ট ডেলিভারি করার নিয়ম | How to Send Parcel by Steadfast" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-         </div>
-         <div className="flex items-center my-[20px] gap-[7px] bg-[#f7f7f7] rounded-[7px] p-[20px]">
 
-          <div>
-            <GiPriceTag className="text-[25px] text-[#00B207]" />
-          </div>
-        <div className="pr-[20px] ">
-            <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">64% Discount</h5>
-             <p className="font-poppins font-normal text-[14px] text-[#808080]">Save your 64% money with us</p>
-        </div>
-          <div>
-            <GiPriceTag className="text-[25px] text-[#00B207]" />
-          </div>
-      <div className=" ">
-            <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">64% Discount</h5>
-             <p className="font-poppins font-normal text-[14px] text-[#808080]">Save your 64% money with us</p>
-        </div>
-         
-         </div>
-        </div>
-
-    </div>
-  )}
+      {/* akhan theke nicher Descriptions end */}
 
 
 
 
-  {/* Additional Information */}
-  {activeTab === "information" && (
-    <div className="flex justify-center gap-[130px] mt-[40px]">
-
-      <div className="w-[650px] font-poppins text-[14px] text-[#808080]">
-
-        {/* <p>
-         Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.
-        </p> */}
-
-        <p className="py-[20px]">
-        Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra. 
-        </p>
-
-        <span className="flex pb-[5px] items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-          100 g of fresh leaves provides.
-        </span>
-
-        <span className="flex pb-[5px]  items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-          Aliquam ac est at augue volutpat elementum.
-        </span>
-
-        <span className="flex pb-[5px]  items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-          Quisque nec enim eget sapien molestie.
-        </span>
-
-        <span className="flex pb-[5px]  items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-         Proin convallis odio volutpat finibus posuere.
-        </span>
-
-        <p className="pt-[15px]">
-          Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa. 
-        </p>
-
-      </div>
-
-      <div className="w-[540px]">
-         <div>
-           {/* <img  src={video} alt="" /> */}
-           <iframe width="500" height="300" src="https://www.youtube.com/embed/rH-OxS4S_3E" title="How to Order at foodpanda || ফুডপ্যান্ডায় অর্ডার করবেন কিভাবে" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-         </div>
-         <div className="flex items-center my-[20px] gap-[7px] bg-[#f7f7f7] rounded-[7px] p-[20px]">
-
-          <div>
-            <GiPriceTag className="text-[25px] text-[#00B207]" />
-          </div>
-        <div className="pr-[20px] ">
-            <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">64% Discount</h5>
-             <p className="font-poppins font-normal text-[14px] text-[#808080]">Save your 64% money with us</p>
-        </div>
-          <div>
-            <GiPriceTag className="text-[25px] text-[#00B207]" />
-          </div>
-      <div className=" ">
-            <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">64% Discount</h5>
-             <p className="font-poppins font-normal text-[14px] text-[#808080]">Save your 64% money with us</p>
-        </div>
-         
-         </div>
-        </div>
-
-    </div>
-  )}
+      {/*  API start */}
 
 
 
 
-  {/* Customer Feedback */}
-  {activeTab === "feedback" && (
-    <div className="flex justify-center gap-[130px] mt-[40px]">
+      <ProduactShowcas allData={allpro} showViewAll={false} type="product" titleCenter={true} />
 
-      <div className="w-[650px] font-poppins text-[14px] text-[#808080]">
-
-        <p>
-         Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.
-        </p>
-
-        <p className="py-[20px]">
-        Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra. 
-        </p>
-
-        <span className="flex pb-[5px] items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-          100 g of fresh leaves provides.
-        </span>
-
-        <span className="flex pb-[5px]  items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-          Aliquam ac est at augue volutpat elementum.
-        </span>
-
-        <span className="flex pb-[5px]  items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-          Quisque nec enim eget sapien molestie.
-        </span>
-
-        <span className="flex pb-[5px]  items-center">
-          <IoMdCheckmarkCircle className="text-[#00B207] text-[23px] pr-[5px]" />
-         Proin convallis odio volutpat finibus posuere.
-        </span>
-
-        <p className="pt-[15px]">
-          Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa. 
-        </p>
-
-      </div>
-
-      <div className="w-[540px]">
-         <div >
-           {/* <img  src={video} alt="" /> */}
-           <iframe width="500" height="300" src="https://www.youtube.com/embed/jVrPC_yssY0" title="How to order food from Foodpanda | Foodpanda Order System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-         </div>
-         <div className="flex items-center my-[20px] gap-[7px] bg-[#f7f7f7] rounded-[7px] p-[20px]">
-
-          <div>
-            <GiPriceTag className="text-[25px] text-[#00B207]" />
-          </div>
-        <div className="pr-[20px] ">
-            <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">64% Discount</h5>
-             <p className="font-poppins font-normal text-[14px] text-[#808080]">Save your 64% money with us</p>
-        </div>
-          <div>
-            <GiPriceTag className="text-[25px] text-[#00B207]" />
-          </div>
-      <div className=" ">
-            <h5 className="font-poppins font-medium text-[15px] text-[#1A1A1A]">64% Discount</h5>
-             <p className="font-poppins font-normal text-[14px] text-[#808080]">Save your 64% money with us</p>
-        </div>
-         
-         </div>
-        </div>
-
-    </div>
-  )}
-
-
-
-</div>
-
-
- {/* akhan theke nicher Descriptions end */}
-
-
-
-
-  {/*  API start */}
-
-
- 
-
- <ProduactShowcas allData={allpro} showViewAll={false} type="product" titleCenter={true}/>
-
-  {/*  API End */}
+      {/*  API End */}
 
     </Container>
   );
