@@ -1,10 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '../Components/Layuots/Container'
 import { Minus, Plus, X } from "lucide-react";
 import cartpic from '../assets/cartpage.png'
 import cartpictow from '../assets/cartpagetow.png'
 
 const Cart = () => {
+
+  let [count,setCount] = useState(0)
+  let [counttow,setCounttow] = useState(0)
+
+  let price = 20.00
+  let pricetow = 20.00
+
+
+  let subTotal = (count * price ) + (counttow * pricetow)
+  let total = subTotal
+
+  let handleClickPlus = ()=> {
+    if(count < 10){
+      
+      setCount(count+1)
+    }
+  }
+
+  let handleClickMinus = ()=> {
+    if(count > 0){
+      
+      setCount(count-1)
+    }
+  }
+  
+  let handleClickPlustow = ()=> {
+    if(counttow < 10){
+      
+      setCounttow(counttow+1)
+    }
+  }
+
+  let handleClickMinustow = ()=> {
+    if(counttow > 0){
+      
+      setCounttow(counttow-1)
+    }
+  }
+  
   return (
   <>
   <Container>
@@ -48,16 +87,16 @@ const Cart = () => {
               </div>
               <span className="text-sm text-gray-700">$14.00</span>
               <div className="flex items-center bg-gray-50 rounded-full w-fit px-1 py-1 gap-3">
-                <button className="w-7 h-7 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-200 transition">
-                  <Minus size={14} />
+                <button onClick={()=> handleClickMinus()} className="w-7 h-7 rounded-full flex items-center justify-center text-black font-bold hover:bg-gray-200 transition">
+                  <Minus size={16} />
                 </button>
-                <span className="text-sm font-medium w-4 text-center">5</span>
-                <button className="w-7 h-7 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-200 transition">
-                  <Plus size={14} />
+                <span className="text-sm font-medium w-4 text-center">{count}</span>
+                <button onClick={()=> handleClickPlus()} className="w-7 h-7 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-200 transition">
+                  <Plus size={15} />
                 </button>
               </div>
               <span className="text-sm font-semibold text-gray-900">
-                $70.00
+                ${count * price}
               </span>
               <button className="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-100 transition">
                 <X size={12} />
@@ -74,16 +113,16 @@ const Cart = () => {
               </div>
               <span className="text-sm text-gray-700">$14.00</span>
               <div className="flex items-center bg-gray-50 rounded-full w-fit px-1 py-1 gap-3">
-                <button className="w-7 h-7 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-200 transition">
-                  <Minus size={14} />
+                <button onClick={()=> handleClickMinustow()} className="w-7 h-7 rounded-full flex items-center justify-center text-black font-bold hover:bg-gray-200 transition">
+                  <Minus size={16} />
                 </button>
-                <span className="text-sm font-medium w-4 text-center">5</span>
-                <button className="w-7 h-7 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-200 transition">
-                  <Plus size={14} />
+                <span className="text-sm font-medium w-4 text-center">{counttow}</span>
+                <button onClick={()=> handleClickPlustow()} className="w-7 h-7 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-200 transition">
+                  <Plus size={15} />
                 </button>
               </div>
               <span className="text-sm font-semibold text-gray-900">
-                $14.00
+                ${counttow * pricetow}
               </span>
               <button className="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-100 transition">
                 <X size={12} />
@@ -128,7 +167,7 @@ const Cart = () => {
           <div className="flex items-center justify-between py-3 border-b border-gray-100">
             <span className="text-sm text-gray-500">Subtotal:</span>
             <span className="text-sm font-semibold text-gray-900">
-              $84.00
+            ${total}.00
             </span>
           </div>
  
@@ -139,7 +178,7 @@ const Cart = () => {
  
           <div className="flex items-center justify-between py-3 mb-5">
             <span className="text-sm text-gray-500">Total:</span>
-            <span className="text-sm font-bold text-gray-900">$84.00</span>
+            <span className="text-sm font-bold text-gray-900">${total}.00</span>
           </div>
  
           <button className="w-full bg-green-600 text-white font-semibold text-sm py-3.5 rounded-full hover:bg-green-700 transition">
