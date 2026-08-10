@@ -15,6 +15,7 @@ import Checkout from './Pages/Checkout';
 import Contact from './Pages/Contact';
 import Wishlist from './Pages/Wishlist';
 import Faq from './Pages/Faq';
+import Error from './Pages/Error';
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/wishlist" element={<Wishlist/>} />
         <Route path="/faq" element={<Faq/>} />
+        <Route path="/error" element={<Error/>} />
       </Route>
     </Routes>
 

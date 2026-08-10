@@ -3,7 +3,7 @@ import Container from '../Components/Layuots/Container'
 
 import  { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import images from '../assets/Image.png'
+import faq from '../assets/faq.png'
  
 const FAQ_ITEMS = [
   {
@@ -44,12 +44,12 @@ const Faq = () => {
       <Container>
 
        <section className="w-full bg-white py-10 px-4 sm:py-16 sm:px-6 lg:px-10">
-      <div className="mx-auto flex max-w-6xl flex-col-reverse items-center gap-10 lg:flex-row lg:items-stretch lg:gap-14">
+      <div className="mx-auto flex  max-w-6xl flex-col-reverse items-center gap-10 lg:flex-row lg:items-center lg:gap-14">
         {/* Left: FAQ card */}
         <div className="w-full lg:w-1/2">
-          <div className="overflow-hidden rounded-md border-2 border-sky-500">
-            <div className="border-b border-sky-500 px-5 py-6 sm:px-7 sm:py-7">
-              <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
+          <div className="overflow-hidden">
+            <div className="border-b px-5 py-6 sm:px-7 sm:py-7">
+              <h2 className="text-2xl font-poppins font-bold leading-tight text-slate-900 sm:text-[40px]">
                 Welcome, Let's Talk
                 <br />
                 About Our Ecobazar
@@ -111,9 +111,9 @@ const Faq = () => {
         <div className="w-full lg:w-1/2">
           <div className="mx-auto aspect-[4/3] w-full max-w-lg overflow-hidden rounded-md sm:aspect-square lg:aspect-[4/5]">
             <img
-              src={images}
+              src={faq}
               alt="Smiling farmer holding a basket full of fresh organic vegetables"
-              className="h-full w-full object-cover"
+              className=" max-h-full max-w-full object-cover"
             />
           </div>
         </div>
