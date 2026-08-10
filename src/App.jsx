@@ -13,6 +13,8 @@ import About  from './Pages/About';
 import Card from './Pages/Cart';
 import Checkout from './Pages/Checkout';
 import Contact from './Pages/Contact';
+import Wishlist from './Pages/Wishlist';
+import Faq from './Pages/Faq';
 
 const App = () => {
   return (
@@ -31,6 +33,8 @@ const App = () => {
         <Route path="/cart" element={<Card/>} />
         <Route path="/checkout" element={<Checkout/>} />
         <Route path="/contact" element={<Contact/>} />
+        <Route path="/wishlist" element={<Wishlist/>} />
+        <Route path="/faq" element={<Faq/>} />
       </Route>
     </Routes>
 

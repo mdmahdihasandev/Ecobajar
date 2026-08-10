@@ -14,60 +14,80 @@ const Sale = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeLeft(targetDate - new Date().getTime());
+      const remaining = targetDate - new Date().getTime();
+      setTimeLeft(remaining > 0 ? remaining : 0);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [targetDate]);
 
-  const days = Math.floor(timeLeft / (1000 * 1000 * 1000 * 24));
+  // Days Calculation Fix (1000 * 60 * 60 * 24)
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
   const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   return (
     <>
-      <div className="mb-[100px]">
+      <div className="mb-12 sm:mb-20 lg:mb-[100px]">
         <Container>
-          <div className="flex justify-between">
+          {/* Main Flex Layout for All Devices */}
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
 
-            {/* Counter Image */}
-            <div className="relative">
+            {/* Counter Banner Item */}
+            <div className="relative w-full sm:w-[80%] md:w-[60%] lg:w-[32%] mx-auto">
+              <img src={count} alt="counter" className="w-full h-auto object-cover rounded-lg" />
 
-              <img src={count} alt="counter" />
+              {/* Fully Responsive Overlay Counter */}
+              <div className="absolute top-[28%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 md:gap-6 lg:gap-5 xl:gap-7 w-full justify-center px-2">
 
-              <div className="absolute top-[28%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-7">
-
-                <div className="text-center">
-                  <h2 className=" text-3xl font-bold text-[white]">{days} </h2>
-                  <p className="text-sm uppercase">Days</p>
+                <div className="text-center min-w-[45px] sm:min-w-[55px]">
+                  <h2 className="text-lg sm:text-2xl md:text-3xl font-bold text-white leading-none">
+                    {String(days).padStart(2, '0')}
+                  </h2>
+                  <p className="text-[10px] sm:text-xs md:text-sm uppercase text-gray-200 mt-1">
+                    Days
+                  </p>
                 </div>
 
-                <div className="text-center">
-                  <h2 className="text-3xl font-bold text-[white]">{hours}</h2>
-                  <p className="text-sm uppercase">Hours</p>
+                <div className="text-center min-w-[45px] sm:min-w-[55px]">
+                  <h2 className="text-lg sm:text-2xl md:text-3xl font-bold text-white leading-none">
+                    {String(hours).padStart(2, '0')}
+                  </h2>
+                  <p className="text-[10px] sm:text-xs md:text-sm uppercase text-gray-200 mt-1">
+                    Hours
+                  </p>
                 </div>
 
-                <div className="text-center">
-                  <h2 className="text-3xl font-bold text-[white]">{minutes}</h2>
-                  <p className="text-sm uppercase">Minutes</p>
+                <div className="text-center min-w-[45px] sm:min-w-[55px]">
+                  <h2 className="text-lg sm:text-2xl md:text-3xl font-bold text-white leading-none">
+                    {String(minutes).padStart(2, '0')}
+                  </h2>
+                  <p className="text-[10px] sm:text-xs md:text-sm uppercase text-gray-200 mt-1">
+                    Mins
+                  </p>
                 </div>
 
-                <div className="text-center">
-                  <h2 className="text-3xl font-bold text-[white]">{seconds}</h2>
-                  <p className="text-sm uppercase">Seconds</p>
+                <div className="text-center min-w-[45px] sm:min-w-[55px]">
+                  <h2 className="text-lg sm:text-2xl md:text-3xl font-bold text-white leading-none">
+                    {String(seconds).padStart(2, '0')}
+                  </h2>
+                  <p className="text-[10px] sm:text-xs md:text-sm uppercase text-gray-200 mt-1">
+                    Secs
+                  </p>
                 </div>
 
               </div>
-
             </div>
 
-            <div>
-              <img src={bannertow} alt="" />
+            {/* Banner Two */}
+            <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[32%] mx-auto">
+              <img src={bannertow} alt="Banner Two" className="w-full h-auto object-cover rounded-lg" />
             </div>
 
-            <div>
-              <img src={bannerone} alt="" />
+            {/* Banner One */}
+            <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[32%] mx-auto">
+              <img src={bannerone} alt="Banner One" className="w-full h-auto object-cover rounded-lg" />
             </div>
 
           </div>

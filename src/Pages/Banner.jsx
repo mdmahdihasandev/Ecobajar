@@ -3,133 +3,134 @@ import Container from '../Components/Layuots/Container'
 import Bannerlogo from '../../src/assets/bannerpic.webp'
 import BannerRigt from '../../src/assets/BannerRigt.webp'
 import BannerRigt2 from '../../src/assets/BannerRigt2.webp'
-import { FaArrowRight } from "react-icons/fa";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
-// Import Swiper React components
+// Import Swiper React components and modules
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation, Scrollbar } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
-// import { Navigation } from 'swiper/modules';
-// import { Pagination } from 'swiper/modules';
-
-import { Autoplay, Pagination, Navigation ,Scrollbar} from 'swiper/modules';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const Banner = () => {
   return (
-    <div>
-        <Container>
-           <div className='sm:flex sm:justify-between sm:mb-[24px]'>
-             <div className='max-w-[872px] relative'>
-              
-               <Swiper
-                    spaceBetween={0}
-                    slidesPerView={1}
-                    // onSlideChange={() => console.log('slide change')}
-                    // onSwiper={(swiper) => console.log(swiper)}
-                     navigation={{
-                        nextEl: '.custom-next',
-                        prevEl: '.custom-prev',
-                      }}
-                   modules={[Navigation, Pagination , Autoplay]}
-                    // pagination={{
-                    //    clickable: true,
-                    // }} 
+    <div className='py-4 lg:py-6'>
+      <Container>
+        <div className='flex flex-col lg:flex-row justify-between gap-6 mb-6'>
+          
+          {/* Main Banner Slider (Left Side) */}
+          <div className='w-full lg:max-w-[872px] relative group'>
+            <Swiper
+              spaceBetween={0}
+              slidesPerView={1}
+              navigation={{
+                nextEl: '.custom-next',
+                prevEl: '.custom-prev',
+              }}
+              modules={[Navigation, Pagination, Autoplay]}
+              pagination={{
+                clickable: true,
+              }}
+              autoplay={{
+                delay: 3500,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              className='rounded-2xl overflow-hidden'
+            >
+              <SwiperSlide>
+                <img className='w-full h-auto object-cover rounded-2xl' src={Bannerlogo} alt="Bannerlogo" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img className='w-full h-auto object-cover rounded-2xl' src={Bannerlogo} alt="Bannerlogo" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img className='w-full h-auto object-cover rounded-2xl' src={Bannerlogo} alt="Bannerlogo" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img className='w-full h-auto object-cover rounded-2xl' src={Bannerlogo} alt="Bannerlogo" />
+              </SwiperSlide>
+            </Swiper>
 
-                    // autoplay={{
-                    //   delay: 2500,
-                    //   disableOnInteraction: false,
-                    // }}
+            {/* Custom Navigation Arrows */}
+            <button className="custom-prev z-10 w-8 h-8 sm:w-11 sm:h-11 bg-white/80 hover:bg-white text-black flex justify-center items-center rounded-full shadow-md absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 transition-all cursor-pointer">
+              <FaArrowLeft className='text-xs sm:text-base' />
+            </button>
+            <button className="custom-next z-10 w-8 h-8 sm:w-11 sm:h-11 bg-white/80 hover:bg-white text-black flex justify-center items-center rounded-full shadow-md absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 transition-all cursor-pointer">
+              <FaArrowRight className='text-xs sm:text-base' />
+            </button>
+          </div>
 
-                    loop={true}
-                 
-                  >
-                    <SwiperSlide>
-                      <img className='pt-[24px]' src={Bannerlogo} alt="Bannerlogo" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                       <img className='pt-[24px]' src={Bannerlogo} alt="Bannerlogo" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                       <img className='pt-[24px]' src={Bannerlogo} alt="Bannerlogo" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                       <img className='pt-[24px]' src={Bannerlogo} alt="Bannerlogo" />
-                    </SwiperSlide>
-                    
-                </Swiper>
-
-                   <div className="custom-prev w-[20px] h-[20px] bg-[#f7f7f7] sm:w-[36px] sm:h-[36px] sm:bg-[white] absolute ml-[15px] sm:ml-[36px] text-[10px] sm:text-[20px]">
-                     <FaArrowLeft  />
-                    </div>
-                    <div className="custom-next  w-[20px] h-[20px] bg-[#f7f7f7] sm:w-[36px] sm:h-[36px] sm:bg-[white] absolute ml-[15px] sm:ml-[36px] text-[10px] sm:text-[20px]">
-                      
-                       <FaArrowRight /> 
-                  </div>
-
-              </div>
-            <div className='max-w-[423px] hidden sm:block'>
-                <div>
-                
-       <Swiper
-            spaceBetween={0}
-            slidesPerView={1}
-            // onSlideChange={() => console.log('slide change')}
-            // onSwiper={(swiper) => console.log(swiper)}
-             scrollbar={{
-                hide: true,
-            }}
-            modules={[Scrollbar]}
-              
+          {/* Right Side Banners (Visible on Desktop / Tablet) */}
+          <div className='w-full lg:max-w-[423px] flex flex-col gap-6 hidden sm:flex'>
+            
+            {/* Top Right Slider */}
+            <div className='w-full overflow-hidden rounded-2xl'>
+              <Swiper
+                spaceBetween={0}
+                slidesPerView={1}
+                scrollbar={{
+                  hide: true,
+                }}
+                modules={[Scrollbar, Autoplay]}
+                autoplay={{
+                  delay: 4000,
+                  disableOnInteraction: false,
+                }}
+                loop={true}
               >
-              <SwiperSlide>
-                <img className='sm:pt-[24px] sm:pb-[24px]' src={BannerRigt} alt="BannerRigt" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img className='sm:pt-[24px] sm:pb-[24px]' src={BannerRigt} alt="BannerRigt" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img className='sm:pt-[24px] sm:pb-[24px]' src={BannerRigt} alt="BannerRigt" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img className='sm:pt-[24px] sm:pb-[24px]' src={BannerRigt} alt="BannerRigt" />
-              </SwiperSlide>
-    </Swiper>
-                
-                </div>
-
-                <div className=''>
-       <Swiper
-            spaceBetween={0}
-            slidesPerView={1}
-            // onSlideChange={() => console.log('slide change')}
-            // onSwiper={(swiper) => console.log(swiper)}
-           
-            pagination={{
-              clickable: true,
-           }}
-            modules={[Pagination]}
-              
-              >
-              <SwiperSlide>
-                <img src={BannerRigt2} alt="BannerRigt2" />
-              </SwiperSlide>
-              <SwiperSlide>
-               <img src={BannerRigt2} alt="BannerRigt2" />
-              </SwiperSlide>
-              <SwiperSlide>
-               <img src={BannerRigt2} alt="BannerRigt2" />
-              </SwiperSlide>
-              <SwiperSlide>
-              <img src={BannerRigt2} alt="BannerRigt2" />
-              </SwiperSlide>
-    </Swiper>
-                
-                </div>
+                <SwiperSlide>
+                  <img className='w-full h-auto object-cover rounded-2xl' src={BannerRigt} alt="BannerRigt" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className='w-full h-auto object-cover rounded-2xl' src={BannerRigt} alt="BannerRigt" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className='w-full h-auto object-cover rounded-2xl' src={BannerRigt} alt="BannerRigt" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className='w-full h-auto object-cover rounded-2xl' src={BannerRigt} alt="BannerRigt" />
+                </SwiperSlide>
+              </Swiper>
             </div>
-           </div>
-        </Container>
+
+            {/* Bottom Right Slider */}
+            <div className='w-full overflow-hidden rounded-2xl'>
+              <Swiper
+                spaceBetween={0}
+                slidesPerView={1}
+                pagination={{
+                  clickable: true,
+                }}
+                modules={[Pagination, Autoplay]}
+                autoplay={{
+                  delay: 4500,
+                  disableOnInteraction: false,
+                }}
+                loop={true}
+              >
+                <SwiperSlide>
+                  <img className='w-full h-auto object-cover rounded-2xl' src={BannerRigt2} alt="BannerRigt2" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className='w-full h-auto object-cover rounded-2xl' src={BannerRigt2} alt="BannerRigt2" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className='w-full h-auto object-cover rounded-2xl' src={BannerRigt2} alt="BannerRigt2" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className='w-full h-auto object-cover rounded-2xl' src={BannerRigt2} alt="BannerRigt2" />
+                </SwiperSlide>
+              </Swiper>
+            </div>
+
+          </div>
+
+        </div>
+      </Container>
     </div>
   )
 }

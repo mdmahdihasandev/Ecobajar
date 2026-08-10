@@ -1,46 +1,68 @@
-import React from 'react'
-import Container from './Layuots/Container'
+import React from 'react';
+import Container from './Layuots/Container';
 import { TfiFacebook } from "react-icons/tfi";
 import { IoLogoTwitter } from "react-icons/io5";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { Link } from 'react-router';
-
 
 const FooterTop = () => {
   return (
-    <div className='py-[40px] bg-[#E6E6E6]'>
-        <Container>
-            <div className='sm:flex justify-between items-center'>
-                <div>
-                    <h3 className='font-poppins font-semibold text-[24px] mb-[4px]'>Subcribe our Newsletter</h3>
-                    <p className='font-poppins font-semibold text-[14px] pb-[15px] sm:pb-0 text-[#999999] max-w-[415px]'>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna.</p>
-                </div>
-                <div>
+    <div className="py-10 bg-[#F2F2F2]">
+      <Container>
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
+          
+          {/* Text Content */}
+          <div className="text-center lg:text-left">
+            <h3 className="font-poppins font-semibold text-xl sm:text-2xl text-[#1A1A1A] mb-1">
+              Subscribe our Newsletter
+            </h3>
+            <p className="font-poppins font-normal text-xs sm:text-sm text-[#999999] max-w-[420px] leading-relaxed">
+              Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna.
+            </p>
+          </div>
 
-                 
-                 
-                    <input className='sm:w-[480px] w-[200px]  sm:py-[14px] sm:py-[8px] py-[4px] sm:pl-[20px] pl-[15px]  rounded-tl-full rounded-bl-full border border-gray-300 bg-white rounded-md' type="text"placeholder='Your email address' />
-                    <button className='text-[white] cursor-pointer bg-[#00B207] sm:py-[16px] py-[6px] sm:px-[40px] px-[10px] leading-[138%] rounded-full relative left-[-30px] '>Subscribe</button>
-                </div>
-                <div className='flex sm:gap-[8px] cursor-pointer'>
-                   <div className='w-[40px] h-[40px] hover:bg-primary hover:text-white flex justify-center items-center rounded-full' >
-                    <Link to="https://www.facebook.com/"> <TfiFacebook className='text-[18px]' /></Link>
-                   </div>
-                   <div className='w-[40px] h-[40px] hover:bg-primary hover:text-white flex justify-center items-center rounded-full' >
-                     <Link to="https://x.com/home"><IoLogoTwitter className='text-[18px]' /></Link>
-                   </div>
-                   <div className='w-[40px] h-[40px] hover:bg-primary hover:text-white flex justify-center items-center rounded-full' >
-                     <Link to="https://www.instagram.com/?hl=en"><FaInstagram className='text-[18px]' /></Link>
-                   </div>
-                   <div className='w-[40px] h-[40px] hover:bg-primary hover:text-white flex justify-center items-center rounded-full' >
-                     <Link to="https://www.linkedin.com/feed/"><FaLinkedinIn className='text-[18px] ' /></Link>
-                   </div> 
-                </div>
-            </div>
-        </Container>
+          {/* Form / Input Field */}
+          <div className="w-full sm:w-auto flex justify-center">
+            <form onSubmit={(e) => e.preventDefault()} className="relative flex items-center w-full max-w-[480px]">
+              <input
+                className="w-full py-3.5 sm:py-4 pl-5 pr-[130px] font-poppins text-sm rounded-full border border-[#E6E6E6] bg-white text-[#1A1A1A] placeholder:text-[#999999] focus:outline-none focus:border-[#00B207] shadow-sm transition-all"
+                type="email"
+                placeholder="Your email address"
+                required
+              />
+              <button
+                type="submit"
+                className="absolute right-1 text-white font-poppins font-semibold text-sm cursor-pointer bg-[#00B207] hover:bg-[#008a05] transition-colors py-2.5 sm:py-3 px-6 sm:px-8 rounded-full shadow-md"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center gap-2">
+            {[
+              { icon: <TfiFacebook className="text-base" />, href: "https://www.facebook.com/" },
+              { icon: <IoLogoTwitter className="text-base" />, href: "https://x.com/home" },
+              { icon: <FaInstagram className="text-base" />, href: "https://www.instagram.com/?hl=en" },
+              { icon: <FaLinkedinIn className="text-base" />, href: "https://www.linkedin.com/feed/" },
+            ].map((social, index) => (
+              <Link
+                key={index}
+                to={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex justify-center items-center rounded-full text-[#4D4D4D] hover:bg-[#00B207] hover:text-white transition-all duration-300 bg-white sm:bg-transparent hover:shadow-md"
+              >
+                {social.icon}
+              </Link>
+            ))}
+          </div>
+
+        </div>
+      </Container>
     </div>
-  )
-}
+  );
+};
 
-export default FooterTop
+export default FooterTop;

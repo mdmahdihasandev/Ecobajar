@@ -1,104 +1,109 @@
-import React, { useRef, useState } from 'react'
-import Container from './Layuots/Container'
+import React, { useRef, useState } from 'react';
+import Container from './Layuots/Container';
 import { CiLocationOn } from "react-icons/ci";
 import { FaAngleDown } from "react-icons/fa";
 import useOutsideClick from '../Hooks/OutsiteClick';
 import { Link } from 'react-router';
 
 const TopBar = () => {
+  const [open, setOpen] = useState(false);
+  const [openTwo, setOpenTwo] = useState(false);
+  const dropDown = useRef(null);
+  const dropDownTwo = useRef(null);
 
-  let [open, setOpen] = useState(false)
-  let [opentow, setOpentow] = useState(false)
-  const dropDown = useRef(null)
-  const dropDowntow = useRef(null)
-
-  
-
-  useOutsideClick(dropDown, () => setOpen(false), open)
-  useOutsideClick(dropDowntow, () => setOpentow(false), opentow)
+  useOutsideClick(dropDown, () => setOpen(false), open);
+  useOutsideClick(dropDownTwo, () => setOpenTwo(false), openTwo);
 
   return (
-
-    <div className='border-b border-solid border-b-gry-50 items-center font-poppins text-[#666666]  text-sm py-[12px]'>
+    <div className="border-b border-[#E6E6E6] bg-white font-poppins text-[#666666] text-xs sm:text-sm py-2 sm:py-2.5">
       <Container>
-        <div className='sm:flex sm:justify-between'>
-          <div className='flex items-center  sm:gap-[6px] gap-[3px] pb-[3px] sm:pb-0'> <CiLocationOn className='pl-[2px] sm:pl-0 text-[23px] sm:text-[0]' /> Store Location: Lincoln- 344, Illinois, Chicago</div>
-
-          <div className='flex gap-[20px] '>
-
-
-            {/* //! DropDown */}
-           <div className='relative inline-block' onMouseEnter={() => setOpen(true)}  onMouseLeave={() => setOpen(false)}
-          >
-
-          <div className='flex items-center cursor-pointer pl-[30px] sm:pl-0'>
-            Eng <FaAngleDown  className={`duration-300 ml-1 ${open ? "rotate-180" : "rotate-0"}`} />
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
+          
+          {/* Store Location */}
+          <div className="flex items-center gap-1.5 text-center sm:text-left">
+            <CiLocationOn className="text-lg sm:text-xl text-[#333333] shrink-0" />
+            <span className="truncate max-w-[280px] sm:max-w-none">
+              Store Location: Lincoln- 344, Illinois, Chicago
+            </span>
           </div>
 
-              {
-                open &&
-                <div className='absolute top-full sm:left-[-20px] left-0 z-50 bg-[#afaeae] text-center text-black cursor-pointer  py-[10px] w-[70px]'>
-                  <ul className=''>
-                    <li className='hover:bg-[white] hover:text-blue-600 mb-[5px]'>BG</li>
-                    <li className='hover:bg-[white] hover:text-blue-600  mb-[5px]'>CH</li>
-                    <li className='hover:bg-[white] hover:text-blue-600  mb-[5px]'>IN</li>
-                    <li className='hover:bg-[white] hover:text-blue-600 '>PK</li>
+          {/* Right Section: Language, Currency, Auth */}
+          <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm">
+            
+            {/* Language Dropdown */}
+            <div
+              ref={dropDown}
+              className="relative inline-block"
+              onMouseEnter={() => setOpen(true)}
+              onMouseLeave={() => setOpen(false)}
+            >
+              <button 
+                onClick={() => setOpen(!open)}
+                className="flex items-center gap-1 cursor-pointer hover:text-[#00B207] transition-colors py-1"
+              >
+                Eng
+                <FaAngleDown className={`duration-300 text-xs ${open ? "rotate-180" : "rotate-0"}`} />
+              </button>
+
+              {open && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 z-50 bg-white text-[#333333] rounded-md shadow-lg border border-gray-100 py-1.5 min-w-[70px] text-center">
+                  <ul className="space-y-1">
+                    <li className="hover:bg-[#f2f2f2] hover:text-[#00B207] py-1 px-2 cursor-pointer transition-colors">Eng</li>
+                    <li className="hover:bg-[#f2f2f2] hover:text-[#00B207] py-1 px-2 cursor-pointer transition-colors">BN</li>
+                    <li className="hover:bg-[#f2f2f2] hover:text-[#00B207] py-1 px-2 cursor-pointer transition-colors">HN</li>
+                    <li className="hover:bg-[#f2f2f2] hover:text-[#00B207] py-1 px-2 cursor-pointer transition-colors">AR</li>
                   </ul>
                 </div>
-              }
-
+              )}
             </div>
 
-              {/* Sidebar */}
-            {/* <div onClick={() => setOpen(!open)} className='flex items-center' ref={dropDown}>
-              Eng <FaAngleDown />
-              {
-                open &&
-                <div className='fixed inset-0 flex z-50 '>
-                 <div className='"w-[200px]   px-[50px] h-full bg-black   p-4"'>
-                   <ul className='text-white'>
-                    <li className='pb-2.5 text-[20px] hover:text-amber-300 hover:bg-red-500 px-[30px]'>BG</li>
-                    <li className='pb-2.5 text-[20px] hover:text-amber-300  hover:bg-red-500 px-[30px]'>CH</li>
-                    <li className='pb-2.5 text-[20px] hover:text-amber-300  hover:bg-red-500 px-[30px]'>IN</li>
-                    <li className='pb-2.5 text-[20px] hover:text-amber-300  hover:bg-red-500 px-[30px]'>IN</li>
-                  </ul>
-                 </div>
-                </div>
-              }
-            </div> */}
+            {/* Currency Dropdown */}
+            <div
+              ref={dropDownTwo}
+              className="relative inline-block"
+              onMouseEnter={() => setOpenTwo(true)}
+              onMouseLeave={() => setOpenTwo(false)}
+            >
+              <button 
+                onClick={() => setOpenTwo(!openTwo)}
+                className="flex items-center gap-1 cursor-pointer hover:text-[#00B207] transition-colors py-1"
+              >
+                USD
+                <FaAngleDown className={`duration-300 text-xs ${openTwo ? "rotate-180" : "rotate-0"}`} />
+              </button>
 
-            <div className='relative inline-block' onMouseEnter={() => setOpentow(true)}  onMouseLeave={() => setOpentow(false)}
-          >
-
-          <div className='flex items-center cursor-pointer'>
-            USD <FaAngleDown  className={`duration-300 ml-1 ${opentow ? "rotate-180" : "rotate-0"}`} />
-          </div>
-
-              {
-                opentow &&
-                <div className='absolute top-full left-[-20px] bg-[#afaeae] text-center text-black cursor-pointer  py-[10px] w-[70px] z-20'>
-                  <ul className=''>
-                    <li className='hover:bg-[white] hover:text-blue-600 mb-[5px]'>USDT</li>
-                    <li className='hover:bg-[white] hover:text-blue-600  mb-[5px]'>TRX</li>
-                    <li className='hover:bg-[white] hover:text-blue-600  mb-[5px]'>USD</li>
-                    <li className='hover:bg-[white] hover:text-blue-600 '>BTC</li>
+              {openTwo && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 z-50 bg-white text-[#333333] rounded-md shadow-lg border border-gray-100 py-1.5 min-w-[70px] text-center">
+                  <ul className="space-y-1">
+                    <li className="hover:bg-[#f2f2f2] hover:text-[#00B207] py-1 px-2 cursor-pointer transition-colors">USD</li>
+                    <li className="hover:bg-[#f2f2f2] hover:text-[#00B207] py-1 px-2 cursor-pointer transition-colors">BDT</li>
+                    <li className="hover:bg-[#f2f2f2] hover:text-[#00B207] py-1 px-2 cursor-pointer transition-colors">EUR</li>
+                    <li className="hover:bg-[#f2f2f2] hover:text-[#00B207] py-1 px-2 cursor-pointer transition-colors">BTC</li>
                   </ul>
                 </div>
-              }
-
+              )}
             </div>
 
-            <div className='flex items-center relative after:w-[1px] after:h-[15px] after:bg-[#E6E6E6] after:top-[2px] after:left-[-12px] after:content-[""] after:absolute gap-3.5'>
-               <Link className='hover:font-medium hover:text-blue-500' to="/login">Sign In</Link>   /   <Link className='hover:font-medium hover:text-blue-500' to="/registration">Sign Up </Link>
-                </div>
+            {/* Vertical Divider */}
+            <span className="h-3.5 w-[1px] bg-[#E6E6E6]"></span>
+
+            {/* Auth Links */}
+            <div className="flex items-center gap-1.5">
+              <Link className="hover:text-[#00B207] transition-colors" to="/login">
+                Sign In
+              </Link>
+              <span>/</span>
+              <Link className="hover:text-[#00B207] transition-colors" to="/registration">
+                Sign Up
+              </Link>
+            </div>
+
           </div>
+
         </div>
       </Container>
-
     </div>
+  );
+};
 
-
-  )
-}
-
-export default TopBar
+export default TopBar;
