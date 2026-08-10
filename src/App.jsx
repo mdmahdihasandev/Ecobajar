@@ -12,6 +12,7 @@ import Details from './Pages/Details';
 import About  from './Pages/About';
 import Card from './Pages/Cart';
 import Checkout from './Pages/Checkout';
+import Contact from './Pages/Contact';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/about" element={<About/>} />
         <Route path="/cart" element={<Card/>} />
         <Route path="/checkout" element={<Checkout/>} />
+        <Route path="/contact" element={<Contact/>} />
       </Route>
     </Routes>
 
