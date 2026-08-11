@@ -9,7 +9,7 @@ const Support = () => {
   return (
     <div className='pt-[24px] pb-[60px] items-center '>
         <Container>
-            <div className='sm:flex flex-wrap gap-2.5 justify-between  shadow-2xl py-[10px] sm:py-[40px] px-[40px]'>
+            <div className='sm:flex flex-wrap gap-2.5 justify-between  shadow-md py-[10px] sm:py-[40px] px-[40px]'>
 
                 <div className=' sm:flex items-center mb-[10px]  sm:mb-0 p-[10px] sm:p-0 bg-[#eeeaea] sm:bg-[white]'>
                   <div>

@@ -76,7 +76,7 @@ const Navbar = () => {
                     Dashboard
                   </h2>
                   <input className='mt-[7px] py-[5px] pl-[15px] pr-[45px] w-full border border-[#E6E6E6] outline-0 rounded-[5px]' type="text" placeholder="Search..." />
-                  <div className='absolute top-[63px] right-[32px] text-[20px] w-[35px] h-[35px] bg-[#ffffff] flex justify-center items-center rounded-[10px] hover:bg-blue-600 hover:text-white cursor-pointer'>
+                  <div className='absolute top-[66px] right-[22px] text-[20px] w-[35px] h-[35px] bg-[#ffffff] flex justify-center items-center rounded-[10px]   cursor-pointer'>
                     <IoSearch />
                   </div>
                 </div>
@@ -106,11 +106,11 @@ const Navbar = () => {
               {dropDown && (
                 <div className='shadow shadow-[#797777] bg-white sm:w-[200px] w-full static sm:absolute sm:top-[60px] left-0 z-50 text-black rounded-b-md'>
                   <ul className='h-full font-poppins font-medium text-[16px] sm:text-[19px]'>
-                    <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center cursor-pointer'><DiApple className='mr-[10px]' /> home</li>
-                    <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center cursor-pointer'><DiApple className='mr-[10px]' /> About</li>
-                    <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center cursor-pointer'><DiApple className='mr-[10px]' /> Blog</li>
-                    <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center cursor-pointer'><DiApple className='mr-[10px]' /> Page</li>
-                    <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center cursor-pointer'><DiApple className='mr-[10px]' /> Shop</li>
+                    <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center cursor-pointer'><DiApple className='mr-[10px]' /> <Link to="/">Home</Link> </li>
+                    <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center cursor-pointer'><DiApple className='mr-[10px]' /> <Link to="/shop">Shop</Link></li>
+                    <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center cursor-pointer'><DiApple className='mr-[10px]' /><Link to="/detsils">Details</Link></li>
+                    <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center cursor-pointer'><DiApple className='mr-[10px]' /> <Link to="/faq">FAQ</Link></li>
+                    <li className='hover:bg-black hover:text-white py-[10px] pl-[20px] flex items-center cursor-pointer'><DiApple className='mr-[10px]' /> <Link to="/about">About</Link></li>
                   </ul>
                 </div>
               )}
@@ -124,11 +124,22 @@ const Navbar = () => {
               {dropDowntow && (
                 <div className='static sm:absolute sm:top-[40px] left-0 z-50 bg-gray-200 w-full sm:w-[120px] text-black rounded-md'>
                   <ul className='font-poppins font-medium text-[15px] text-center'>
+                  <Link to="/">
                     <li className='hover:bg-primary hover:text-black py-[8px] cursor-pointer'>home</li>
+                  </Link>
+                  <Link to="/about">
                     <li className='hover:bg-primary hover:text-black py-[8px] cursor-pointer'>About</li>
+                  </Link>
+                  <Link to="/shop">
                     <li className='hover:bg-primary hover:text-black py-[8px] cursor-pointer'>Shop</li>
+                  </Link>
+                  <Link to="/contact">
                     <li className='hover:bg-primary hover:text-black py-[8px] cursor-pointer'>Contact</li>
+                  </Link>
+                  <Link to="/">
                     <li className='hover:bg-primary hover:text-black py-[8px] cursor-pointer'>Skills</li>
+                  </Link>
+                  
                   </ul>
                 </div>
               )}
@@ -136,8 +147,8 @@ const Navbar = () => {
 
             {/* Shop Dropdown */}
             <li ref={DropDownthreref} className='relative w-full sm:w-auto text-center sm:text-left py-2 sm:py-0'>
-              <Link onClick={() => setDropDownthre(!dropDownthre)} className='flex items-center justify-center sm:justify-start py-[7px] sm:py-0 hover:text-white' to='#'>
-                Shop <FaAngleDown className={`cursor-pointer duration-300 text-[17px] ml-1 ${dropDownthre ? 'rotate-180' : 'rotate-0'}`} />
+              <Link  onClick={() => setDropDownthre(!dropDownthre)} className='flex items-center justify-center sm:justify-start py-[7px] sm:py-0 hover:text-white' to='#'>
+               <Link to="/shop">Shop</Link> <FaAngleDown className={`cursor-pointer duration-300 text-[17px] ml-1 ${dropDownthre ? 'rotate-180' : 'rotate-0'}`} />
               </Link>
               {dropDownthre && (
                 <div className='static sm:absolute sm:top-[40px] left-0 z-50 bg-gray-200 w-full sm:w-[120px] text-black rounded-md'>
@@ -153,7 +164,7 @@ const Navbar = () => {
             {/* Pages Dropdown */}
             <li ref={DropDownforref} className='relative w-full sm:w-auto text-center sm:text-left py-2 sm:py-0'>
               <Link onClick={() => setDropDownfor(!dropDownfor)} className='flex items-center justify-center sm:justify-start py-[7px] sm:py-0 hover:text-white' to='#'>
-                Pages <FaAngleDown className={`cursor-pointer duration-300 text-[17px] ml-1 ${dropDownfor ? 'rotate-180' : 'rotate-0'}`} />
+                  <Link to="/details">Details</Link> <FaAngleDown className={`cursor-pointer duration-300 text-[17px] ml-1 ${dropDownfor ? 'rotate-180' : 'rotate-0'}`} />
               </Link>
               {dropDownfor && (
                 <div className='static sm:absolute sm:top-[40px] left-0 z-50 bg-gray-200 w-full sm:w-[120px] text-black rounded-md'>
@@ -168,7 +179,7 @@ const Navbar = () => {
             {/* Blog Dropdown */}
             <li ref={DropDownfiveref} className='relative w-full sm:w-auto text-center sm:text-left py-2 sm:py-0'>
               <Link onClick={() => setDropDownfive(!dropDownfive)} className='flex items-center justify-center sm:justify-start py-[7px] sm:py-0 hover:text-white' to='#'>
-                Blog <FaAngleDown className={`cursor-pointer duration-300 text-[17px] ml-1 ${dropDownfive ? 'rotate-180' : 'rotate-0'}`} />
+                  <Link to="/faq">FAQ</Link> <FaAngleDown className={`cursor-pointer duration-300 text-[17px] ml-1 ${dropDownfive ? 'rotate-180' : 'rotate-0'}`} />
               </Link>
               {dropDownfive && (
                 <div className='static sm:absolute sm:top-[40px] left-0 z-50 bg-gray-200 w-full sm:w-[120px] text-black rounded-md'>
@@ -180,8 +191,8 @@ const Navbar = () => {
               )}
             </li>
 
-            <li className='w-full sm:w-auto text-center sm:text-left py-2 sm:py-0'><Link className='flex justify-center sm:justify-start hover:text-white' to='#'>About Us</Link></li>
-            <li className='w-full sm:w-auto text-center sm:text-left py-2 sm:py-0'><Link className='flex justify-center sm:justify-start hover:text-white' to='#'>Contact Us</Link></li>
+            <li className='w-full sm:w-auto text-center sm:text-left py-2 sm:py-0'><Link  className='flex justify-center sm:justify-start hover:text-white' to='#'>  <Link to="/contact">Contact Us</Link></Link></li>
+            <li className='w-full sm:w-auto text-center sm:text-left py-2 sm:py-0'><Link className='flex justify-center sm:justify-start hover:text-white' to='#'>  <Link to="/about">About Us</Link></Link></li>
           </ul>
 
           {/* Desktop Phone */}

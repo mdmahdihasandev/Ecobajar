@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from './Layuots/Container'
 import ProductImages from '../assets/Productimages.webp'
 import { Link } from 'react-router';
@@ -8,9 +8,12 @@ import { IoIosStarHalf } from "react-icons/io";
 import { IoBagOutline } from "react-icons/io5";
 import { FaRegEye ,  } from "react-icons/fa6";
 import { IoIosHeartEmpty } from "react-icons/io";
+import { IoEyeOff } from "react-icons/io5";
 
 const ProduactShowcas = ({ allData, showViewAll, type, columns = 5, showTitle = true ,titleCenter }) => {
     console.log(allData);
+
+    let [show,setShow] = useState(false)
 
 
     function rattin(count) {
@@ -64,29 +67,44 @@ const ProduactShowcas = ({ allData, showViewAll, type, columns = 5, showTitle = 
                             key={item.id || idx}
 
                             className={`group relative border border-[#979393] p-3 sm:p-4 rounded-lg bg-white transition-all duration-300
-                                ${type === 'product' && 'hover:border-2 hover:border-[#15ff00]  '} 
-                                ${type === 'category' && 'hover:border-2 hover:border-[#15ff00] hover:text-[#13d11a] cursor-pointer '} 
-                                ${type === 'Featured' ? 'hover:border-2' : ''}`} >
+                                ${type === 'product' && 'hover:border-1 hover:border-[#06f12d]  '} 
+                                ${type === 'category' && 'hover:border-1 hover:border-[#15ff00] hover:text-[#13d11a] cursor-pointer '} 
+                                ${type === 'Featured' ? 'hover:border-1' : ''}`} >
 
 
                           
 
                             {type === 'product' && (
                                <>
-                                <div className="absolute top-[50px] w-[30px] h-[30px] bg-[#dad8d8] flex justify-center items-center rounded-[30px]  right-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <div onClick={()=> setShow(!show)} className="absolute top-[50px] w-[30px] h-[30px] bg-[#dad8d8] flex justify-center items-center rounded-[30px]  right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-[#00B207] cursor-pointer">
+
+                                    {
+                                        show 
+                                        ?
+
+                                       
+                                        <IoEyeOff className='cursor-pointer text-[20px] '  />
+                                        :
+                                         <FaRegEye className="text-[20px] cursor-pointer " />
+                                    }
                                   
-                                   
-                                    <FaRegEye className="text-[20px]" />
                                 </div>
 
-                                 <div className="absolute top-[10px] w-[30px] h-[30px] bg-[#dad8d8] flex justify-center items-center rounded-[30px]  right-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                 <div className="absolute top-[10px] w-[30px] h-[30px] bg-[#dad8d8] flex justify-center items-center rounded-[30px]  right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-[#00B207] cursor-pointer">
                                   
+                                   <Link to="/wishlist">
                                     <IoIosHeartEmpty className='text-[20px] ' />
+                                   </Link>
                                    
                                 </div>
 
-                                <div className='w-[35px] h-[35px] bg-white text-black rounded-full flex justify-center items-center absolute hover:bg-[#00B207] hover:text-[white] bottom-[20px] right-[25px] cursor-pointer transition-colors'>
+                                <div className='w-[35px] h-[35px] bg-white text-black rounded-full flex justify-center items-center absolute hover:bg-[#00B207] hover:text-[#f7f6f6] bottom-[20px] right-[25px] cursor-pointer transition-colors'>
+
+                                    <Link to="cart">
+                                    
                                         <IoBagOutline className='text-[22px]' />
+                                    </Link>
+
                                     </div>
 
                                </>
