@@ -205,8 +205,10 @@ const Shop = () => {
                 <h2 className='font-medium font-poppins text-[22px] sm:text-[26px] mt-6 mb-3'>Sale Products</h2>
                 <div className='space-y-3'>
                   <img className='hover:border border-[#00B207] w-full max-w-[300px] mx-auto' src={product} alt="Product" />
-                  <img className='hover:border border-[#00B207] w-full max-w-[300px] mx-auto' src={productone} alt="Product 1" />
+                
                   <img className='hover:border border-[#00B207] w-full max-w-[300px] mx-auto' src={producttow} alt="Product 2" />
+
+                  <img className='hover:border border-[#00B207] w-full max-w-[300px] mx-auto' src={product} alt="Product" />
                 </div>
               </div>
             )}

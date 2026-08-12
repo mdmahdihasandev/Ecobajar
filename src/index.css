@@ -344,7 +344,59 @@ input:checked + label.ratting-label::before {
 
 
 /* ===Popular Start ==== */
-.popularlabel{
+
+
+/* label.popularlabel {
+  position: relative;
+  padding-left: 55px;
+  cursor: pointer;
+  line-height: 24px;
+} */
+
+/* Switch Background */
+/* label.popularlabel::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 22px;
+  border: 2px solid rgb(133, 131, 131);
+  border-radius: 50px;
+  transition: 0.3s;
+  z-index: 1;
+} */
+
+/* Circle */
+/* label.popularlabel::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 2;
+} */
+
+/* ON হলে */
+/* input:checked + label.popularlabel {
+    background-color: rgb(94, 255, 1);
+  border-color: rgba(89, 253, 0, 0.952);
+} */
+
+input:checked + label.popularlabel {
+  background-color: rgb(36, 196, 14)!important;
+  transform: translateX(8px);
+  
+}
+
+
+
+
+/* .popularlabel{
   background-color: #F2F2F2;
   padding: 10px 20px;
   border-radius: 50px;
@@ -352,7 +404,7 @@ input:checked + label.ratting-label::before {
 .popularlabel:hover{
   background-color: #00B207;
 
-}
+} */
 /* ===Popular End ==== */
 
 
