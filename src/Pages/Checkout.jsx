@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Container from '../Components/Layuots/Container'
+import { Link } from 'react-router';
 
 const Checkout = () => {
 
@@ -254,9 +255,9 @@ const Checkout = () => {
             </label>
           ))}
  
-          <button className="w-full mt-4 py-3.5 bg-green-500 hover:bg-green-600 text-white text-[15px] font-semibold rounded-lg transition-colors">
+          <Link to="/" className="block w-full mt-4 py-3.5 bg-green-500 hover:bg-green-600 text-white text-[15px] font-semibold text-center rounded-lg transition-colors">
             Place Order
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ import instrathree from '../assets/instra (3).webp'
 import instrafor from '../assets/instra (4).webp'
 import instrafive from '../assets/instra (5).webp'
 import useOutsideClick from '../Hooks/OutsiteClick'
+import { FaInstagram } from "react-icons/fa";
 const Steps = () => {
     let [show,setShow] = useState(false)
     let [showone,setShowone] = useState(false)
@@ -61,21 +62,92 @@ const Steps = () => {
 
           
 
-            <div className='flex justify-between sm:gap-2.5 '>
-            <img className='w-[50px] sm:w-full' onClick={()=> setShow(!show)}  src={Instagram} alt="" />
-            <img  className='w-[50px] sm:w-full' onClick={()=> setShowone(!showone)} src={instraone} alt="" />
-            <img  className='w-[50px] sm:w-full' onClick={()=> setShowtow(!showotow)} src={instratow} alt="" />
-            <img  className='w-[50px] sm:w-full' onClick={()=> setShowthree(!showothree)} src={instrathree} alt="" />
-            <img  className='w-[50px] sm:w-full' onClick={()=> setShowfor(!showofor)} src={instrafor} alt="" />
-            <img  className='w-[50px] sm:w-full' onClick={()=> setShowfive(!showofive)} src={instrafive} alt="" />
-            </div>
+                            <div className="flex justify-between sm:gap-2.5">
+
+                   
+                    <div className="group relative overflow-hidden rounded-lg">
+                            <img
+                                className="w-[50px] sm:w-full block cursor-pointer"
+                                onClick={() => setShow(!show)}
+                                src={Instagram}
+                                alt=""
+                            />
+
+                            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                                <FaInstagram className="w-7 h-7 text-white" />
+                            </div>
+                     </div>
+                    <div className="group relative overflow-hidden rounded-lg">
+                            <img
+                                className="w-[50px] sm:w-full block cursor-pointer"
+                                onClick={() => setShowone(!showone)}
+                                src={instraone}
+                                alt=""
+                            />
+
+                            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                                <FaInstagram className="w-7 h-7 text-white" />
+                            </div>
+                     </div>
+                    <div className="group relative overflow-hidden rounded-lg">
+                            <img
+                                className="w-[50px] sm:w-full block cursor-pointer"
+                                onClick={() => setShowtow(!showotow)}
+                                src={instratow}
+                                alt=""
+                            />
+
+                            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                                <FaInstagram className="w-7 h-7 text-white" />
+                            </div>
+                     </div>
+                    <div className="group relative overflow-hidden rounded-lg">
+                            <img
+                                className="w-[50px] sm:w-full block cursor-pointer"
+                                onClick={() => setShowthree(!showothree)}
+                                src={instrathree}
+                                alt=""
+                            />
+
+                            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                                <FaInstagram className="w-7 h-7 text-white" />
+                            </div>
+                     </div>
+                    <div className="group relative overflow-hidden rounded-lg">
+                            <img
+                                className="w-[50px] sm:w-full block cursor-pointer"
+                                onClick={() => setShowfor(!showofor)}
+                                src={instrafor}
+                                alt=""
+                            />
+
+                            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                                <FaInstagram className="w-7 h-7 text-white" />
+                            </div>
+                     </div>
+                    <div className="group relative overflow-hidden rounded-lg">
+                            <img
+                                className="w-[50px] sm:w-full block cursor-pointer"
+                                onClick={() => setShowfive(!showofive)}
+                                src={instrafive}
+                                alt=""
+                            />
+
+                            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                                <FaInstagram className="w-7 h-7 text-white" />
+                            </div>
+                     </div>
+
+                   
+
+                    </div>
 
             {
         
                 show &&
-                  <div className='w-full h-screen bg-[#000000be] fixed top-0 left-0 z-50 flex justify-center items-center'>
-             <div ref={Sidebarref}>
-            <img width={600} src={Instagram} alt="" />
+                  <div  className='w-full h-screen  bg-[#000000be] fixed top-0 left-0 z-50 flex justify-center items-center'>
+             <div  ref={Sidebarref} >
+            <img  width={600} src={Instagram} alt="" />
             </div>
             </div>
             }

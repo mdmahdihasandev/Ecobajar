@@ -19,7 +19,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { Link } from "react-router";
+import { Link, Links } from "react-router";
 import axios from "axios";
 import ProduactShowcas from "../Components/ProduactShowcas";
 
@@ -235,14 +235,18 @@ export default function Details() {
               </div>
 
               {/* Add to Cart Button */}
-              <button className="flex-1 min-w-[180px] flex items-center justify-center gap-3 font-poppins font-semibold text-sm sm:text-base py-3.5 px-6 rounded-full bg-[#00B207] hover:bg-[#008a05] text-white transition-colors cursor-pointer">
-                Add to Cart <FaBagShopping className="text-lg" />
-              </button>
+
+               <Link to="/cart"  className="flex-1 min-w-[180px] flex items-center justify-center gap-3 font-poppins font-semibold text-sm sm:text-base py-3.5 px-6 rounded-full bg-[#00B207] hover:bg-[#008a05] text-white transition-colors cursor-pointer">
+               
+            
+               Add to Cart <FaBagShopping className="text-lg" />
+             
+               </Link>
+            
+            
 
               {/* Wishlist Icon */}
-              <button className="w-12 h-12 shrink-0 bg-[#cee7ce] hover:bg-[#00B207] hover:text-white text-[#2C742F] rounded-full flex justify-center items-center transition-colors cursor-pointer">
-                <GoHeart className="text-xl" />
-              </button>
+               <Link className="w-12 h-12 shrink-0 bg-[#cee7ce] hover:bg-[#00B207] hover:text-white text-[#2C742F] rounded-full flex justify-center items-center transition-colors cursor-pointer" to="/wishlist">  <GoHeart className="text-xl" />  </Link>
             </div>
 
             <hr className="border-gray-200 my-4" />

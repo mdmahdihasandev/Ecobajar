@@ -3,6 +3,7 @@ import Container from '../Components/Layuots/Container'
 import { Minus, Plus, X } from "lucide-react";
 import cartpic from '../assets/cartpage.png'
 import cartpictow from '../assets/cartpagetow.png'
+import { Link } from 'react-router';
 
 const Cart = () => {
 
@@ -433,7 +434,7 @@ const Cart = () => {
                 </div>
 
                 <button className="w-full bg-green-600 text-white font-semibold text-sm py-3.5 rounded-full hover:bg-green-700 transition">
-                  Proceed to checkout
+                 <Link to="/checkout"> Proceed to checkout</Link>
                 </button>
               </div>
 
