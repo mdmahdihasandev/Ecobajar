@@ -120,31 +120,29 @@ export default function Details() {
           </div>
 
           {/* Main Big Image Swiper */}
-          <div className="w-full h-auto aspect-square max-h-[520px] rounded-lg overflow-hidden border border-gray-100">
-            <Swiper
-              loop={true}
-              spaceBetween={10}
-              thumbs={{
-                swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
-              }}
-              modules={[FreeMode, Navigation, Thumbs]}
-              className="mySwiper2 w-full h-full"
-            >
-              <SwiperSlide>
-                <img className="w-full h-full object-cover" src={productbigg} alt="Product Big View" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full h-full flex items-center justify-center">
-                  <ReactImageZoom {...props} />
-                </div>
-              </SwiperSlide>
-              {[productbigg, productbigg, productbigg, productbigg, productbigg, productbigg, productbigg, productSmall3].map((imgSrc, index) => (
-                <SwiperSlide key={index}>
-                  <img className="w-full h-full object-cover" src={imgSrc} alt="Product View" />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+         
+            <div className="w-full h-auto aspect-square max-h-[520px] rounded-lg overflow-hidden border border-gray-100">
+              <Swiper
+                loop={true}
+                spaceBetween={10}
+                thumbs={{
+                  swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+                }}
+                modules={[FreeMode, Navigation, Thumbs]}
+                className="mySwiper2 w-full h-full"
+              >
+                {[productbigg, productbigg, productbigg, productbigg, productbigg, productbigg, productbigg, productSmall3].map((imgSrc, index) => (
+                  <SwiperSlide key={index} className="overflow-hidden">
+                    {/* Hover-e zoom hobar jonno Tailwind classes */}
+                    <img 
+                      className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-150 cursor-zoom-in" 
+                      src={imgSrc} 
+                      alt={`Product View ${index}`} 
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
         </div>
 
         {/* ================= RIGHT PRODUCT DETAILS ================= */}
